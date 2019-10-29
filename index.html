@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- <link rel="stylesheet" href="./public/css/style.css"> -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+  </head>
+  <body>
+    <div>
+      <textarea id="chatLog" class="chat_log" readonly></textarea>
+    </div>
+
+    <!-- 501동 테마 -->
+    <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat1">
+          <input id="name1" class="name" type="text" value="room1" readonly>
+          <input id="message1" class="message" type="text" placeholder="[501동] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+        <div class="timeContents" id="clock">
+            <p id="output1">00:00</p>
+        </div>
+        <form class="timeContents" id="clock1Start">
+          <input type="submit" id="startPause1" class="btn btn-default btn-success" value="시작">
+        </form>
+        <form class="timeContents" id="clock1End">
+          <input type="submit" id="stop1" class="btn btn-default btn-danger" value="종료">
+        </form>
+      </div>
+      <div class="hintBox room1">
+      </div>
+    </div>
+
+    <!-- 기묘한 날개짓 테마 -->
+    <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat2">
+          <input id="name2" class="name" type="text" value="room2" readonly>
+          <input id="message2" class="message" type="text" placeholder="[기묘한 날개짓] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+        <div class="timeContents" id="clock">
+            <p id="output2">00:00</p>
+        </div>
+        <form class="timeContents" id="clock2Start">
+          <input type="submit" id="startPause2" class="btn btn-default btn-success" value="시작">
+        </form>
+        <form class="timeContents" id="clock2End">
+          <input type="submit" id="stop2" class="btn btn-default btn-danger" value="종료">
+        </form>
+      </div>
+      <div class="hintBox room2">
+      </div>
+    </div>
+
+    <!-- 숨바꼭질 테마 -->
+    <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat3">
+          <input id="name3" class="name" type="text" value="room3" readonly>
+          <input id="message3" class="message" type="text" placeholder="[숨바꼭질] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+        <div class="timeContents" id="clock">
+            <p id="output3">00:00</p>
+        </div>
+        <form class="timeContents" id="clock3Start">
+          <input type="submit" id="startPause3" class="btn btn-default btn-success" value="시작">
+        </form>
+        <form class="timeContents" id="clock3End">
+          <input type="submit" id="stop3" class="btn btn-default btn-danger" value="종료">
+        </form>
+      </div>
+      <div class="hintBox room3">
+      </div>
+    </div>
+
+    <!-- 제물의 밤 테마 -->
+    <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat4">
+          <input id="name4" class="name" type="text" value="room4" readonly>
+          <input id="message4" class="message" type="text" placeholder="[제물의 밤] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+        <div class="timeContents" id="clock">
+            <p id="output4">00:00</p>
+        </div>
+        <form class="timeContents" id="clock4Start">
+          <input type="submit" id="startPause4" class="btn btn-default btn-success" value="시작">
+        </form>
+        <form class="timeContents" id="clock4End">
+          <input type="submit" id="stop4" class="btn btn-default btn-danger" value="종료">
+        </form>
+      </div>
+      <div class="hintBox room4">
+      </div>
+    </div>
+
+    <!-- 그 남자 그 여자 -->
+    <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat5">
+          <input id="name5" class="name" type="text" value="room5" readonly>
+          <input id="message5" class="message" type="text" placeholder="[그 남자 그 여자] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+        <div class="timeContents" id="clock">
+            <p id="output5">00:00</p>
+        </div>
+        <form class="timeContents" id="clock5Start">
+          <input type="submit" id="startPause5" class="btn btn-default btn-success" value="시작">
+        </form>
+        <form class="timeContents" id="clock5End">
+          <input type="submit" id="stop5" class="btn btn-default btn-danger" value="종료">
+        </form>
+      </div>
+      <div class="hintBox room5">
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/hint.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+  </body>
+</html>

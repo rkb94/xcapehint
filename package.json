@@ -1,0 +1,17 @@
+{
+  "name": "chatting",
+  "version": "1.0.0",
+  "description": "node-js-socket-io-chatting-site",
+  "main": "server.js",
+  "scripts": {
+	"start": "node server.js",
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "git": "^0.1.5",
+    "socket.io": "^2.0.3"
+  }
+}
