@@ -14,10 +14,6 @@ function startPause(number) {
     }
 }
 
-vid.onended = function() {
-    alert("ended video!");
-};
-
 function reset() {
     running = 0;
     minTime = 0;
@@ -54,6 +50,12 @@ function increment() {
         }, 100);
     }
 }
+
+vid.onended = function() {
+    vid.style.display = "none";
+    document.getElementById("clock").style.display = "block";
+    increment();
+};
 
 var socket = io();
 $('#chat').on('submit', function(e){
