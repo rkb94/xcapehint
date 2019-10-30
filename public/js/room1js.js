@@ -12,8 +12,11 @@ function startPause(number) {
         running = 0;
         // document.getElementById("startPause").innerHTML = "Resume";
     }
-
 }
+
+vid.onended = function() {
+    alert("ended video!");
+};
 
 function reset() {
     running = 0;
