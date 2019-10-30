@@ -26,4 +26,5 @@
 
 #myVideo{
     width: 100%;
+    backdrop-filter: blur(10px);
 }

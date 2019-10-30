@@ -1,60 +1,11 @@
-var minTime = 0;
-var secTime = 0;
-var running = 0;
 var vid = document.getElementById("myVideo"); 
-
-function startPause(number) {
-    if (running == 0) {
-        running = 1;
-        increment();
-        // document.getElementById("startPause").innerHTML = "Pause";
-    } else {
-        running = 0;
-        // document.getElementById("startPause").innerHTML = "Resume";
-    }
-}
-
-function reset() {
-    running = 0;
-    minTime = 0;
-    secTime = 0;
-    // document.getElementById("startPause").innerHTML = "Start";
-    // document.getElementById("output").innerHTML = "00:00";
-}
-
-function increment() {
-    if (running == 1) {
-        setTimeout(function () {
-            minTime++;
-            secTime++;
-            if (secTime == 600){
-                secTime = 0;
-            }
-            var mins = Math.floor(minTime / 10 / 60);
-            var secs = Math.floor(secTime / 10);
-
-            if (mins < 10) {
-                mins = "0" + mins;
-            }
-            if (secs < 10) {
-                secs = "0" + secs;
-            }
-
-            if (secs == 60){
-                secs = "00"
-            }
-
-            document.getElementById('output').innerHTML = mins + ":" + secs;
-            increment();
-
-        }, 100);
-    }
-}
 
 vid.onended = function() {
     vid.style.display = "none";
     document.getElementById("clock").style.display = "block";
-    startPause();
+    var seventyMinutes = 2;
+    var display = document.querySelector('#output');
+    startTimer(seventyMinutes, display);
 };
 
 var socket = io();
@@ -83,5 +34,47 @@ socket.on('start clock', function(data){
 
 socket.on('end clock', function(data){
     console.log('end clock room1');
-    // $("#myVideo").get(0).;
 });
+
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds,
+        miliseconds = 99;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+        if(minutes == 0 && seconds == 0){
+            console.log('act clearInterval!!!');
+            document.getElementById("output").innerHTML = "00:00:00";
+            clearInterval(inter);
+            return;
+        }
+
+        if(miliseconds == 0){
+            miliseconds = 99;
+        }
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
+        
+        display.textContent = minutes + ":" + seconds + ":" + miliseconds;
+        --miliseconds;
+        
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    var inter = setInterval(timer, 10);
+}
