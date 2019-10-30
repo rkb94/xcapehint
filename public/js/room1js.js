@@ -54,7 +54,7 @@ function increment() {
 vid.onended = function() {
     vid.style.display = "none";
     document.getElementById("clock").style.display = "block";
-    increment();
+    startPause();
 };
 
 var socket = io();
