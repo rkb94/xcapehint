@@ -16,3 +16,8 @@ socket.on('receive message', function(msg){
 socket.on('change name', function(name){
     $('#name').val(name);
 });
+
+socket.on('start clock', function(data){
+    console.log('start clock room1');
+    // $("#myVideo").get(0).play();
+});

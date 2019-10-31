@@ -23,7 +23,7 @@ io.on('connection', function(socket){
   socket.on('send message', function(name,text){
     var msg = name + ' : ' + text;
     console.log(msg);
-    io.emit('receive message', { roomNum : name, contents : text});
+    io.emit('receive message', {roomNum : name, contents : text});
   });
 
   socket.on('start clock', function(data){
@@ -34,6 +34,12 @@ io.on('connection', function(socket){
   socket.on('end clock', function(data){
     console.log(data);
     io.emit('end clock', data);
+  });
+
+  socket.on('start room', function(data1, data2){
+    var data = data1 + ' : ' + data2;
+    console.log(data);
+    io.emit('start room', {roomNum : data1, time : data2});
   });
 });
 var port = process.env.PORT || 3000;

@@ -1,20 +1,18 @@
+var socket = io();
 var vid = document.getElementById("myVideo"); 
 
 vid.onended = function() {
+    var roomNum = '1';
+    socket.emit('send');
     vid.style.display = "none";
     document.getElementById("clock").style.display = "block";
     var seventyMinutes = 60 * 70;
     var display = document.querySelector('#output');
     startTimer(seventyMinutes, display);
+    socket.emit('start room', roomNum, seventyMinutes);
+    console.log("start timer start!!");
 };
 
-var socket = io();
-$('#chat').on('submit', function(e){
-    socket.emit('send message', $('#name').val(), $('#message').val());
-    $('#message').val("");
-    $("#message").focus();
-    e.preventDefault();
-});
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
@@ -24,7 +22,8 @@ socket.on('receive message', function(msg){
     }
 });
 socket.on('change name', function(name){
-    $('#name').val(name);
+    alert("test");
+    // $('#name').val(name);
 });
 
 socket.on('start clock', function(data){

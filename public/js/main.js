@@ -1,27 +1,3 @@
-var minTime1 = 0;
-var secTime1 = 0;
-var running1 = 0;
-
-var minTime2 = 0;
-var secTime2 = 0;
-var running2 = 0;
-
-var minTime3 = 0;
-var secTime3 = 0;
-var running3 = 0;
-
-var minTime4 = 0;
-var secTime4 = 0;
-var running4 = 0;
-
-var minTime5 = 0;
-var secTime5 = 0;
-var running5 = 0;
-
-var minTime6 = 0;
-var secTime6 = 0;
-var running6 = 0;
-
 function startPause(number) {
     console.log('start clock button!!!');
     if (eval("running"+number) == 0) {
@@ -34,47 +10,6 @@ function startPause(number) {
     }
 
 }
-
-function reset(number) {
-    eval("running"+number+"=0");
-    eval("minTime"+number+"=0");
-    eval("secTime"+number+"=0");
-    $('#startPause'+number).val('시작');
-    document.getElementById("output"+number).innerHTML = "00:00";
-}
-
-function increment(number) {
-    // console.log("increment"+number);
-    // console.log(running1);
-    if (eval("running"+number) == 1) {
-        setTimeout(function () {
-            eval("minTime"+number+"++");
-            eval("secTime"+number+"++");
-
-            if (eval("secTime"+number) == 600){
-                eval("secTime"+number+"= 0");
-            }
-            var mins = Math.floor(eval("minTime"+number) / 10 / 60);
-            var secs = Math.floor(eval("secTime"+number) / 10);
-
-            if (mins < 10) {
-                mins = "0" + mins;
-            }
-            if (secs < 10) {
-                secs = "0" + secs;
-            }
-            if (secs == 60){
-                console.log("secs changed");
-                secs = "00"
-            }
-
-            document.getElementById('output'+number).innerHTML = mins + ":" + secs;
-            increment(number);
-
-        }, 100);
-    }
-}
-
 
 $(document).ready(function () {
     getHintContent();
@@ -97,6 +32,14 @@ function clickHint(theme, content) {
 }
 
 var socket = io();
+
+$('#clock1Start').on('submit', function(e){
+    socket.emit('start clock');
+    console.log('client clock 1start');
+    startPause(1);
+    e.preventDefault();
+});
+
 $('#chat1').on('submit', function(e){
     socket.emit('send message', $('#name1').val(), $('#message1').val());
     $('#message1').val("");
@@ -134,7 +77,7 @@ $('#chat5').on('submit', function(e){
 
 // room1 501동
 $('#clock1Start').on('submit', function(e){
-    socket.emit('start clock', 'success');
+    socket.emit('start clock');
     console.log('client clock 1start');
     startPause(1);
     e.preventDefault();
@@ -145,6 +88,14 @@ $('#clock1End').on('submit', function(e){
     console.log('client clock 1end');
     reset(1);
     e.preventDefault();
+});
+
+socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작
+    var roomNum = data.roomNum;
+    var time = data.time;
+    console.log('room' + roomNum + ' start!!!');
+    var display = document.querySelector('#output'+roomNum);
+    startTimer(time, display)
 });
 
 // room2 기묘한 날개짓
@@ -211,9 +162,71 @@ $('#clock5End').on('submit', function(e){
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
-    $('#chatLog').append(roomNum + ' : ' + contents+'\n');
+    var roomName;
+    switch(roomNum) {
+        case 'room1':
+            roomName = '501동';
+            break;
+        case 'room2':
+            roomName = '기묘한';
+            break;
+        case 'room3':
+            roomName = '숨바꼭';
+            break;
+        case 'room4':
+            roomName = '제물밤';
+            break;
+        case 'room5':
+            roomName = '그남녀';
+            break;
+        default:
+            roomName = '잘못된 입력';
+            break;
+    }
+    $('#chatLog').append(roomName + ' : ' + contents+'\n');
     $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
 });
-socket.on('change name', function(name){
-    $('#name').val(name);
-});
+
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+        // miliseconds = 99
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+        if(minutes == 0 && seconds == 0){
+            console.log('act clearInterval!!!');
+            document.getElementById("output").innerHTML = "00:00:00";
+            clearInterval(inter);
+            return;
+        }
+
+        // if(miliseconds == 0){
+        //     miliseconds = 99;
+        // }
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        // miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
+        
+        // display.textContent = minutes + ":" + seconds + ":" + miliseconds;
+        display.textContent = minutes + ":" + seconds;
+        // --miliseconds;
+        
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    var inter = setInterval(timer, 10);
+}
