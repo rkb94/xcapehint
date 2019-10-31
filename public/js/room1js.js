@@ -21,10 +21,6 @@ socket.on('receive message', function(msg){
         // $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
     }
 });
-socket.on('change name', function(name){
-    alert("test");
-    // $('#name').val(name);
-});
 
 socket.on('start clock', function(data){
     console.log('start clock room1');
