@@ -10,7 +10,7 @@ vid.onended = function() {
     var display = document.querySelector('#output');
     startTimer(seventyMinutes, display);
     socket.emit('start room', roomNum, seventyMinutes);
-    console.log("start timer start!!");
+    console.log("start timer start!!!");
 };
 
 socket.on('receive message', function(msg){
