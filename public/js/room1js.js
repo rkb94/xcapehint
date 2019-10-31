@@ -3,7 +3,7 @@ var vid = document.getElementById("myVideo");
 vid.onended = function() {
     vid.style.display = "none";
     document.getElementById("clock").style.display = "block";
-    var seventyMinutes = 2;
+    var seventyMinutes = 60 * 70;
     var display = document.querySelector('#output');
     startTimer(seventyMinutes, display);
 };

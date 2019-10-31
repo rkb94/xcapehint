@@ -1,5 +1,6 @@
 #background {
-    background-color: black;
+    /* background-color: black; */
+    background-image: url(/image/bg1.gif);
 }
 
 #chatLog {
@@ -20,8 +21,8 @@
 }
 
 #output {
-    top: 20%;
-    font-size: 100px;
+    top: 47%;
+    font-size: 1200%;
 }
 
 #myVideo{
