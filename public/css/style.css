@@ -45,12 +45,25 @@
 
 
 .chat_log{
-  width: 100%;
+  width: 20%;
+  float: left;
   height: 200px;
   background-color: #333333;
   color: antiquewhite;
   border-color: black;
 }
+
+#roomTitleWrapper{
+  display: flex;
+}
+
+.roomTitle{
+  width: 20%;
+  float: left;
+  color: antiquewhite;
+  text-align: center;
+}
+
 .message{ width: 88%; }
 .chat{ width: 10%; }
 .roomContents {
