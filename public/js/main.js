@@ -40,8 +40,8 @@ $('#timestate1').on('submit', function(e){ // 1번 일시정지
         startStateButton.className = 'btn btn-default btn-danger';
         startStateButton.value = '일시정지';
     } else {
-        socket.emit('paused clock', 'room1');
         pausedTimer(inter1);
+        socket.emit('paused clock', 'room1');
         startStateButton.className = 'btn btn-default btn-success';
         startStateButton.value = '다시시작';
     }
