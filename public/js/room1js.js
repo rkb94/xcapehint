@@ -1,5 +1,7 @@
 var socket = io();
 var vid = document.getElementById("myVideo"); 
+var audio = new Audio();
+audio.src = "/mp3/bell.mp3";
 
 vid.onended = function() {
     var roomNum = '1';
@@ -18,6 +20,14 @@ socket.on('receive message', function(msg){
     var contents = msg.contents;
     if(roomNum == 'room1'){
         $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');
+        // document.getElementById('audio').get(0).play();
+        // $("#player").get(0).play();
+        
+        audio.play();
+        // if (promise) {
+        //     //Older browsers may not return a promise, according to the MDN website
+        //     promise.catch(function(error) { console.error(error); });
+        // }
         // $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
     }
 });

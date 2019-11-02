@@ -8,16 +8,15 @@ function startPause(number) {
         eval("running"+ number + "= 0");
         $('#startPause'+number).val('시작');
     }
-
 }
 
-$(document).ready(function () {
+$(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
     getHintContent();
 });
 
 function getHintContent() {
     var i = 0;
-    while (hint[i] != null) {
+    while (hint[i] != null) { // js파일에 있는 힌트들을 이름별로 바인딩
         $('.' + hint[i].theme).append(`
             <button onclick="clickHint('` + hint[i].theme + `', '` + hint[i].hintContent + `')" class="btn btn-primary btn-sm btn-block" id="roomHint1-` + hint[i].hintNumber + `">` + hint[i].hintContent + `</button>
         `)
@@ -25,7 +24,7 @@ function getHintContent() {
     }
 }
 
-function clickHint(theme, content) {
+function clickHint(theme, content) { // 힌트 버튼에 들어가 있는 버튼
     var messageNum = theme.slice(4);
     console.log(messageNum);
     $('#message' + messageNum).val(content);
@@ -90,11 +89,14 @@ $('#clock1End').on('submit', function(e){
     e.preventDefault();
 });
 
-socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작
+socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
     var roomNum = data.roomNum;
     var time = data.time;
     console.log('room' + roomNum + ' start!!!');
     var display = document.querySelector('#output'+roomNum);
+    var startStateButton = document.getElementById('startStateButton'+roomNum);
+    startStateButton.className = 'btn btn-default btn-success';
+    startStateButton.value = '일시정지';
     startTimer(time, display)
 });
 
@@ -159,10 +161,19 @@ $('#clock5End').on('submit', function(e){
     e.preventDefault();
 });
 
-socket.on('receive message', function(msg){
+Date.prototype.hhmmss = function() { // 날짜 형식 Format
+    var hh = this.getHours().toString();
+    var mm = this.getMinutes().toString();
+    var ss = this.getSeconds().toString();
+    return (hh[1] ? hh : "0" + hh[0]) + ":" + (mm[1] ? mm : "0" + mm[0]) + ":" + (ss[1] ? ss : "0" + ss[0]);
+}
+
+socket.on('receive message', function(msg){ // 메시지 방 어디껀지 콤바인하고, chatLog에 입력
     var roomNum = msg.roomNum;
+    var roomInt = roomNum.slice(4);
     var contents = msg.contents;
     var roomName;
+    var d = new Date();
     switch(roomNum) {
         case 'room1':
             roomName = '501동';
@@ -183,11 +194,11 @@ socket.on('receive message', function(msg){
             roomName = '잘못된 입력';
             break;
     }
-    $('#chatLog').append(roomName + ' : ' + contents+'\n');
-    $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
+    $('#chatLog'+roomInt).append('[' + d.hhmmss() + ']' +' : ' + contents+'\n');
+    $('#chatLog'+roomInt).scrollTop($('#chatLog'+roomInt)[0].scrollHeight);
 });
 
-function startTimer(duration, display) {
+function startTimer(duration, display) { // 타이머...인데 일시정지 재시작을 어떻게 짤까?
     var start = Date.now(),
         diff,
         minutes,
