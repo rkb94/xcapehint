@@ -1,6 +1,7 @@
 var socket = io();
 var vid = document.getElementById("myVideo"); 
 var audio = new Audio();
+var inter;
 audio.src = "/mp3/bell.mp3";
 
 vid.onended = function() {
@@ -10,7 +11,7 @@ vid.onended = function() {
     document.getElementById("clock").style.display = "block";
     var seventyMinutes = 60 * 70;
     var display = document.querySelector('#output');
-    startTimer(seventyMinutes, display);
+    startTimer(seventyMinutes, display, 99);
     socket.emit('start room', roomNum, seventyMinutes);
     console.log("start timer start!!!");
 };
@@ -19,34 +20,42 @@ socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
     if(roomNum == 'room1'){
-        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');
-        // document.getElementById('audio').get(0).play();
-        // $("#player").get(0).play();
-        
+        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
         audio.play();
-        // if (promise) {
-        //     //Older browsers may not return a promise, according to the MDN website
-        //     promise.catch(function(error) { console.error(error); });
-        // }
-        // $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
     }
 });
 
-socket.on('start clock', function(data){
-    console.log('start clock room1');
-    $("#myVideo").get(0).play();
+socket.on('restart clock', function(data){
+    console.log(data + 'restart room1');
+    if(data == 'room1'){
+        console.log('restart clock room1');
+        var output1Min = document.getElementById('output').innerHTML.slice(0, 2);
+        output1Min *= 1;
+        var output1Sec = document.getElementById('output').innerHTML.slice(3, 5);
+        output1Sec *= 1;
+        var output1Mil = document.getElementById('output').innerHTML.slice(6);
+        output1Mil *= 1;
+        console.log(output1Min);
+        console.log(output1Sec);
+        console.log(output1Mil);
+        var output1Dur = (output1Min * 60) + output1Sec;
+        startTimer(output1Dur, document.querySelector('#output'), output1Mil);
+    }
 });
 
-socket.on('end clock', function(data){
-    console.log('end clock room1');
+socket.on('paused clock', function(data){
+    if(data == 'room1'){
+        console.log('end clock room1');
+        pausedTimer();
+    }
 });
 
-function startTimer(duration, display) {
+function startTimer(duration, display, mil) {
     var start = Date.now(),
         diff,
         minutes,
         seconds,
-        miliseconds = 99;
+        miliseconds = mil;
     function timer() {
         // get the number of seconds that have elapsed since 
         // startTimer() was called
@@ -81,5 +90,10 @@ function startTimer(duration, display) {
     };
     // we don't want to wait a full second before the timer starts
     timer();
-    var inter = setInterval(timer, 10);
+    inter = setInterval(timer, 10);
+}
+
+function pausedTimer(){ // inter + number의 타이머를 일시 정지!!
+    console.log('inter paused!!');
+    clearInterval(inter);
 }

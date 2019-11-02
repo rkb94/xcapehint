@@ -1,14 +1,8 @@
-function startPause(number) {
-    console.log('start clock button!!!');
-    if (eval("running"+number) == 0) {
-        eval("running"+ number + "= 1");
-        increment(number);
-        $('#startPause'+number).val('일시정지');
-    } else {
-        eval("running"+ number + "= 0");
-        $('#startPause'+number).val('시작');
-    }
-}
+var inter1;
+var inter2;
+var inter3;
+var inter4;
+var inter5;
 
 $(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
     getHintContent();
@@ -32,10 +26,25 @@ function clickHint(theme, content) { // 힌트 버튼에 들어가 있는 버튼
 
 var socket = io();
 
-$('#clock1Start').on('submit', function(e){
-    socket.emit('start clock');
-    console.log('client clock 1start');
-    startPause(1);
+$('#timestate1').on('submit', function(e){ // 1번 일시정지
+    console.log('timestate1 changed!!');
+    var startStateButton = document.getElementById('startStateButton1');
+    if(startStateButton.value == '다시시작'){
+        var output1Min = document.getElementById('output1').innerHTML.slice(0, 2);
+        output1Min *= 1;
+        var output1Sec = document.getElementById('output1').innerHTML.slice(3);
+        output1Sec *= 1;
+        var output1Dur = (output1Min * 60) + output1Sec;
+        socket.emit('restart clock', 'room1');
+        startTimer(output1Dur, document.querySelector('#output1'));
+        startStateButton.className = 'btn btn-default btn-danger';
+        startStateButton.value = '일시정지';
+    } else {
+        socket.emit('paused clock', 'room1');
+        pausedTimer(inter1);
+        startStateButton.className = 'btn btn-default btn-success';
+        startStateButton.value = '다시시작';
+    }
     e.preventDefault();
 });
 
@@ -75,19 +84,6 @@ $('#chat5').on('submit', function(e){
 });
 
 // room1 501동
-$('#clock1Start').on('submit', function(e){
-    socket.emit('start clock');
-    console.log('client clock 1start');
-    startPause(1);
-    e.preventDefault();
-});
-
-$('#clock1End').on('submit', function(e){
-    socket.emit('end clock', 'success');
-    console.log('client clock 1end');
-    reset(1);
-    e.preventDefault();
-});
 
 socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
     var roomNum = data.roomNum;
@@ -95,71 +91,19 @@ socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르
     console.log('room' + roomNum + ' start!!!');
     var display = document.querySelector('#output'+roomNum);
     var startStateButton = document.getElementById('startStateButton'+roomNum);
-    startStateButton.className = 'btn btn-default btn-success';
+    startStateButton.type = 'submit';
+    startStateButton.className = 'btn btn-default btn-danger';
     startStateButton.value = '일시정지';
     startTimer(time, display)
 });
 
 // room2 기묘한 날개짓
-$('#clock2Start').on('submit', function(e){
-    socket.emit('start clock', 'success');
-    console.log('client clock2 start');
-    startPause(2);
-    e.preventDefault();
-});
-
-$('#clock2End').on('submit', function(e){
-    socket.emit('end clock', 'success');
-    console.log('client clock2 end');
-    reset(2);
-    e.preventDefault();
-});
 
 // room3 숨바꼭질
-$('#clock3Start').on('submit', function(e){
-    socket.emit('start clock', 'success');
-    console.log('client clock start');
-    startPause(3);
-    e.preventDefault();
-});
-
-$('#clock3End').on('submit', function(e){
-    socket.emit('end clock', 'success');
-    console.log('client clock end');
-    reset(3);
-    e.preventDefault();
-});
 
 // room4 제물의 밤
 
-$('#clock4Start').on('submit', function(e){
-    socket.emit('start clock', 'success');
-    console.log('client clock start');
-    startPause(4);
-    e.preventDefault();
-});
-
-$('#clock4End').on('submit', function(e){
-    socket.emit('end clock', 'success');
-    console.log('client clock end');
-    reset(4);
-    e.preventDefault();
-});
-
 // room5 그 남자 그 여자
-$('#clock5Start').on('submit', function(e){
-    socket.emit('start clock', 'success');
-    console.log('client clock start');
-    startPause(5);
-    e.preventDefault();
-});
-
-$('#clock5End').on('submit', function(e){
-    socket.emit('end clock', 'success');
-    console.log('client clock end');
-    reset(5);
-    e.preventDefault();
-});
 
 Date.prototype.hhmmss = function() { // 날짜 형식 Format
     var hh = this.getHours().toString();
@@ -239,5 +183,31 @@ function startTimer(duration, display) { // 타이머...인데 일시정지 재�
     };
     // we don't want to wait a full second before the timer starts
     timer();
-    var inter = setInterval(timer, 10);
+    // var inter = setInterval(timer, 10);
+    console.log(display.id);
+    switch(display.id) {
+        case 'output1':
+            inter1 = setInterval(timer, 10);
+            break;
+        case 'output2':
+            inter2 = setInterval(timer, 10);
+            break;
+        case 'output3':
+            inter3 = setInterval(timer, 10);
+            break;
+        case 'output4':
+            inter4 = setInterval(timer, 10);
+            break;
+        case 'output5':
+            inter5 = setInterval(timer, 10);
+            break;
+        default:
+            console.log("error about timer select");
+            break;
+    }
+}
+
+function pausedTimer(display){ // inter + number의 타이머를 일시 정지!!
+    console.log(display + ' paused!!');
+    clearInterval(display);
 }
