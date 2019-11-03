@@ -4,20 +4,14 @@ var inter3;
 var inter4;
 var inter5;
 
-function doNotReload(){
-    if( (event.ctrlKey == true && (event.keyCode == 78 || event.keyCode == 82)) || (event.keyCode == 116) ) {
-        alert("2");
-        event.keyCode = 0;
-        event.cancelBubble = true;
-        event.returnValue = false;
-    } 
-}
-document.onkeydown = doNotReload;
-
 $(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
     console.log('hint contents ')
     getHintContent();
 });
+
+window.onbeforeunload = function() { // 새로고침 방지
+    return "Dude, are you sure you want to leave? Think of the kittens!";
+}
 
 function getHintContent() {
     var i = 0;

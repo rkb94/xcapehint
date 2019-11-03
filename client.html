@@ -7,18 +7,6 @@
     <title>XCAPE 힌트 시스템</title>
   </head>
   <body id="background">
-    <script language="javascript">
-      function noEvent() { // 새로 고침 방지
-        if (event.keyCode == 116) {
-          alert("새로고침을 할 수 없습니다.");
-          event.keyCode = 2;
-          return false;
-        } else if (event.ctrlKey && (event.keyCode == 78 || event.keyCode == 82)) {
-          return false;
-        }
-      }
-      document.onkeydown = noEvent;
-    </script>
     <div id="roomTitleWrapper">
       <h5 class="roomTitle">501동 사람들</h5>
       <h5 class="roomTitle">기묘한 날개짓</h5>

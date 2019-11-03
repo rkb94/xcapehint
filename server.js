@@ -26,9 +26,9 @@ io.on('connection', function(socket){
     io.emit('receive message', {roomNum : name, contents : text});
   });
 
-  socket.on('start clock', function(data){
+  socket.on('restart clock', function(data){
     console.log(data);
-    io.emit('start clock', data);
+    io.emit('restart clock', data);
   });
 
   socket.on('paused clock', function(data){
