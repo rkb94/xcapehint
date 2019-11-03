@@ -53,6 +53,94 @@ $('#timestate1').on('submit', function(e){ // 1번 일시정지
     e.preventDefault();
 });
 
+$('#timestate2').on('submit', function(e){ // 2번 일시정지
+    console.log('timestate2 changed!!');
+    var startStateButton = document.getElementById('startStateButton2');
+    if(startStateButton.value == '다시시작'){
+        var output2Min = document.getElementById('output2').innerHTML.slice(0, 2);
+        output2Min *= 1;
+        var output2Sec = document.getElementById('output2').innerHTML.slice(3);
+        output2Sec *= 1;
+        var output2Dur = (output2Min * 60) + output2Sec;
+        socket.emit('restart clock', 'room2');
+        startTimer(output2Dur, document.querySelector('#output2'));
+        startStateButton.className = 'btn btn-default btn-danger';
+        startStateButton.value = '일시정지';
+    } else {
+        pausedTimer(inter2);
+        socket.emit('paused clock', 'room2');
+        startStateButton.className = 'btn btn-default btn-success';
+        startStateButton.value = '다시시작';
+    }
+    e.preventDefault();
+});
+
+$('#timestate3').on('submit', function(e){ // 3번 일시정지
+    console.log('timestate3 changed!!');
+    var startStateButton = document.getElementById('startStateButton3');
+    if(startStateButton.value == '다시시작'){
+        var output3Min = document.getElementById('output3').innerHTML.slice(0, 2);
+        output3Min *= 1;
+        var output3Sec = document.getElementById('output3').innerHTML.slice(3);
+        output3Sec *= 1;
+        var output3Dur = (output3Min * 60) + output3Sec;
+        socket.emit('restart clock', 'room3');
+        startTimer(output3Dur, document.querySelector('#output3'));
+        startStateButton.className = 'btn btn-default btn-danger';
+        startStateButton.value = '일시정지';
+    } else {
+        pausedTimer(inter3);
+        socket.emit('paused clock', 'room3');
+        startStateButton.className = 'btn btn-default btn-success';
+        startStateButton.value = '다시시작';
+    }
+    e.preventDefault();
+});
+
+$('#timestate4').on('submit', function(e){ // 4번 일시정지
+    console.log('timestate4 changed!!');
+    var startStateButton = document.getElementById('startStateButton4');
+    if(startStateButton.value == '다시시작'){
+        var output4Min = document.getElementById('output4').innerHTML.slice(0, 2);
+        output4Min *= 1;
+        var output4Sec = document.getElementById('output4').innerHTML.slice(3);
+        output4Sec *= 1;
+        var output4Dur = (output4Min * 60) + output4Sec;
+        socket.emit('restart clock', 'room4');
+        startTimer(output4Dur, document.querySelector('#output4'));
+        startStateButton.className = 'btn btn-default btn-danger';
+        startStateButton.value = '일시정지';
+    } else {
+        pausedTimer(inter4);
+        socket.emit('paused clock', 'room4');
+        startStateButton.className = 'btn btn-default btn-success';
+        startStateButton.value = '다시시작';
+    }
+    e.preventDefault();
+});
+
+$('#timestate5').on('submit', function(e){ // 5번 일시정지
+    console.log('timestate5 changed!!');
+    var startStateButton = document.getElementById('startStateButton5');
+    if(startStateButton.value == '다시시작'){
+        var output5Min = document.getElementById('output5').innerHTML.slice(0, 2);
+        output5Min *= 1;
+        var output5Sec = document.getElementById('output5').innerHTML.slice(3);
+        output5Sec *= 1;
+        var output5Dur = (output5Min * 60) + output5Sec;
+        socket.emit('restart clock', 'room5');
+        startTimer(output5Dur, document.querySelector('#output5'));
+        startStateButton.className = 'btn btn-default btn-danger';
+        startStateButton.value = '일시정지';
+    } else {
+        pausedTimer(inter5);
+        socket.emit('paused clock', 'room5');
+        startStateButton.className = 'btn btn-default btn-success';
+        startStateButton.value = '다시시작';
+    }
+    e.preventDefault();
+});
+
 $('#chat1').on('submit', function(e){
     socket.emit('send message', $('#name1').val(), $('#message1').val());
     $('#message1').val("");
@@ -88,8 +176,6 @@ $('#chat5').on('submit', function(e){
     e.preventDefault();
 });
 
-// room1 501동
-
 socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
     var roomNum = data.roomNum;
     var time = data.time;
@@ -102,14 +188,6 @@ socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르
     startTimer(time, display)
 });
 
-// room2 기묘한 날개짓
-
-// room3 숨바꼭질
-
-// room4 제물의 밤
-
-// room5 그 남자 그 여자
-
 Date.prototype.hhmmss = function() { // 날짜 형식 Format
     var hh = this.getHours().toString();
     var mm = this.getMinutes().toString();
@@ -121,28 +199,7 @@ socket.on('receive message', function(msg){ // 메시지 방 어디껀지 콤바
     var roomNum = msg.roomNum;
     var roomInt = roomNum.slice(4);
     var contents = msg.contents;
-    var roomName;
     var d = new Date();
-    switch(roomNum) {
-        case 'room1':
-            roomName = '501동';
-            break;
-        case 'room2':
-            roomName = '기묘한';
-            break;
-        case 'room3':
-            roomName = '숨바꼭';
-            break;
-        case 'room4':
-            roomName = '제물밤';
-            break;
-        case 'room5':
-            roomName = '그남녀';
-            break;
-        default:
-            roomName = '잘못된 입력';
-            break;
-    }
     $('#chatLog'+roomInt).append('[' + d.hhmmss() + ']' +' : ' + contents+'\n');
     $('#chatLog'+roomInt).scrollTop($('#chatLog'+roomInt)[0].scrollHeight);
 });

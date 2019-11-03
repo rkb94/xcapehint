@@ -1,16 +1,16 @@
 var socket = io();
 var vid = document.getElementById("myVideo"); 
 var audio = new Audio();
-var inter2;
+var inter4;
 audio.src = "/mp3/bell.mp3";
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
-    socket.emit('reset clock', '2', 'output2');
+    socket.emit('reset clock', '4', 'output4');
 });
 
 vid.onended = function() {
-    var roomNum = '2';
+    var roomNum = '4';
     socket.emit('send');
     vid.style.display = "none";
     document.getElementById("clock").style.display = "block";
@@ -24,33 +24,33 @@ vid.onended = function() {
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
-    if(roomNum == 'room2'){
+    if(roomNum == 'room4'){
         $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
         audio.play();
     }
 });
 
 socket.on('restart clock', function(data){
-    console.log(data + 'restart room2');
-    if(data == 'room2'){
-        console.log('restart clock room2');
-        var output2Min = document.getElementById('output').innerHTML.slice(0, 2);
-        output2Min *= 1;
-        var output2Sec = document.getElementById('output').innerHTML.slice(3, 5);
-        output2Sec *= 1;
-        var output2Mil = document.getElementById('output').innerHTML.slice(6);
-        output2Mil *= 1;
-        console.log(output2Min);
-        console.log(output2Sec);
-        console.log(output2Mil);
-        var output2Dur = (output2Min * 60) + output2Sec;
-        startTimer(output2Dur, document.querySelector('#output'), output2Mil);
+    console.log(data + 'restart room4');
+    if(data == 'room4'){
+        console.log('restart clock room4');
+        var output4Min = document.getElementById('output').innerHTML.slice(0, 2);
+        output4Min *= 1;
+        var output4Sec = document.getElementById('output').innerHTML.slice(3, 5);
+        output4Sec *= 1;
+        var output4Mil = document.getElementById('output').innerHTML.slice(6);
+        output4Mil *= 1;
+        console.log(output4Min);
+        console.log(output4Sec);
+        console.log(output4Mil);
+        var output4Dur = (output4Min * 60) + output4Sec;
+        startTimer(output4Dur, document.querySelector('#output'), output4Mil);
     }
 });
 
 socket.on('paused clock', function(data){
-    if(data == 'room2'){
-        console.log('paused clock room2');
+    if(data == 'room4'){
+        console.log('paused clock room4');
         pausedTimer();
     }
 });
@@ -72,7 +72,7 @@ function startTimer(duration, display, mil) {
         if(minutes == 0 && seconds == 0){
             console.log('act clearInterval!!!');
             document.getElementById("output").innerHTML = "00:00:00";
-            clearInterval(inter2);
+            clearInterval(inter4);
             return;
         }
 
@@ -95,10 +95,10 @@ function startTimer(duration, display, mil) {
     };
     // we don't want to wait a full second before the timer starts
     timer();
-    inter2 = setInterval(timer, 10);
+    inter4 = setInterval(timer, 10);
 }
 
 function pausedTimer(){ // inter + number의 타이머를 일시 정지!!
     console.log('inter paused!!');
-    clearInterval(inter2);
+    clearInterval(inter4);
 }
