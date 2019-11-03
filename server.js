@@ -10,12 +10,7 @@ app.get('/',function(req, res){
   res.sendFile(__dirname + '/client.html');
 });
 
-var count=1;
 io.on('connection', function(socket){
-  console.log('user connected: ', socket.id);
-  // var name = "user" + count++;
-  // io.to(socket.id).emit('change name',name);
-
   socket.on('disconnect', function(){
     console.log('user disconnected: ', socket.id);
   });
