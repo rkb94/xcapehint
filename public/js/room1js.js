@@ -1,8 +1,13 @@
 var socket = io();
 var vid = document.getElementById("myVideo"); 
 var audio = new Audio();
-var inter;
+var inter1;
 audio.src = "/mp3/bell.mp3";
+
+$(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
+    console.log('start refresh');
+    socket.emit('reset clock', '1', 'output1');
+});
 
 vid.onended = function() {
     var roomNum = '1';
@@ -45,7 +50,7 @@ socket.on('restart clock', function(data){
 
 socket.on('paused clock', function(data){
     if(data == 'room1'){
-        console.log('end clock room1');
+        console.log('paused clock room1');
         pausedTimer();
     }
 });
@@ -67,7 +72,7 @@ function startTimer(duration, display, mil) {
         if(minutes == 0 && seconds == 0){
             console.log('act clearInterval!!!');
             document.getElementById("output").innerHTML = "00:00:00";
-            clearInterval(inter);
+            clearInterval(inter1);
             return;
         }
 
@@ -90,10 +95,10 @@ function startTimer(duration, display, mil) {
     };
     // we don't want to wait a full second before the timer starts
     timer();
-    inter = setInterval(timer, 10);
+    inter1 = setInterval(timer, 10);
 }
 
 function pausedTimer(){ // inter + number의 타이머를 일시 정지!!
     console.log('inter paused!!');
-    clearInterval(inter);
+    clearInterval(inter1);
 }

@@ -4,7 +4,18 @@ var inter3;
 var inter4;
 var inter5;
 
+function doNotReload(){
+    if( (event.ctrlKey == true && (event.keyCode == 78 || event.keyCode == 82)) || (event.keyCode == 116) ) {
+        alert("2");
+        event.keyCode = 0;
+        event.cancelBubble = true;
+        event.returnValue = false;
+    } 
+}
+document.onkeydown = doNotReload;
+
 $(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
+    console.log('hint contents ')
     getHintContent();
 });
 
@@ -211,3 +222,52 @@ function pausedTimer(display){ // inter + number의 타이머를 일시 정지!!
     console.log(display + ' paused!!');
     clearInterval(display);
 }
+
+socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
+    console.log("room" + data.roomNum + " reset timer!! in " + data.inter);
+    switch(data.output) {
+        case 'output1':
+            clearInterval(inter1);
+            document.getElementById(data.output).innerHTML = '70:00';
+            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.type = 'button';
+            startStateButton.className = 'btn btn-default btn-warning';
+            startStateButton.value = '시작 전';
+            break;
+        case 'output2':
+            clearInterval(inter2);
+            document.getElementById(data.output).innerHTML = '60:00';
+            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.type = 'button';
+            startStateButton.className = 'btn btn-default btn-warning';
+            startStateButton.value = '시작 전';
+            break;
+        case 'output3':
+            clearInterval(inter3);
+            document.getElementById(data.output).innerHTML = '60:00';
+            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.type = 'button';
+            startStateButton.className = 'btn btn-default btn-warning';
+            startStateButton.value = '시작 전';
+            break;
+        case 'output4':
+            clearInterval(inter4);
+            document.getElementById(data.output).innerHTML = '60:00';
+            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.type = 'button';
+            startStateButton.className = 'btn btn-default btn-warning';
+            startStateButton.value = '시작 전';
+            break;
+        case 'output5':
+            clearInterval(inter5);
+            document.getElementById(data.output).innerHTML = '60:00';
+            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.type = 'button';
+            startStateButton.className = 'btn btn-default btn-warning';
+            startStateButton.value = '시작 전';
+            break;
+        default:
+            console.log("error about reset timer");
+            break;
+    }
+});

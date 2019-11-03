@@ -26,14 +26,20 @@ io.on('connection', function(socket){
     io.emit('receive message', {roomNum : name, contents : text});
   });
 
-  socket.on('restart clock', function(data){
+  socket.on('start clock', function(data){
     console.log(data);
-    io.emit('restart clock', data);
+    io.emit('start clock', data);
   });
 
   socket.on('paused clock', function(data){
     console.log(data);
     io.emit('paused clock', data);
+  });
+
+  socket.on('reset clock', function(data1, data2){
+    var data = data1 + ' : ' + data2;
+    console.log(data);
+    io.emit('reset clock', {roomNum : data1, output : data2});
   });
 
   socket.on('start room', function(data1, data2){
