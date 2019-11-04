@@ -64,11 +64,11 @@
   text-align: center;
 }
 
-.message{ width: 88%; }
-.chat{ width: 10%; }
+.message{ width: 90%; }
+.chat{ width: 9%; }
 .roomContents {
   display: inline-block;
-  width: 75%;
+  width: 100%;
 }
 .time{
   color: antiquewhite;

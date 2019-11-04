@@ -256,51 +256,190 @@ window.hint = [
 
     ///////// 숨바꼭질 /////////
     {
-        theme: 'room3',
-        hintNumber: '1',
-        hintContent: '힌트 내용을 추가해주세요...'
+        theme:'room3',
+        hintNumber:'1',
+        hintContent:'한전안내문을 태깅(수사반)을 하여 영상을 보고 누전차단기를 맞게 올려주세요[비상,주 전원]'
     },
     {
-        theme: 'room3',
-        hintNumber: '2',
-        hintContent: '힌트 내용을 추가해주세요...'
+        theme:'room3',
+        hintNumber:'2',
+        hintContent:'계단 아래쪽 발자국을 태깅(감식반)하여 발자국 주인을 용의자 목록에서 보고 택배상자와 태깅 내용의 노란 띠를 보고 TV맨 아래함을 열어주세요.[046+1]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'3',
+        hintContent:'TV 내용과 신문기사 내용이 같다고 생각하고 신문기사의 영어 부분을 TV에서 바꿔듣고 바로 위에 함을 열어주세요[72994]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'4',
+        hintContent:'가운데 방 열쇠를 발견하여 지아방 문을 열어주세요'
+    },
+    {
+        theme:'room3',
+        hintNumber:'5',
+        hintContent:'그림 일기와 키를 잰 흔적을 보고 곰돌이의 키를 알아내주세요[115+5]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'6',
+        hintContent:'그림 일기들의 맞춤법이 틀린 글자를 날짜 순서대로 나열해주세요[구해주세요]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'7',
+        hintContent:'수첩을 태깅(감식반)하여 스톡홀룸 증후군 항목들을 보고 수첩에 답변이 쓰인 순서대로 답을 찾아주세요.[HIDE!]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'8',
+        hintContent:'옷장을 열면 아이의 그림일기가 있다. 그림일기 내용대로 옷장안에 들어가서 문을 닫고 기다리면 뒷문이 열립니다.'
+    },
+    {
+        theme:'room3',
+        hintNumber:'9',
+        hintContent:'스위치를 켜면 아이방으로 가서 시체를 확인할 수 있습니다.이때 태깅(감식반)마크가 보이고 이를 태깅하면 열상의 종류가 나오는데 아이의 몸에 있는 흔적들과 대조하여 찾아주세요.[CLAW]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'10',
+        hintContent:'흉기를 태깅[감식반]하여 범인의 지문(손잡이부분)을 찾아 no.를 입력주세요.[71105]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'11',
+        hintContent:'통장을 태깅하여 입금받은 업체명을 찾아 전화기 근처 명함을 보고(4418)업체번호를 찾아주세요.업체 고객센터 번호 + 계좌번호로 전화를 해주세요.[4418 130056]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'12',
+        hintContent:'총 입금액을 들어주세요.[80,404,280]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'13',
+        hintContent:'UV를 엄마의 메모에 태깅(감식반) 후 멍의 형태를 봐주세요.그리고 아이방 벽면의 아이의 숨은 일기를 찾고 내용을 추측한 뒤 맞은 흉기를 찾아 흉기에 써있는 번호(UV로 찾는다)를 날짜순으로 입력해주세요.[1923]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'14',
+        hintContent:'보험금 지급 서류를 태깅(감식반)하여 죽인 방법을 찾아주세요.아이 시체가 나왔을 때 연기가 나왔을 것이고 이를 공기 중 흡입으로 생각한 후 게시판에 가서 범행요소를 보고 공기 중 흡입의 대한 내용을 영어로 쓴 부분의 대문자를 X-KIT에 입력해주세요. [PDIG]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'15',
+        hintContent:'태깅 내용에 뜬 독극물 화학식에서 H,O,C의 갯수를 TV 맨 위에 함에 대입해주세요.이때 날짜는 사건일시를 기준으로 하면되나 시체 옆에보면 사건이 하루 조작되있다고 나와있어요. 그래서 사건일시에서 하루를 뺀 날짜에 대입을 해주세요.[901109]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'16',
+        hintContent:'얻은 카드를 게시판 옆에 맞게 넣어주세요.나오는 영상을 보고 영상 내용을 크게 4가지 키워드로 생각해서 옆에 방향자물쇠를 풀어주세요.[첫째아이-결혼-가난-둘째아이]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'17',
+        hintContent:'일기를 보고 붉은 색으로 표시딘 부분의 숫자를 찾아주세요.[며칠:36,몇:2,혼자:1 - 3621]'
+    },
+    {
+        theme:'room3',
+        hintNumber:'18',
+        hintContent:'빔 영상 속에서 공범자의 차량번호를 확인 후 자물쇠를 열어주세요.'
     },
     
     
     ///////// 제물의 밤 /////////
-    {
-        theme: 'room4',
-        hintNumber: '1',
-        hintContent: '요로콤'
-    },
-    {
-        theme: 'room4',
-        hintNumber: '2',
-        hintContent: '저러콤'
-    },
-    {
-        theme: 'room4',
-        hintNumber: '3',
-        hintContent: '이러콤'
-    },
-    {
-        theme: 'room4',
-        hintNumber: '4',
-        hintContent: '이러콤'
-    },
-    {
-        theme: 'room4',
-        hintNumber: '5',
-        hintContent: '이러콤'
-    },
-    {
-        theme: 'room4',
-        hintNumber: '6',
-        hintContent: '이러콤'
-    },
     
-    
-    
+    {
+        theme:'room4',
+        hintNumber:'1',
+        hintContent:'각 방에 별이 그려져있는 빙고판을 확인 후에 큰별에서 작은별 순으로 [ARIES] 알파벳을 입력해주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'2',
+        hintContent:'별자리판에서 색칠해져있는 별자리 문양을 확인후 철장에서 그 별자리에 해당하는 문양을 찾아주세요. 그리고 그 밑에다가 천을 대서 사다리타기를 해서 알맞은 호일을 찾아줍니다. 반대편도 동일한 행동을 하고 호일을 찾은 후 서로 알맞은 호일을 잡고 서로의 손을 맞잡아주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'3',
+        hintContent:'말머리 문제를 풀어주세요. 말머리 앞에 있는 날짜를 확인 후 반대편에서 그 날짜에 해당하는 달 모양을 알려주면 말머리 옆에 있는 힌트를 보고 달 모양에 따라서 말머리 방향을 [오 뒤 앞 왼]으로 맞게 돌려주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'4',
+        hintContent:'순혈마녀의 이름 문자 해독해주세요. 피라미드 아래 문자와 빨간색 함 옆 벽에 보면 문자가 있습니다.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'5',
+        hintContent:'마녀의 음계 자물쇠 답을 확인 후 마녀의 음계를 오픈해주세요'
+    },
+    {
+        theme:'room4',
+        hintNumber:'6',
+        hintContent:'힌트 판을 보고 알맞게 마녀의 음계를 눌러주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'7',
+        hintContent:'총으로 해골 눈을 맞춰주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'8',
+        hintContent:'단상에 맨 아래 서랍을 열어 서랍 손잡이 방향 그림을 확인헤주세요. 단상에 있는 책 모양 서랍에서 맨 위에 칸을 열어 서랍 손잡이 방향 그림대로 움직여 방향 자물쇠 문제를 풀어주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'9',
+        hintContent:'잠겨져 있지 않은 서랍을 열어주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'10',
+        hintContent:'단상에 돼지랑 고양이를 알맞게 올려주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'11',
+        hintContent:'방안 곳곳을 돌아다니며 파란색 불빛이 나오는 UV랜턴으로 고양이를 꺼낸 서랍에 있는 문양과 카드에 있는 문양으로 서로 맞출 수 있는 힌트들을 찾아주세요. 그거에 알맞게 카드함에 카드를 넣어주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'12',
+        hintContent:'십자가를 바로 옆 관뚜껑에 대주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'13',
+        hintContent:'관뚜껑을 열면 나오는 촛대 밑에 서랍을 열면 초 하나가 나옵니다. 초를 앞에 꽂아주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'14',
+        hintContent:'그 방안에 있는 동물들 갯수를 세고 전에 찾았던 동물들 갯수를 세주세요. 세어서 흰색 사물함 맨 밑에 있는 사물함을 열어주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'15',
+        hintContent:'쥐 인형이 있는 곳 옆에 있는 초를 불어주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'16',
+        hintContent:'터널을 통과해주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'17',
+        hintContent:'피라미드있는 방으로 가서 거울을 보고 알맞게 판을 꽂아주세요.'
+    },
+    {
+        theme:'room4',
+        hintNumber:'18',
+        hintContent:'손모양 조각상 밑에 있는 달모양에 해당하는 문양을 확인한 후, 터널 위에 있는 힌트에서 그 문양이 손 어디에 위치하는지 찾아서 거기에 손가락을 알맞게 꽂아주세요.'
+    },  
+        
     ///////// 그 남자 그 여자 /////////
     {
         theme: 'room5',
