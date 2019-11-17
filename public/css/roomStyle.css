@@ -29,3 +29,8 @@
     width: 100%;
     backdrop-filter: blur(10px);
 }
+
+.refreshButton{
+    background: border-box;
+    border: none;
+}
