@@ -1,8 +1,10 @@
 var socket = io();
 var vid = document.getElementById("myVideo"); 
 var audio = new Audio();
+var bgm = new Audio();
 var inter1;
 audio.src = "/mp3/bell.mp3";
+bgm.src = "/mp3/bgm.mp3";
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
@@ -13,12 +15,18 @@ vid.onended = function() {
     var roomNum = '1';
     socket.emit('send');
     vid.style.display = "none";
+    vid.style.display = "none";
+    vid.style.display = "none";
     document.getElementById("clock").style.display = "block";
     var seventyMinutes = 60 * 70;
     var display = document.querySelector('#output');
     startTimer(seventyMinutes, display, 99);
     socket.emit('start room', roomNum, seventyMinutes);
+    // alert("start timer!!");
     console.log("start timer start!!!");
+    bgm.play();
+    bgm.loop = true;
+    vid.style.display = "none";
 };
 
 socket.on('receive message', function(msg){

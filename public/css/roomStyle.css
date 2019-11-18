@@ -3,6 +3,18 @@
     background-image: url(/image/bg1.gif);
 }
 
+#background2 {
+    /* background-color: black; */
+    background-image: url(/image/bg2.gif);
+    background-size: 100%;
+}
+
+#background5 {
+    /* background-color: black; */
+    background-image: url(/image/bg5.gif);
+    background-size: 100%;
+}
+
 #chatLog {
     display: flex;
     align-items: center;
@@ -15,7 +27,7 @@
     top: 75%;
     left: 50%;
     right: -25%;
-    font-size: 200%;
+    font-size: 250%;
     transform: translate(-50%, -50%);
     color: white;
 }
@@ -27,6 +39,9 @@
 
 #myVideo{
     width: 100%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     backdrop-filter: blur(10px);
 }
 
