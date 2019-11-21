@@ -100,3 +100,12 @@
   /* color: azure; */
   background-color: #262626;
 }
+
+#modalContent{
+  background-color: none;
+  border: none;
+}
+
+.w3-modal {
+  padding-top: 25%;
+}

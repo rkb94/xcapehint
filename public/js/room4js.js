@@ -11,8 +11,9 @@ $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시�
     socket.emit('reset clock', '4', 'output4');
 });
 
-vid.onended = function() {
+function activeStart(){
     var roomNum = '4';
+    started = true;
     socket.emit('send');
     vid.style.display = "none";
     vid.style.display = "none";
@@ -22,11 +23,16 @@ vid.onended = function() {
     var display = document.querySelector('#output');
     startTimer(sixtyMinutes, display, 99);
     socket.emit('start room', roomNum, sixtyMinutes);
+    // alert("start timer!!");
     console.log("start timer start!!!");
     bgm.play();
     bgm.loop = true;
     vid.style.display = "none";
 };
+
+vid.onended = function() {
+    activeStart();
+}
 
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
@@ -59,6 +65,18 @@ socket.on('paused clock', function(data){
     if(data == 'room4'){
         console.log('paused clock room4');
         pausedTimer();
+    }
+});
+
+socket.on('active room', function(data){
+    if(data == 'room4'){
+        console.log('active room1 clock!!!');
+        if(document.getElementById('clock').style.display == "none"){
+            activeStart();
+        } else {
+            socket.emit('already started', 'room4');
+            console.log("already started room4");
+        }
     }
 });
 

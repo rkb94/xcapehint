@@ -189,7 +189,7 @@ window.hint = [
         hintContent: 'c바코드에 X-Kit를 태깅한 후, 왕나비 페이지를 보고 [발비나네]에 해당하는 숫자를 입력해주세요.[7499]'
     },
     {
-        theme: 'room1',
+        theme: 'room2',
         hintNumber: '7',
         hintContent: '서류에 X-Kit를 태깅한 후, 교수와 조교가 주고받은 문자 메세지 내용을 보고 조교의 이름을 입력해주세요.[ETHAN]'
     },
