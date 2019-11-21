@@ -3,6 +3,7 @@ var vid = document.getElementById("myVideo");
 var audio = new Audio();
 var bgm = new Audio();
 var inter1;
+var started = false;
 audio.src = "/mp3/bell.mp3";
 bgm.src = "/mp3/bgm.mp3";
 
@@ -11,8 +12,9 @@ $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시�
     socket.emit('reset clock', '1', 'output1');
 });
 
-vid.onended = function() {
+function activeStart(){
     var roomNum = '1';
+    started = true;
     socket.emit('send');
     vid.style.display = "none";
     vid.style.display = "none";
@@ -28,6 +30,10 @@ vid.onended = function() {
     bgm.loop = true;
     vid.style.display = "none";
 };
+
+vid.onended = function() {
+    activeStart();
+}
 
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
@@ -60,6 +66,24 @@ socket.on('paused clock', function(data){
     if(data == 'room1'){
         console.log('paused clock room1');
         pausedTimer();
+    }
+});
+
+socket.on('active room', function(data){
+    if(data == 'room1'){
+        console.log('active room1 clock!!!');
+        if(document.getElementById('clock').style.display == "none"){
+            activeStart();
+        } else {
+            socket.emit('already started', 'room1');
+            console.log("already started room1");
+        }
+    }
+});
+
+socket.on('if started', function(){
+    if(started == true){
+        socket.emit('before started', 'room1');
     }
 });
 

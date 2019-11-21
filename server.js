@@ -42,6 +42,25 @@ io.on('connection', function(socket){
     console.log(data);
     io.emit('start room', {roomNum : data1, time : data2});
   });
+
+  socket.on('active room', function(data){
+    console.log(data);
+    io.emit('active room', data);
+  });
+
+  socket.on('already started', function(data){
+    console.log(data);
+    io.emit('already started', data);
+  });
+
+  socket.on('if started', function(){
+    // console.log(data);
+    io.emit('if started');
+  });
+  socket.on('before started', function(data){
+    console.log(data);
+    io.emit('before started', data);
+  });
 });
 var port = process.env.PORT || 3000;
 http.listen(port, function(){

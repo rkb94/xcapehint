@@ -2,11 +2,21 @@
 <html>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <head>
     <meta charset="utf-8">
     <title>XCAPE 힌트 시스템</title>
   </head>
   <body id="background">
+    <!-- Modal Content -->
+    <div id="modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <p id="modalContent"><p>
+        </div>
+      </div>
+    </div>
     <div id="roomTitleWrapper">
       <h5 class="roomTitle">501동 사람들
         <div class="timeContents" id="clock">
@@ -14,6 +24,9 @@
         </div>
         <form class="timeContents" id="timestate1">
           <input type="button" id="startStateButton1" class="btn btn-default btn-warning" value="시작 전">
+        </form>
+        <form class="timeContents" id="activeStart1">
+          <input type="submit" id="activeStartButton1" class="btn btn-default btn-warning" value="강제 시작">
         </form>
       </h5>
 
@@ -24,6 +37,9 @@
         <form class="timeContents" id="timestate2">
           <input type="submit" id="startStateButton2" class="btn btn-default btn-warning" value="시작 전">
         </form>
+        <form class="timeContents" id="activeStart2">
+          <input type="submit" id="activeStartButton2" class="btn btn-default btn-warning" value="강제 시작">
+        </form>
       </h5>
 
       <h5 class="roomTitle">숨바꼭질
@@ -32,6 +48,9 @@
         </div>
         <form class="timeContents" id="timestate3">
           <input type="submit" id="startStateButton3" class="btn btn-default btn-warning" value="시작 전">
+        </form>
+        <form class="timeContents" id="activeStart3">
+          <input type="submit" id="activeStartButton3" class="btn btn-default btn-warning" value="강제 시작">
         </form>
       </h5>
 
@@ -42,6 +61,9 @@
         <form class="timeContents" id="timestate4">
           <input type="submit" id="startStateButton4" class="btn btn-default btn-warning" value="시작 전">
         </form>
+        <form class="timeContents" id="activeStart4">
+          <input type="submit" id="activeStartButton4" class="btn btn-default btn-warning" value="강제 시작">
+        </form>
       </h5>
 
       <h5 class="roomTitle">그 남자 그 여자
@@ -50,6 +72,9 @@
         </div>
         <form class="timeContents" id="timestate5">
           <input type="submit" id="startStateButton5" class="btn btn-default btn-warning" value="시작 전">
+        </form>
+        <form class="timeContents" id="activeStart5">
+          <input type="submit" id="activeStartButton5" class="btn btn-default btn-warning" value="강제 시작">
         </form>
       </h5>
     </div>
