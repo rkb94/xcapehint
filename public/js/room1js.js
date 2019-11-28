@@ -1,5 +1,4 @@
 var socket = io();
-var vid = document.getElementById("myVideo"); 
 var audio = new Audio();
 var bgm = new Audio();
 var inter1;

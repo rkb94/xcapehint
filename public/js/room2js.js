@@ -1,5 +1,4 @@
 var socket = io();
-var vid = document.getElementById("myVideo"); 
 var audio = new Audio();
 var bgm = new Audio();
 var inter2;
@@ -67,9 +66,7 @@ function activeStart(){
     var roomNum = '2';
     started = true;
     socket.emit('send');
-    vid.style.display = "none";
-    vid.style.display = "none";
-    vid.style.display = "none";
+    document.getElementById('youtube_video').style.display = "none";
     document.getElementById("clock").style.display = "block";
     var sixtyMinutes = 60 * 60;
     var display = document.querySelector('#output');
@@ -79,7 +76,6 @@ function activeStart(){
     console.log("start timer start!!!");
     bgm.play();
     bgm.loop = true;
-    vid.style.display = "none";
 };
 
 socket.on('receive message', function(msg){
