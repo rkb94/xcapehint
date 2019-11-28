@@ -5,6 +5,7 @@ var inter1;
 var started = false;
 audio.src = "/mp3/bell.mp3";
 bgm.src = "/mp3/bgm.mp3";
+var domain = 'file://';
 // var tag = document.createElement('script');
 // tag.src = "https://www.youtube.com/iframe_api";
 // var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -82,9 +83,8 @@ socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
     if(roomNum == 'room1'){
-        window.parent.postMessage('receiveHint', 'http://localhost:8100/home');
+        window.parent.postMessage('receiveHint', domain);
         $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
-        // audio.play();
     }
 });
 
