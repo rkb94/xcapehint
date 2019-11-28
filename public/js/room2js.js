@@ -47,8 +47,8 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady (event) {
     console.log('onPlayerReady 실행');
-    event.target.playVideo();
-    setTimeout(event.target.pauseVideo(), 5000);
+    // event.target.playVideo();
+    // setTimeout(event.target.pauseVideo(), 5000);
 }
 
 var playerState;
@@ -81,10 +81,6 @@ function activeStart(){
     bgm.loop = true;
     vid.style.display = "none";
 };
-
-vid.onended = function() {
-    activeStart();
-}
 
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
