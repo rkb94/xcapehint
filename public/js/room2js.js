@@ -6,11 +6,62 @@ var inter2;
 var started = false;
 audio.src = "/mp3/bell.mp3";
 bgm.src = "/mp3/bgm.mp3";
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
     socket.emit('reset clock', '2', 'output2');
+    onYouTubeIframeAPIReady();
 });
+
+window.addEventListener( 'message', function( e ) {
+    if(e.data == 'playYouTube'){
+        playYT();
+    } else if (e.data == 'resetPage'){
+        history.go(0);
+    }
+} );
+
+function playYT(){
+    console.log('start YT');
+    var fn = function(){player.playVideo();}
+    setTimeout(fn, 1);
+}
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube_video', {
+      height: '100%',
+      width: '100%',
+      videoId: 'xOye2VmX83k',
+      autoplay: 0,
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+function onPlayerReady (event) {
+    console.log('onPlayerReady 실행');
+    event.target.playVideo();
+    setTimeout(event.target.pauseVideo(), 5000);
+}
+
+var playerState;
+function onPlayerStateChange (event) {
+  playerState = event.data == YT.PlayerState.ENDED ? activeStart() :
+    event.data == YT.PlayerState.PLAYING ? '재생 중' :
+    event.data == YT.PlayerState.PAUSED ? '일시중지 됨' :
+    event.data == YT.PlayerState.BUFFERING ? '버퍼링 중' :
+    event.data == YT.PlayerState.CUED ? '재생준비 완료됨' :
+    event.data == -1 ? '시작되지 않음' : '예외';
+
+  console.log('onPlayerStateChange 실행: ' + playerState);
+}
 
 function activeStart(){
     var roomNum = '2';

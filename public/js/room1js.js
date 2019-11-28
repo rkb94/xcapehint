@@ -47,9 +47,8 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady (event) {
     console.log('onPlayerReady 실행');
-    $('#result').val($('#result').val() + 'onPlayerReady 실행\n')
     event.target.playVideo();
-    setTimeout(event.target.pauseVideo(), 100);
+    setTimeout(function(){event.target.pauseVideo(); }, 2000);
 }
 
 var playerState;
@@ -62,7 +61,6 @@ function onPlayerStateChange (event) {
     event.data == -1 ? '시작되지 않음' : '예외';
 
   console.log('onPlayerStateChange 실행: ' + playerState);
-  $('#result').val($('#result').val() + 'onPlayerStateChange 실행: ' + playerState + '\n')
 }
 
 function activeStart(){
