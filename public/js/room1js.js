@@ -37,6 +37,7 @@ function onYouTubeIframeAPIReady() {
       height: '100%',
       width: '100%',
       videoId: 'lvi7EIP6E00',
+      autoplay: 0,
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
@@ -77,12 +78,7 @@ function activeStart(){
     console.log("start timer start!!!");
     bgm.play();
     bgm.loop = true;
-    // vid.style.display = "none";
 };
-
-// vid.onended = function() {
-//     activeStart();
-// }
 
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
