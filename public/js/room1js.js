@@ -47,8 +47,8 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady (event) {
     console.log('onPlayerReady 실행');
-    event.target.playVideo();
-    setTimeout(function(){event.target.pauseVideo(); }, 2000);
+    // event.target.playVideo();
+    // setTimeout(function(){event.target.pauseVideo(); }, 2000);
 }
 
 var playerState;
