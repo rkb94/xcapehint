@@ -49,7 +49,7 @@ function onPlayerReady (event) {
     console.log('onPlayerReady 실행');
     $('#result').val($('#result').val() + 'onPlayerReady 실행\n')
     event.target.playVideo();
-    event.target.pauseVideo();
+    setTimeout(event.target.pauseVideo(), 100);
 }
 
 var playerState;
