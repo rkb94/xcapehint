@@ -266,7 +266,7 @@ socket.on('receive message', function(msg){ // 메시지 방 어디껀지 콤바
 });
 
 function changeRoomName(roomNum){
-    var roomName;
+    var roomName = '';
     switch(roomNum) {
         case 'room1':
             roomName = '501동 사람들';

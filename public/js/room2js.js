@@ -1,11 +1,6 @@
 var socket = io();
-var audio = new Audio();
-var bgm = new Audio();
 var inter2;
 var started = false;
-audio.src = "/mp3/bell.mp3";
-bgm.src = "/mp3/bgm.mp3";
-var domain = 'file://';
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
@@ -29,7 +24,6 @@ function activeStart(){
     startTimer(sixtyMinutes, display, 99);
     socket.emit('start room', roomNum, sixtyMinutes);
     console.log("start timer start!!!");
-    bgm.loop = true;
 };
 
 socket.on('receive message', function(msg){
