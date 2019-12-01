@@ -30,7 +30,7 @@ socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
     if(roomNum == 'room1'){
-        window.parent.postMessage('receiveHint', domain);
+        window.parent.postMessage('receiveHint', '*');
         $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
     }
 });

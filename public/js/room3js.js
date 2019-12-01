@@ -30,8 +30,8 @@ socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;
     var contents = msg.contents;
     if(roomNum == 'room3'){
-        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
-        audio.play();
+        window.parent.postMessage('receiveHint', '*');
+        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');
     }
 });
 
