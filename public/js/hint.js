@@ -72,6 +72,11 @@ window.hint = [
     },
     {
         theme: 'room1',
+        hintNumber: '-',
+        hintContent: '엘리베이터 타고 다시 돌아온 후'
+    },
+    {
+        theme: 'room1',
         hintNumber: '11',
         hintContent: '컴퓨터 사진이 있는 핸드폰에 엘레베이터에서 들은대로 엄미선 사망 날짜를 입력해주세요. [ _ _ _ _ _ _ ]'
     },
@@ -98,7 +103,7 @@ window.hint = [
     {
         theme: 'room1',
         hintNumber: '16',
-        hintContent: '철함을 연 후, 현재 년도를 입력해주세요.'
+        hintContent: '철함을 연 후, 현재 연도를 입력해주세요.'
     },
 
 
@@ -122,6 +127,11 @@ window.hint = [
         theme: 'room2',
         hintNumber: '4',
         hintContent: '시디케이스를 태깅하여 영상을 보고 해당 위치에 독약을 올려주세요.'
+    },
+    {
+        theme: 'room2',
+        hintNumber: '-',
+        hintContent: '두 번째 방으로 이동 후'
     },
     {
         theme: 'room2',
@@ -160,6 +170,11 @@ window.hint = [
     },
     {
         theme: 'room2',
+        hintNumber: '-',
+        hintContent: '세 번째 방으로 이동 후'
+    },
+    {
+        theme: 'room2',
         hintNumber: '12',
         hintContent: '모니터에 여자들이 알파벳 모양으로 누워있는데, 함의 붙어있는 순서대로 나열해주세요.'
     },
@@ -182,6 +197,11 @@ window.hint = [
         theme: 'room2',
         hintNumber: '16',
         hintContent: '얻은 액자를 벽에 큰 액자위에 겹쳐주세요.'
+    },
+    {
+        theme: 'room2',
+        hintNumber: '-',
+        hintContent: '네 번째 방으로 이동 후'
     },
     {
         theme: 'room2',
@@ -286,6 +306,11 @@ window.hint = [
         hintContent:'얻은 카드를 게시판 옆에 맞게 끼워주세요. 나오는 영상을 보고 영상 내용을 크게 4가지 키워드로 생각해서 옆에 방향자물쇠에 입력해주세요 [첫째아이-결혼-가난-둘째아이]'
     },
     {
+        theme: 'room3',
+        hintNumber: '-',
+        hintContent: '방 이동'
+    },
+    {
         theme:'room3',
         hintNumber:'17',
         hintContent:'일기를 보고 붉은 색으로 표시된 부분의 숫자를 찾아주세요. [며칠 : 36, 몇 : 2, 혼자 : 1 - 3621]'
@@ -307,27 +332,27 @@ window.hint = [
     {
         theme:'room4',
         hintNumber:'1',
-        hintContent:'각 방에 별이 그려져있는 빙고판을 확인 후에 큰별에서 작은별 순으로 [ARIES] 알파벳을 입력해주세요.'
+        hintContent:'상대편 철장 쪽을 보면 별이 그려진 빙고판을 볼 수 있습니다. 두 개의 빙고판을 합쳐서 큰 별에서 작은 별 순으로 마법의 문자를 알파벳으로 바꿔 입력해주세요.(철장에 적힌 마법의 문자를 해독할 수 있는 단서는 벽에 있습니다.)'
     },
     {
         theme:'room4',
         hintNumber:'2',
-        hintContent:'별자리판에서 색칠해져있는 별자리 문양을 확인후 철장에서 그 별자리에 해당하는 문양을 찾아주세요. 그리고 그 밑에다가 천을 대서 사다리타기를 해서 알맞은 호일을 찾아줍니다. 반대편도 동일한 행동을 하고 호일을 찾은 후 서로 알맞은 호일을 잡고 서로의 손을 맞잡아주세요.'
+        hintContent:'별자리판에서 색칠해져있는 별자리 문양을 확인 후 철장에서 그 별자리에 해당하는 문양을 찾아주세요. 그리고 그 밑에다가 천을 대서 사다리 타기를 해서 알맞은 호일을 찾아줍니다. 반대편도 동일한 행동을 하고 호일을 찾은 후, 서로 알맞을 호일을 잡고 서로의 손을 맞잡아주세요.'
     },
     {
         theme:'room4',
         hintNumber:'3',
-        hintContent:'말머리 문제를 풀어주세요. 말머리 앞에 있는 날짜를 확인 후 반대편에서 그 날짜에 해당하는 달 모양을 알려주면 말머리 옆에 있는 힌트를 보고 달 모양에 따라서 말머리 방향을 [오 뒤 앞 왼]으로 맞게 돌려주세요.'
+        hintContent:'말머리 앞에 있는 날짜를 반대쪽으로 넘긴 뒤 해당하는 달모양을 찾습니다. 그리고 달모양 그림을 받아 말머리상 옆에 있는 십자가 모양에 맟춰 말머리를 돌려주세요.'
     },
     {
         theme:'room4',
         hintNumber:'4',
-        hintContent:'순혈마녀의 이름 문자 해독해주세요. 피라미드 아래 문자와 빨간색 함 옆 벽에 보면 문자가 있습니다.'
+        hintContent:'피라미드 아래 문자와 빨간색함 옆 벽면에 문자를 이용하여 순혈마녀의 이름을 해독해 주세요. [ _ _ _ _ _ ]'
     },
     {
         theme:'room4',
         hintNumber:'5',
-        hintContent:'마녀의 음계 자물쇠 답을 확인 후 마녀의 음계를 오픈해주세요'
+        hintContent:'마녀의 음계 확인 후 마녀의 음계를 누를 수 있는 마법진 아크릴 함의 자물쇠를 열어주세요.'
     },
     {
         theme:'room4',
@@ -337,27 +362,27 @@ window.hint = [
     {
         theme:'room4',
         hintNumber:'7',
-        hintContent:'총으로 해골 눈을 맞춰주세요.'
+        hintContent:'총으로 해골의 움직이는 빨간 눈을 맞춰주세요.'
     },
     {
         theme:'room4',
         hintNumber:'8',
-        hintContent:'단상에 맨 아래 서랍을 열어 서랍 손잡이 방향 그림을 확인헤주세요. 단상에 있는 책 모양 서랍에서 맨 위에 칸을 열어 서랍 손잡이 방향 그림대로 움직여 방향 자물쇠 문제를 풀어주세요.'
+        hintContent:'단상에 맨 아래 서랍과 제일 작은 책모양 서랍을 열어주세요. 그리고 화살표 그림에 맞춰 책모양 서랍을 움직여 방향 자물쇠를 열어주세요.'
     },
     {
         theme:'room4',
         hintNumber:'9',
-        hintContent:'잠겨져 있지 않은 서랍을 열어주세요.'
+        hintContent:'단상에 돼지와 고양이를 모양에 맞춰 배부분이 바닥에 닿게 올려주세요.'
     },
     {
         theme:'room4',
         hintNumber:'10',
-        hintContent:'단상에 돼지랑 고양이를 알맞게 올려주세요.'
+        hintContent:'방안 곳곳을 돌아다니며 서랍안에 있는 문양을 찾아 UV랜턴으로 비춰주세요. 알맞는 문양의 카드를 카드함에 넣어주세요.'
     },
     {
         theme:'room4',
         hintNumber:'11',
-        hintContent:'방안 곳곳을 돌아다니며 파란색 불빛이 나오는 UV랜턴으로 고양이를 꺼낸 서랍에 있는 문양과 카드에 있는 문양으로 서로 맞출 수 있는 힌트들을 찾아주세요. 그거에 알맞게 카드함에 카드를 넣어주세요.'
+        hintContent:'십자가를 관뚜껑 가운데 십자가 그림에 대주세요'
     },
     {
         theme:'room4',
@@ -367,33 +392,23 @@ window.hint = [
     {
         theme:'room4',
         hintNumber:'13',
-        hintContent:'관뚜껑을 열면 나오는 촛대 밑에 서랍을 열면 초 하나가 나옵니다. 초를 앞에 꽂아주세요.'
+        hintContent:'촛대 밑에 서랍에서 초를 꺼내 비어있는 초 자리에 꽂아주세요.'
     },
     {
         theme:'room4',
         hintNumber:'14',
-        hintContent:'그 방안에 있는 동물들 갯수를 세고 전에 찾았던 동물들 갯수를 세주세요. 세어서 흰색 사물함 맨 밑에 있는 사물함을 열어주세요.'
+        hintContent:'안에 있는 동물 갯수를 확인하여 흰색 사물함 맨 아래 서랍을 열어주세요.'
     },
     {
         theme:'room4',
         hintNumber:'15',
-        hintContent:'쥐 인형이 있는 곳 옆에 있는 초를 불어주세요.'
+        hintContent:'마지막 방에서 4개의 조각을 가지고 피라미드 있는 방으로 가서 거울을 보고 문제를 풀어주세요. 순서대로 꽂아주시면 됩니다.'
     },
     {
         theme:'room4',
         hintNumber:'16',
-        hintContent:'터널을 통과해주세요.'
+        hintContent:'터널 안 벽면에 손그림 액자를 봐주세요 손목에 있는 달 모양과  조각상 밑에 달을 비교하여 같은 모양을 찾아 해당하는 별자리 그림에 반지를 꽂아주세요.'
     },
-    {
-        theme:'room4',
-        hintNumber:'17',
-        hintContent:'피라미드있는 방으로 가서 거울을 보고 알맞게 판을 꽂아주세요.'
-    },
-    {
-        theme:'room4',
-        hintNumber:'18',
-        hintContent:'손모양 조각상 밑에 있는 달모양에 해당하는 문양을 확인한 후, 터널 위에 있는 힌트에서 그 문양이 손 어디에 위치하는지 찾아서 거기에 손가락을 알맞게 꽂아주세요.'
-    },  
         
     ///////// 그 남자 그 여자 /////////
     {
@@ -419,22 +434,32 @@ window.hint = [
     {
         theme: 'room5',
         hintNumber: '5',
-        hintContent: 'LP판을 턴테이블 재생시키듯 위에 올리면 밑에 함이 열립니다.'
+        hintContent: 'LP판을 턴테이블 재생시키듯 위에 올려주세요.'
     },
     {
         theme: 'room5',
         hintNumber: '6',
-        hintContent: '엽서를 우편함에 넣어주세요.'
+        hintContent: '아래 서랍에서 엽서를 찾아 우편함에 넣어주세요.'
+    },
+    {
+        theme: 'room5',
+        hintNumber: '-',
+        hintContent: '두 번째 방으로 이동 후'
     },
     {
         theme: 'room5',
         hintNumber: '7',
-        hintContent: '그녀를 생각하며 쓴 시가 왼쪽 벽면에 있다. 시에서 노란 글씨를 찾아 오른쪽 벽면의 단어로 방향을 찾아주세요.[[ex]행복,사랑,즐거움,사랑 >>상상하_ _ _]'
+        hintContent: '왼쪽 벽면에 그녀를 생각하며 쓴 시가 있습니다. 노란색 단어를 찾아 오른쪽 벽면에서 해당하는 단어들의 방향을 찾아주세요[EX 행복,사랑,즐거움,사랑 ➔ 상 상 하 _ _ _]'
     },
     {
         theme: 'room5',
         hintNumber: '8',
-        hintContent: '그녀에게 별도 달도 따주려 한다는 얘기, 별자리 단서의 숫자 그리고 지붕의 달모양을 보고 함을 풀어주세요.[_ _ _ _ _]'
+        hintContent: '별자리 단서의 숫자 그리고 지붕의 달모양을 보고 함을 풀어주세요.[ _ _ _ _ _ ]'
+    },
+    {
+        theme: 'room5',
+        hintNumber: '-',
+        hintContent: '세 번째 방으로 이동 후'
     },
     {
         theme: 'room5',
@@ -459,7 +484,12 @@ window.hint = [
     {
         theme: 'room5',
         hintNumber: '13',
-        hintContent: '지쳐서 이미 마음을 정리한 여자가 남긴 편지를 읽고 여자 방으로 가서 문의 글과 비교 후 다음 방으로 이동해주세요.[_ _ _ _ _]'
+        hintContent: '지쳐서 이미 마음을 정리한 여자가 남긴 편지를 읽고 여자 방의 문에 적힌 글과 비교해서 자물쇠를 열어주세요.'
+    },
+    {
+        theme: 'room5',
+        hintNumber: '-',
+        hintContent: '마지막 방으로 이동 후'
     },
     {
         theme: 'room5',

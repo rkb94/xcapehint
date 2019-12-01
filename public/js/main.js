@@ -17,14 +17,24 @@ window.onbeforeunload = function() { // 새로고침 방지
 function getHintContent() {
     var i = 0;
     while (hint[i] != null) { // js파일에 있는 힌트들을 이름별로 바인딩
-        $('.' + hint[i].theme).append(`
-            <div class="form-group has-success has-feedback">
-                <div class="input-group">
-                    <span class="input-group-addon">` + hint[i].hintNumber + `</span>
-                    <button onclick="clickHint('` + hint[i].theme + `', '` + hint[i].hintContent + `')" class="btn btn-primary btn-m btn-block" id="roomHint-` + hint[i].hintNumber + `" style="border-bottom-left-radius : 0; border-top-left-radius : 0;">` + hint[i].hintContent + `</button>
+        if(hint[i].hintNumber != '-'){
+            $('.' + hint[i].theme).append(`
+                <div class="form-group has-success has-feedback">
+                    <div class="input-group">
+                        <span class="input-group-addon">` + hint[i].hintNumber + `</span>
+                        <button onclick="clickHint('` + hint[i].theme + `', '` + hint[i].hintContent + `')" class="btn btn-primary btn-m btn-block" id="roomHint-` + hint[i].hintNumber + `" style="border-bottom-left-radius : 0; border-top-left-radius : 0;">` + hint[i].hintContent + `</button>
+                    </div>
                 </div>
-            </div>
-        `)
+            `)
+        } else {
+            $('.' + hint[i].theme).append(`
+                <div class="form-group has-error has-feedback">
+                    <div class="input-group">
+                        <span class="input-group-addon">` + hint[i].hintContent + `</span>
+                    </div>
+                </div>
+            `)
+        }
         i++;
     }
 }
