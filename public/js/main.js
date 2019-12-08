@@ -3,9 +3,10 @@ var inter2;
 var inter3;
 var inter4;
 var inter5;
+var roomStarted = [false, false, false, false, false, false];
 
 $(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
-    console.log('hint contents ')
+    console.log('Get hint contents')
     getHintContent();
     socket.emit('if started');
 });
@@ -224,19 +225,24 @@ $('#chat5').on('submit', function(e){
 
 socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
     var roomNum = data.roomNum;
-    var time = data.time;
-    console.log('room' + roomNum + ' start!!!');
-    var display = document.querySelector('#output'+roomNum);
-    var startStateButton = document.getElementById('startStateButton'+roomNum);
-    startStateButton.type = 'submit';
-    startStateButton.className = 'btn btn-default btn-danger';
-    startStateButton.value = '일시정지';
-    startTimer(time, display)
-    var curRoomName = changeRoomName('room'+roomNum);
-    var startDate = new Date();
-    document.getElementById('modalContent').innerHTML += '\n [' + startDate.hhmmss() + '] ' + curRoomName + ' 테마가 정상적으로 시작되었습니다.\n';
-    document.getElementById('modal').style.display = 'block';
-    setTimeout(displayNoneModal, 5000);
+    if(roomStarted[roomNum] == false){
+        roomStarted[roomNum] = true;
+        var time = data.time;
+        console.log('room' + roomNum + ' start!!!');
+        var display = document.querySelector('#output'+roomNum);
+        var startStateButton = document.getElementById('startStateButton'+roomNum);
+        startStateButton.type = 'submit';
+        startStateButton.className = 'btn btn-default btn-danger';
+        startStateButton.value = '일시정지';
+        startTimer(time, display)
+        var curRoomName = changeRoomName('room'+roomNum);
+        var startDate = new Date();
+        document.getElementById('modalContent').innerHTML += '\n [' + startDate.hhmmss() + '] ' + curRoomName + ' 테마가 정상적으로 시작되었습니다.\n';
+        document.getElementById('modal').style.display = 'block';
+        setTimeout(displayNoneModal, 5000);
+    } else {
+        console.log(changeRoomName('room'+roomNum) + ' 테마는 다른 곳에서 이미 진행중입니다.');
+    }
 });
 
 function displayNoneModal(){
@@ -254,7 +260,7 @@ socket.on('already started', function(data){ // 이미 진행중일 경우 모�
 
 socket.on('before started', function(data){
     var roomNum = data;
-    console.log(roomNum + '이미 진행중');
+    console.log(changeRoomName(roomNum) + ' 테마는 이미 진행중');
 })
 
 Date.prototype.hhmmss = function() { // 날짜 형식 Format
@@ -370,7 +376,8 @@ function pausedTimer(display){ // inter + number의 타이머를 일시 정지!!
 }
 
 socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
-    console.log("room" + data.roomNum + " reset timer!! in " + data.inter);
+    console.log("room" + data.roomNum + " reset timer!! in " + data.output);
+    roomStarted[data.roomNum] = false;
     switch(data.output) {
         case 'output1':
             clearInterval(inter1);

@@ -17,13 +17,16 @@ window.addEventListener( 'message', function( e ) {
 
 function activeStart(){
     var roomNum = '4';
-    started = true;
-    socket.emit('send');
-    var sixtyMinutes = 60 * 60;
-    var display = document.querySelector('#output');
-    startTimer(sixtyMinutes, display, 99);
-    socket.emit('start room', roomNum, sixtyMinutes);
-    console.log("start timer start!!!");
+    if(started == false){
+        started = true;
+        var sixtyMinutes = 60 * 60;
+        var display = document.querySelector('#output');
+        startTimer(sixtyMinutes, display, 99);
+        socket.emit('start room', roomNum, sixtyMinutes);
+        console.log("start timer start!!!");
+    } else {
+        console.log("room" + roomNum + "는 이미 시작을 진행했습니다.");
+    }
 };
 
 socket.on('receive message', function(msg){
