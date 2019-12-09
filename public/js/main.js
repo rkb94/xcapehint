@@ -329,30 +329,40 @@ function startTimer(duration, display) { // 타이머...인데 일시정지 재�
         // does the same job as parseInt truncates the float
         minutes = (diff / 60) | 0;
         seconds = (diff % 60) | 0;
-        if(minutes == 0 && seconds == 0){
-            console.log('act clearInterval!!!');
-            document.getElementById("output").innerHTML = "00:00:00";
-            clearInterval(inter);
-            return;
-        }
+        // if(minutes == 0 && seconds == 0){
+        //     console.log('act clearInterval!!!');
+        //     document.getElementById("output").innerHTML = "00:00:00";
+        //     clearInterval(inter);
+        //     return;
+        // }
 
         // if(miliseconds == 0){
         //     miliseconds = 99;
         // }
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+        if(seconds <= 0){
+            if(minutes <= 0){
+                minutes *= -1;
+            }
+            seconds *= -1;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = "-" + minutes + ":" + seconds;
+        } else {
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+        }
         // miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
         
         // display.textContent = minutes + ":" + seconds + ":" + miliseconds;
-        display.textContent = minutes + ":" + seconds;
         // --miliseconds;
         
-        if (diff <= 0) {
-            // add one second so that the count down starts at the full duration
-            // example 05:00 not 04:59
-            start = Date.now() + 1000;
-        }
+        // if (diff <= 0) {
+        //     // add one second so that the count down starts at the full duration
+        //     // example 05:00 not 04:59
+        //     start = Date.now() + 1000;
+        // }
     };
     // we don't want to wait a full second before the timer starts
     timer();

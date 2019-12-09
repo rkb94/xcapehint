@@ -22,7 +22,7 @@ function activeStart(){
         var seventyMinutes = 60 * 70;
         var display = document.querySelector('#output');
         startTimer(seventyMinutes, display, 99);
-        socket.emit('start room', roomNum, seventyMinutes);
+        socket.emit('start room', roomNum, 5);
         console.log("start timer start!!!");
     } else {
         console.log("room" + roomNum + "는 이미 시작을 진행했습니다.");
