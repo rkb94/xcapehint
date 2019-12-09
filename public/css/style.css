@@ -6,6 +6,10 @@
   border: solid 1px;
 }
 
+body::-webkit-scrollbar { 
+  display: none; 
+}
+
 #startPause, #button{
   display: block;
 }
