@@ -340,10 +340,8 @@ function startTimer(duration, display) { // 타이머...인데 일시정지 재�
         //     miliseconds = 99;
         // }
 
-        if(seconds <= 0){
-            if(minutes <= 0){
-                minutes *= -1;
-            }
+        if(seconds < 0){
+            minutes *= -1;
             seconds *= -1;
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
