@@ -313,7 +313,7 @@ window.hint = [
     {
         theme:'room3',
         hintNumber:'17',
-        hintContent:'일기를 보고 붉은 색으로 표시된 부분의 숫자를 찾아주세요. [며칠 : 36, 몇 : 2, 혼자 : 1 - 3621]'
+        hintContent:'일기를 보고 붉은 색으로 표시된 부분의 숫자를 찾아주세요.'
     },
     {
         theme:'room3',
