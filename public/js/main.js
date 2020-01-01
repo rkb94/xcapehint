@@ -4,6 +4,7 @@ var inter3;
 var inter4;
 var inter5;
 var roomStarted = [false, false, false, false, false, false];
+var room1Flag = true;
 nowTime();
 setInterval(nowTime, 1000);
 
@@ -350,6 +351,11 @@ function startTimer(duration, display) { // 타이머...인데 일시정지 재�
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
             display.textContent = minutes + ":" + seconds;
+            if(display.id == "output1" && minutes + ":" + seconds == "30:00" && room1Flag){
+                document.getElementById('modalContent').innerHTML += '\n\n <h1>      501동 사람들 테마가 40분 진행되었습니다.</h1>\n <h1>      크루님! 타임머신 가방 세팅을 완료하셨나요?</h1>\n\n            이 알림은 자동으로 닫히지 않고, 우측 상단 X버튼을 눌러야 닫힙니다.\n\n\n';
+                document.getElementById('modal').style.display = 'block';
+                room1Flag = false;
+            }
         }
         // miliseconds = miliseconds < 10 ? "0" + miliseconds : miliseconds;
         
@@ -405,6 +411,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
+            room1Flag = true;
             break;
         case 'output2':
             clearInterval(inter2);

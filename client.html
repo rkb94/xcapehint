@@ -12,7 +12,7 @@
     <div id="modal" class="w3-modal">
       <div class="w3-modal-content">
         <div class="w3-container">
-          <span onclick="document.getElementById('modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <span onclick="document.getElementById('modal').style.display='none'; document.getElementById('modalContent').innerHTML = '';" class="w3-button w3-display-topright">&times;</span>
           <pre id="modalContent"></pre>
         </div>
       </div>
