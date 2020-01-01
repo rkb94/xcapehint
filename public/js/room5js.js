@@ -34,8 +34,7 @@ socket.on('receive message', function(msg){
     var contents = msg.contents;
     if(roomNum == 'room5'){
         window.parent.postMessage('receiveHint', '*');
-        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
-        audio.play();
+        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');
     }
 });
 

@@ -35,7 +35,6 @@ socket.on('receive message', function(msg){
     if(roomNum == 'room4'){
         window.parent.postMessage('receiveHint', '*');
         $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
-        audio.play();
     }
 });
 

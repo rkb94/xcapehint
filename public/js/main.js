@@ -5,6 +5,9 @@ var inter4;
 var inter5;
 var roomStarted = [false, false, false, false, false, false];
 var room1Flag = true;
+var audio = new Audio('/mp3/bell.mp3');
+var silenceAudio = new Audio('/mp3/silence.mp3');
+var audioFlag = true;
 nowTime();
 setInterval(nowTime, 1000);
 
@@ -47,6 +50,10 @@ function clickHint(theme, content) { // 힌트 버튼에 들어가 있는 버튼
     var messageNum = theme.slice(4);
     console.log(messageNum);
     $('#message' + messageNum).val(content);
+    if(audioFlag){
+        silenceAudio.play();
+        audioFlag = false;
+    }
 }
 
 var socket = io();
@@ -240,9 +247,9 @@ socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르
         startTimer(time, display)
         var curRoomName = changeRoomName('room'+roomNum);
         var startDate = new Date();
-        document.getElementById('modalContent').innerHTML += '\n [' + startDate.hhmmss() + '] ' + curRoomName + ' 테마가 정상적으로 시작되었습니다.\n';
+        document.getElementById('modalContent').innerHTML += '\n\n<h5>[' + startDate.hhmmss() + '] : ' + curRoomName + ' 테마가 정상적으로 시작되었습니다.</h5>\n';
         document.getElementById('modal').style.display = 'block';
-        setTimeout(displayNoneModal, 5000);
+        // setTimeout(displayNoneModal, 5000);
     } else {
         console.log(changeRoomName('room'+roomNum) + ' 테마는 다른 곳에서 이미 진행중입니다.');
     }
@@ -258,7 +265,7 @@ socket.on('already started', function(data){ // 이미 진행중일 경우 모�
     var startDate = new Date();
     document.getElementById('modalContent').innerHTML += '\n [' + startDate.hhmmss() + '] ' + changeRoomName(roomNum) + ' 테마는 이미 진행중입니다.\n';
     document.getElementById('modal').style.display = 'block';
-    setTimeout(displayNoneModal, 5000);
+    // setTimeout(displayNoneModal, 5000);
 });
 
 socket.on('before started', function(data){
@@ -453,4 +460,12 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             console.log("error about reset timer");
             break;
     }
+});
+
+socket.on('receive modal', function(msg){ // 메시지 방 어디껀지 콤바인하고, chatLog에 입력
+    var modalMessage = msg;
+    var startDate = new Date();
+    document.getElementById('modalContent').innerHTML += '\n\n<h5>[' + startDate.hhmmss() + '] : ' + modalMessage + '</h5>\n';
+    document.getElementById('modal').style.display = 'block';
+    audio.play();
 });
