@@ -12,15 +12,18 @@ Date.prototype.hhmmss = function() { // 날짜 형식 Format
 
 $('#chat').on('submit', function(e){
     if($('#message').val() != ""){
-        var startDate = new Date();
         socket.emit('send modal', $('#message').val());
-        $('#chatLog').append('<div class="messageContents" >' + startDate.hhmmss() + ' : ' +$('#message').val()+'\n</div>');
-        $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
-        $('#message').val("");
-        $("#message").focus();
     } else {
         alert("메시지 내용을 입력해주세요.");
         $("#message").focus();
     }
     e.preventDefault();
 });
+
+socket.on('receive modal', function(msg){
+    var startDate = new Date();
+    $('#chatLog').append('<div class="messageContents" >' + startDate.hhmmss() + ' : ' +$('#message').val()+'\n</div>');
+    $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
+    $('#message').val("");
+    $("#message").focus();
+})
