@@ -22,7 +22,8 @@ $('#chat').on('submit', function(e){
 
 socket.on('receive modal', function(msg){
     var startDate = new Date();
-    $('#chatLog').append('<div class="messageContents" >' + startDate.hhmmss() + ' : ' +$('#message').val()+'\n</div>');
+    var modalMessage = msg;
+    $('#chatLog').append('<div class="messageContents" >' + startDate.hhmmss() + ' : ' + modalMessage +'\n</div>');
     $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
     $('#message').val("");
     $("#message").focus();
