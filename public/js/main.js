@@ -355,7 +355,7 @@ function startTimer(duration, display) { // 타이머...인데 일시정지 재�
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
             display.textContent = minutes + ":" + seconds;
-            if(display.id == "output1" && minutes + ":" + seconds == "69:56" && room1Flag){
+            if(display.id == "output1" && minutes + ":" + seconds == "40:00" && room1Flag){
                 displayBlockModal('크루님! 501동 사람들 테마가 40분 진행되었습니다.\n타임머신 가방 세팅을 완료하셨나요?');
                 room1Flag = false;
             }
