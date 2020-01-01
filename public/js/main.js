@@ -246,10 +246,7 @@ socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르
         startStateButton.value = '일시정지';
         startTimer(time, display)
         var curRoomName = changeRoomName('room'+roomNum);
-        var startDate = new Date();
-        document.getElementById('modalContent').innerHTML += '\n\n<h5>[' + startDate.hhmmss() + '] : ' + curRoomName + ' 테마가 정상적으로 시작되었습니다.</h5>\n';
-        document.getElementById('modal').style.display = 'block';
-        // setTimeout(displayNoneModal, 5000);
+        displayBlockModal(curRoomName + ' 테마가 정상적으로 시작되었습니다.');
     } else {
         console.log(changeRoomName('room'+roomNum) + ' 테마는 다른 곳에서 이미 진행중입니다.');
     }
@@ -358,9 +355,8 @@ function startTimer(duration, display) { // 타이머...인데 일시정지 재�
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
             display.textContent = minutes + ":" + seconds;
-            if(display.id == "output1" && minutes + ":" + seconds == "30:00" && room1Flag){
-                document.getElementById('modalContent').innerHTML += '\n\n <h1>      501동 사람들 테마가 40분 진행되었습니다.</h1>\n <h1>      크루님! 타임머신 가방 세팅을 완료하셨나요?</h1>\n\n            이 알림은 자동으로 닫히지 않고, 우측 상단 X버튼을 눌러야 닫힙니다.\n\n\n';
-                document.getElementById('modal').style.display = 'block';
+            if(display.id == "output1" && minutes + ":" + seconds == "69:56" && room1Flag){
+                displayBlockModal('크루님! 501동 사람들 테마가 40분 진행되었습니다.\n타임머신 가방 세팅을 완료하셨나요?');
                 room1Flag = false;
             }
         }
@@ -464,8 +460,13 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
 
 socket.on('receive modal', function(msg){ // 메시지 방 어디껀지 콤바인하고, chatLog에 입력
     var modalMessage = msg;
-    var startDate = new Date();
-    document.getElementById('modalContent').innerHTML += '\n\n<h5>[' + startDate.hhmmss() + '] : ' + modalMessage + '</h5>\n';
-    document.getElementById('modal').style.display = 'block';
+    displayBlockModal(modalMessage);
     audio.play();
 });
+
+
+function displayBlockModal(message){
+    var startDate = new Date();
+    document.getElementById('modalContent').innerHTML += '<div class="modalInnerContents">\n\n<h5>[' + startDate.hhmmss() + '] : ' + message + '</h5></div>\n';
+    document.getElementById('modal').style.display = 'block';
+};

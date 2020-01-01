@@ -134,3 +134,13 @@
   color: antiquewhite;
   font-size: 25px;
 }
+
+.modalInnerContents{
+  word-break: break-all;
+  margin: 2%;
+  padding: 2%;
+  padding-left: 4%;
+  border: 1px solid #e4c9d3;
+  background-color: #faebf1;
+  border-radius: 10px 10px 10px 10px;
+}
