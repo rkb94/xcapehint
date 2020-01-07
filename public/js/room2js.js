@@ -1,10 +1,12 @@
 var socket = io();
 var inter2;
 var started = false;
+const group = "suwon";
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
-    socket.emit('reset clock', '2', 'output2');
+    socket.emit('join send', group);
+    socket.emit('reset clock', '2', 'output2', group);
 });
 
 window.addEventListener( 'message', function( e ) {
@@ -22,7 +24,7 @@ function activeStart(){
         var sixtyMinutes = 60 * 60;
         var display = document.querySelector('#output');
         startTimer(sixtyMinutes, display, 99);
-        socket.emit('start room', roomNum, sixtyMinutes);
+        socket.emit('start room', roomNum, sixtyMinutes, group);
         console.log("start timer start!!!");
     } else {
         console.log("room" + roomNum + "는 이미 시작을 진행했습니다.");
@@ -69,15 +71,15 @@ socket.on('active room', function(data){
         if(document.getElementById('clock').style.display == "none"){
             activeStart();
         } else {
-            socket.emit('already started', 'room1');
+            socket.emit('already started', 'room1', group);
             console.log("already started room1");
         }
     }
 });
 
-socket.on('if started', function(){
+socket.on('if started', function(group){
     if(started == true){
-        socket.emit('before started', 'room2');
+        socket.emit('before started', 'room2', group);
     }
 });
 

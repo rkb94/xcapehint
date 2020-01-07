@@ -1,4 +1,11 @@
 var socket = io();
+var group = 'geondae'
+
+$(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
+    socket.emit('join send', group);
+    console.log(socket.id);
+});
+
 window.onbeforeunload = function() { // 새로고침 방지
     return "Dude, are you sure you want to leave? Think of the kittens!";
 }
@@ -12,7 +19,7 @@ Date.prototype.hhmmss = function() { // 날짜 형식 Format
 
 $('#chat').on('submit', function(e){
     if($('#message').val() != ""){
-        socket.emit('send modal', $('#message').val());
+        socket.emit('send modal', $('#message').val(), group);
     } else {
         alert("메시지 내용을 입력해주세요.");
         $("#message").focus();
@@ -27,4 +34,10 @@ socket.on('receive modal', function(msg){
     $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
     $('#message').val("");
     $("#message").focus();
+})
+
+socket.on('check alert', function(data){
+    var startDate = new Date();
+    $('#chatLog').append('<div class="checkMessageContents" >---------- ' + startDate.hhmmss() +' : 크루가 위 메시지 내용을 확인했습니다. ----------\n</div>');
+    $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
 })

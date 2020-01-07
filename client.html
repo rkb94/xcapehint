@@ -1,169 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="/css/client.css">
   <head>
     <meta charset="utf-8">
     <title>XCAPE 힌트 시스템</title>
   </head>
-  <body id="background">
-    <!-- Modal Content -->
-    <div id="modal" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <span onclick="document.getElementById('modal').style.display='none'; document.getElementById('modalContent').innerHTML = '';" class="w3-button w3-display-topright">&times;</span>
-          <div id="modalContent"></div>
+  <body class="site-wrapper">
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <!-- <div class="container">          
+          <div id="id01" class="modal">
+            
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="loginContainer">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit">Login</button>
+              </div>
+            </form>
+          </div> -->
+          
+          <div class="masthead clearfix">
+            <div class="container inner">
+              <nav>
+                <ul class="nav masthead-nav">
+                </ul>
+              </nav>
+            </div>
+          </div>
+          
+          <div class="inner cover">
+            
+            <!-- <button class="btn btn-lg w3-hover-dark-gray" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><img src="http://xcapesw.co.kr/img/logo.png"alt=""></button> -->
+            <p class="lead">
+              <a href="http://xcapehint.herokuapp.com/page/XCAPE_SUWON.html" class="btn btn-lg w3-hover-dark-gray"><img src="http://xcapesw.co.kr/img/logo.png" alt=""></a>
+            </p>
+            <p class="lead">
+              <a href="http://localhost:3000/page/xcape_geondae/xcape_geondae.html" class="btn btn-lg w3-hover-dark-gray"><img src="http://xcape.co.kr/img/logo.png" alt=""></a>
+            </p>
+          </div>
+          
         </div>
+        
       </div>
+
     </div>
-    <div id="roomTitleWrapper">
-      <h5 class="roomTitle">501동 사람들
-        <div class="timeContents" id="clock">
-            <button type="button" class="btn btn-default" id="output1">70:00</button>
-        </div>
-        <form class="timeContents" id="timestate1">
-          <input type="button" id="startStateButton1" class="btn btn-default btn-warning" value="시작 전">
-        </form>
-        <!-- <form class="timeContents" id="activeStart1">
-          <input type="submit" id="activeStartButton1" class="btn btn-default btn-warning" value="강제 시작">
-        </form> -->
-      </h5>
-
-      <h5 class="roomTitle">기묘한 날개짓
-        <div class="timeContents" id="clock">
-            <button type="button" class="btn btn-default" id="output2">60:00</button>
-        </div>
-        <form class="timeContents" id="timestate2">
-          <input type="button" id="startStateButton2" class="btn btn-default btn-warning" value="시작 전">
-        </form>
-        <!-- <form class="timeContents" id="activeStart2">
-          <input type="submit" id="activeStartButton2" class="btn btn-default btn-warning" value="강제 시작">
-        </form> -->
-      </h5>
-
-      <h5 class="roomTitle">숨바꼭질
-        <div class="timeContents" id="clock">
-            <button type="button" class="btn btn-default" id="output3">60:00</button>
-        </div>
-        <form class="timeContents" id="timestate3">
-          <input type="button" id="startStateButton3" class="btn btn-default btn-warning" value="시작 전">
-        </form>
-        <!-- <form class="timeContents" id="activeStart3">
-          <input type="submit" id="activeStartButton3" class="btn btn-default btn-warning" value="강제 시작">
-        </form> -->
-      </h5>
-
-      <h5 class="roomTitle">제물의 밤
-        <div class="timeContents" id="clock">
-            <button type="button" class="btn btn-default" id="output4">60:00</button>
-        </div>
-        <form class="timeContents" id="timestate4">
-          <input type="button" id="startStateButton4" class="btn btn-default btn-warning" value="시작 전">
-        </form>
-        <!-- <form class="timeContents" id="activeStart4">
-          <input type="submit" id="activeStartButton4" class="btn btn-default btn-warning" value="강제 시작">
-        </form> -->
-      </h5>
-
-      <h5 class="roomTitle">그 남자 그 여자
-        <div class="timeContents" id="clock">
-            <button type="button" class="btn btn-default" id="output5">60:00</button>
-        </div>
-        <form class="timeContents" id="timestate5">
-          <input type="button" id="startStateButton5" class="btn btn-default btn-warning" value="시작 전">
-        </form>
-        <!-- <form class="timeContents" id="activeStart5">
-          <input type="submit" id="activeStartButton5" class="btn btn-default btn-warning" value="강제 시작">
-        </form> -->
-      </h5>
-    </div>
-    <div id="roomTitleWrapper">
-      <textarea id="chatLog1" class="chat_log" readonly></textarea>
-      <textarea id="chatLog2" class="chat_log" readonly></textarea>
-      <textarea id="chatLog3" class="chat_log" readonly></textarea>
-      <textarea id="chatLog4" class="chat_log" readonly></textarea>
-      <textarea id="chatLog5" class="chat_log" readonly></textarea>
-    </div>
-
-    <!-- 501동 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat1">
-          <input id="name1" class="name" type="text" value="room1" readonly>
-          <input id="message1" class="message" type="text" autocomplete="off" placeholder="[501동 사람들] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room1">
-      </div>
-    </div>
-
-    <!-- 기묘한 날개짓 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat2">
-          <input id="name2" class="name" type="text" value="room2" readonly>
-          <input id="message2" class="message" type="text" autocomplete="off" placeholder="[기묘한 날개짓] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room2">
-      </div>
-    </div>
-
-    <!-- 숨바꼭질 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat3">
-          <input id="name3" class="name" type="text" value="room3" readonly>
-          <input id="message3" class="message" type="text" autocomplete="off" placeholder="[숨바꼭질] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room3">
-      </div>
-    </div>
-
-    <!-- 제물의 밤 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat4">
-          <input id="name4" class="name" type="text" value="room4" readonly>
-          <input id="message4" class="message" type="text" autocomplete="off" placeholder="[제물의 밤] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room4">
-      </div>
-    </div>
-
-    <!-- 그 남자 그 여자 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat5">
-          <input id="name5" class="name" type="text" value="room5" readonly>
-          <input id="message5" class="message" type="text" autocomplete="off" placeholder="[그 남자 그 여자] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room5">
-      </div>
-    </div>
-
-    <!-- 현재 시간 -->
-    <div class="roomWrapper">
-      <div class="currentTimeContent">
-          <p id="currentTimer"></p>
-      </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/hint.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="/js/client.js"></script>
+  <script type="text/javascript" src="/js/hint.js"></script>
+  <!-- <script type="text/javascript" src="/js/bootstrap.js"></script> -->
 </html>

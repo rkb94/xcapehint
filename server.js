@@ -12,60 +12,73 @@ app.get('/',function(req, res){
 
 io.on('connection', function(socket){
   console.log('user connected: ', socket.id);
+
+  socket.on('join send', function(group){
+    socket.join(group);
+    console.log(socket.adapter.rooms);
+    // io.emit('join receive', data);
+  });
+
   socket.on('disconnect', function(){
     console.log('user disconnected: ', socket.id);
   });
 
-  socket.on('send message', function(name,text){
+  socket.on('send message', function(name,text,group){
     var msg = name + ' : ' + text;
     console.log(msg);
-    io.emit('receive message', {roomNum : name, contents : text});
+    io.sockets.in(group).emit('receive message', {roomNum : name, contents : text, group : group});
   });
 
-  socket.on('restart clock', function(data){
+  socket.on('restart clock', function(data,group){
     console.log(data);
-    io.emit('restart clock', data);
+    io.sockets.in(group).emit('restart clock', data,group);
   });
 
-  socket.on('paused clock', function(data){
+  socket.on('paused clock', function(data,group){
     console.log(data);
-    io.emit('paused clock', data);
+    io.sockets.in(group).emit('paused clock', data,group);
   });
 
-  socket.on('reset clock', function(data1, data2){
+  socket.on('reset clock', function(data1, data2, group){
     var data = data1 + ' : ' + data2;
     console.log(data);
-    io.emit('reset clock', {roomNum : data1, output : data2});
+    io.sockets.in(group).emit('reset clock', {roomNum : data1, output : data2,group : group});
   });
 
-  socket.on('start room', function(data1, data2){
+  socket.on('start room', function(data1, data2, group){
     var data = data1 + ' : ' + data2;
     console.log(data);
-    io.emit('start room', {roomNum : data1, time : data2});
+    io.sockets.in(group).emit('start room', {roomNum : data1, time : data2,group : group});
   });
 
-  socket.on('active room', function(data){
+  socket.on('active room', function(data, group){
     console.log(data);
-    io.emit('active room', data);
+    io.sockets.in(group).emit('active room', data,group);
   });
 
-  socket.on('already started', function(data){
+  socket.on('already started', function(data, group){
     console.log(data);
-    io.emit('already started', data);
+    io.sockets.in(group).emit('already started', data,group);
   });
 
-  socket.on('if started', function(){
+  socket.on('if started', function(group){
+    // console.log();
+    io.sockets.in(group).emit('if started',group);
+  });
+
+  socket.on('before started', function(data,group){
+    console.log(data);
+    io.sockets.in(group).emit('before started', data,group);
+  });
+
+  socket.on('send modal', function(data,group){
+    console.log(data);
+    io.sockets.in(group).emit('receive modal', data,group);
+  });
+
+  socket.on('check alert', function(group){
     // console.log(data);
-    io.emit('if started');
-  });
-  socket.on('before started', function(data){
-    console.log(data);
-    io.emit('before started', data);
-  });
-
-  socket.on('send modal', function(data){
-    console.log(data);
-    io.emit('receive modal', data);
+    io.sockets.in(group).emit('check alert', group);
   });
 });
 var port = process.env.PORT || 3000;

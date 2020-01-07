@@ -1,7 +1,7 @@
 var socket = io();
 var inter1;
 var started = false;
-const group = "suwon";
+const group = "geondae";
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
@@ -50,9 +50,7 @@ socket.on('restart clock', function(data){
         output1Sec *= 1;
         var output1Mil = document.getElementById('output').innerHTML.slice(6);
         output1Mil *= 1;
-        console.log(output1Min);
-        console.log(output1Sec);
-        console.log(output1Mil);
+        console.log(output1Min + ' : ' + output1Sec + ' : ' + output1Mil);
         var output1Dur = (output1Min * 60) + output1Sec;
         startTimer(output1Dur, document.querySelector('#output'), output1Mil);
     }
