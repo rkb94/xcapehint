@@ -28,3 +28,9 @@ socket.on('receive modal', function(msg){
     $('#message').val("");
     $("#message").focus();
 })
+
+socket.on('check alert', function(){
+    var startDate = new Date();
+    $('#chatLog').append('<div class="checkMessageContents" >---------- ' + startDate.hhmmss() +' : 크루가 위 메시지 내용을 확인했습니다. ----------\n</div>');
+    $('#chatLog').scrollTop($('#chatLog')[0].scrollHeight);
+})

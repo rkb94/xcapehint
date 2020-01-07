@@ -31,3 +31,16 @@
     background-color: #242424;
     border-radius: 10px 10px 10px 10px;
 }
+
+.checkMessageContents{
+    word-break: break-all;
+    margin: 2%;
+    padding: 2%;
+    color: antiquewhite;
+    padding-left: 4%;
+    font-size: 10px;
+    text-align: center;
+    /* border: 1px solid #b18484; */
+    /* background-color: #dba6a6; */
+    border-radius: 10px 10px 10px 10px;
+}

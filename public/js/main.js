@@ -470,3 +470,9 @@ function displayBlockModal(message){
     document.getElementById('modalContent').innerHTML += '<div class="modalInnerContents">\n\n<h5>[' + startDate.hhmmss() + '] : ' + message + '</h5></div>\n';
     document.getElementById('modal').style.display = 'block';
 };
+
+function checkAlert(){
+    document.getElementById('modal').style.display='none';
+    document.getElementById('modalContent').innerHTML = '';
+    socket.emit('check alert');
+}

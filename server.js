@@ -67,6 +67,11 @@ io.on('connection', function(socket){
     console.log(data);
     io.emit('receive modal', data);
   });
+
+  socket.on('check alert', function(){
+    // console.log(data);
+    io.emit('check alert');
+  });
 });
 var port = process.env.PORT || 3000;
 http.listen(port, function(){
