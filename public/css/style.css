@@ -96,6 +96,16 @@
   display: inline-block;
 }
 
+.clockWrapper {
+  color: black;
+  background-color: #333333;
+  margin-top: 15px;
+  padding: 10px;
+  border: solid 1px;
+  width: 100%;
+  display: inline-block;
+}
+
 .contents {
   padding-left: 10px;
 }
@@ -125,6 +135,15 @@
   padding-top: 77px;
   width: 100%;
   height: 204px;
+  overflow: auto;
+  border: solid 1px;
+  text-align: center;
+}
+
+.currentTimeContentInGeondae{
+  padding: 5px;
+  padding-top: 15px;
+  width: 100%;
   overflow: auto;
   border: solid 1px;
   text-align: center;

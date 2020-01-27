@@ -10,8 +10,8 @@ var audio = new Audio('/mp3/bell.mp3');
 var silenceAudio = new Audio('/mp3/silence.mp3');
 var audioFlag = true;
 const group = "geondae";
-// nowTime();
-// setInterval(nowTime, 1000);
+nowTime();
+setInterval(nowTime, 1000);
 
 $(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
     socket.emit('join send', group);
@@ -351,13 +351,13 @@ function changeRoomName(roomNum){
     }
 }
 
-// function nowTime(){
-//     var d = new Date();
-//     var currentDate = d.getFullYear() + "년 " + ( d.getMonth() + 1 ) + "월 " + d.getDate() + "일 ";
-//     var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
-//     var result = document.getElementById("currentTimer");
-//     result.innerHTML = currentDate + " " + currentTime;
-// }
+function nowTime(){
+    var d = new Date();
+    var currentDate = d.getFullYear() + "년 " + ( d.getMonth() + 1 ) + "월 " + d.getDate() + "일 ";
+    var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
+    var result = document.getElementById("currentTimer");
+    result.innerHTML = currentDate + " " + currentTime;
+}
 
 function startTimer(duration, display) { // 타이머...인데 일시정지 재시작을 어떻게 짤까?
     var start = Date.now(),
