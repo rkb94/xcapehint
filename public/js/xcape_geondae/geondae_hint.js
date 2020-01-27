@@ -601,98 +601,98 @@ window.hint = [
 
     {
         theme: 'room4',
-        hintNumber: '11',
+        hintNumber: '9',
         hintContent: 'THE DREAM 뚜껑에 있는 날짜들과 baby, kid, adult, me 의 방향과 달력을 대조하여 토글스위치를 움직여주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '9',
+        hintNumber: '10',
         hintContent: '토글스위치의 정답은 윗줄 [우하좌하우], 아랫줄 [좌좌상] 입니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '10',
+        hintNumber: '11',
         hintContent: '다음 방에 있는 서랍 중 두 번째 서랍을 열어 토글 스위치를 움직여주세요. 토글 스위치를 움직이면 천장 LED불빛이 작동합니다. 토글 스위치 마다 고대문자가 쓰여 있고 벽면에도 고대문자가 3줄 있습니다. 천장 LED 불빛을 모두 꺼주신 상태에서 벽면에 있는 고대문자 첫째줄부터 토글 스위치를 켜주시면 천장 LED 불빛이 숫자 모양으로 보이게 됩니다. 숫자 3개를 찾아 세 번째 서랍에 입력해주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '11',
+        hintNumber: '12',
         hintContent: '세 번째 서랍의 정답은 [572] 입니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '12',
+        hintNumber: '13',
         hintContent: '세 번째 서랍에서 나온 아크릴 판을 화살표 방향대로 서랍 맨 위에 꽂아주세요. 틈 사이에서 영상을 보면 모니터와 아크릴이 겹쳐 알파벳이 보입니다. 찾은 알파벳울 상자에 입력해주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '13',
+        hintNumber: '14',
         hintContent: '상자의 정답은 [HATES] 입니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '14',
+        hintNumber: '15',
         hintContent: '열쇠로 막대를 획득하고 새장 안에 있는 단서를 꺼내주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '15',
+        hintNumber: '16',
         hintContent: '새장 안에서 나온 단서에 있는 빨간선과 벽면에 있는 빨간선을 합치면 알파벳이 4개가 나옵니다. 그리고 상자 안에서 나온 몽키스패너로 나사를 풀고 나오는 영어문구를 보고 순서를 찾아 철장을 열어주세요.'
     },
 
 
     {
         theme: 'room4',
-        hintNumber: '16',
+        hintNumber: '17',
         hintContent: '철장의 정답은 [SINK] 입니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '17',
+        hintNumber: '18',
         hintContent: '전화부스에 있는 얼굴 수를 맞은편 벽면의 선이 가르키는 순서로 전화부스 자물쇠에 입력해주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '18',
+        hintNumber: '19',
         hintContent: '전화부스 자물쇠의 정답은 [1436] 입니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '19',
+        hintNumber: '20',
         hintContent: '전화부스 벽에 적혀 있는 일기를 보고 [baby, kid, adult] 순으로 인격이 태어난 날짜를 찾아주세요. 월과 일을 반대로 생각하여 수화기를 들고 전화기에 입력하고 잠시 기다려주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '20',
+        hintNumber: '21',
         hintContent: '전화기의 정답은 [3567120] 입니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '21',
+        hintNumber: '22',
         hintContent: '총으로 과녁들을 모두 쓰려 뜨려주세요.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '22',
+        hintNumber: '23',
         hintContent: '거울에 있는 얼굴들은 지나온 방들로 돌아가 보면 곳곳에 있습니다. 그곳을 UV랜턴을 비춰주시면 숨겨진 이름이 나옵니다. 그 이름들을 거울에 있는 판에서 조합하여 진짜 이름을 찾아주세요. 참고로 거울 방 영상에도 한명의 이름이 나옵니다.'
     },
 
     {
         theme: 'room4',
-        hintNumber: '23',
+        hintNumber: '24',
         hintContent: '열쇠로 함을 열고 빨간색 버튼을 화살표모양대로 돌려주세요.'
     },
 
