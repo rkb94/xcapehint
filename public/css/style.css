@@ -152,6 +152,7 @@
 #currentTimer{
   color: antiquewhite;
   font-size: 25px;
+  display: inline-block;
 }
 
 .modalInnerContents{
@@ -162,4 +163,15 @@
   border: 1px solid #e4c9d3;
   background-color: #faebf1;
   border-radius: 10px 10px 10px 10px;
+}
+
+#refreshButton {
+  width: 50px;
+  background-color: #333333;
+}
+
+#buttonWraper {
+  display: inline-block;
+  background-color: #333333;
+  border: none;
 }

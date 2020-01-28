@@ -274,7 +274,7 @@ socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르
     if(roomStarted[roomNum] == false){
         roomStarted[roomNum] = true;
         var time = data.time;
-        console.log('room' + roomNum + ' start!!!');
+        console.log(changeRoomName(roomNum) + ' start!!!');
         var display = document.querySelector('#output'+roomNum);
         var startStateButton = document.getElementById('startStateButton'+roomNum);
         startStateButton.type = 'submit';
@@ -301,10 +301,34 @@ socket.on('already started', function(data){ // 이미 진행중일 경우 모�
     // setTimeout(displayNoneModal, 5000);
 });
 
-socket.on('before started', function(data, group){
-    var roomNum = data;
-    console.log(changeRoomName(roomNum) + ' 테마는 이미 진행중입니다.');
+socket.on('before started', function(data){
+    var roomNum = data.roomNum.slice(4, 5);
+    var remainMin = data.min;
+    var remainSec = data.sec;
+    if(roomStarted[roomNum] == false){
+        console.log(changeRoomName('room' + roomNum) + ' 테마는 이미 진행중입니다.');
+        reconnectTimer(roomNum, remainMin, remainSec);
+    } else {
+        console.log(changeRoomName('room' + roomNum) + ' 테마는 다른 곳에서 이미 진행중입니다.');
+    }
 })
+
+function reconnectTimer(roomNum, remainMin, remainSec){
+    roomStarted[roomNum] = true;
+    var display = document.querySelector('#output'+roomNum);
+    var startStateButton = document.getElementById('startStateButton'+roomNum);
+    startStateButton.type = 'submit';
+    startStateButton.className = 'btn btn-default btn-danger';
+    startStateButton.value = '일시정지';
+    remainMin *= 1;
+    remainSec *= 1;
+    var output1Dur = (remainMin * 60) + remainSec - 1;
+    startTimer(output1Dur, display)
+}
+
+function tryReconnect(){
+    socket.emit('if started', group);
+}
 
 Date.prototype.hhmmss = function() { // 날짜 형식 Format
     var hh = this.getHours().toString();

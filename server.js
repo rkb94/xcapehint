@@ -62,13 +62,13 @@ io.on('connection', function(socket){
   });
 
   socket.on('if started', function(group){
-    // console.log();
+    console.log("if started!!!");
     io.sockets.in(group).emit('if started',group);
   });
 
-  socket.on('before started', function(data,group){
-    console.log(data);
-    io.sockets.in(group).emit('before started', data,group);
+  socket.on('before started', function(data1, data2, data3, group){
+    console.log(data1);
+    io.sockets.in(group).emit('before started', {roomNum : data1, min : data2, sec : data3, group : group});
   });
 
   socket.on('send modal', function(data,group){
