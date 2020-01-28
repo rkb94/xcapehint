@@ -79,7 +79,9 @@ socket.on('active room', function(data){
 
 socket.on('if started', function(group){
     if(started == true){
-        socket.emit('before started', 'room3', group);
+        var min = document.getElementById('output').innerHTML.slice(0, 2);
+        var sec = document.getElementById('output').innerHTML.slice(3, 5);
+        socket.emit('before started', 'room3', min, sec, group);
     }
 });
 
