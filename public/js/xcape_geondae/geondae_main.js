@@ -277,6 +277,7 @@ socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르
         console.log(changeRoomName(roomNum) + ' start!!!');
         var display = document.querySelector('#output'+roomNum);
         var startStateButton = document.getElementById('startStateButton'+roomNum);
+        startStateButton.closest(".roomTitleWrapper").style.border = "solid 2px lightgreen";
         startStateButton.type = 'submit';
         startStateButton.className = 'btn btn-default btn-danger';
         startStateButton.value = '일시정지';
@@ -473,6 +474,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '70:00';
             $('#chatLog1').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
@@ -482,6 +484,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '60:00';
             $('#chatLog2').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
@@ -491,6 +494,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '60:00';
             $('#chatLog3').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
@@ -500,6 +504,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '60:00';
             $('#chatLog4').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
@@ -509,6 +514,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '60:00';
             $('#chatLog5').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
@@ -518,6 +524,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '60:00';
             $('#chatLog6').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';

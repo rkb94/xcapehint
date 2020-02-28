@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <head>
     <meta charset="utf-8">
-    <title>XCAPE 수원</title>
+    <title>XCAPE 강남</title>
   </head>
   <body id="background">
     <!-- Modal Content -->
@@ -19,8 +19,8 @@
     </div>
     <div id="header">
 
-      <div class="roomTitleWrapper">
-        <h5 class="roomTitle">501동 사람들</h5>
+      <div class="gangnamRoomTitleWrapper">
+        <h5 class="roomTitle">기억의 틈</h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
               <button type="button" class="btn btn-default" id="output1">70:00</button>
@@ -31,8 +31,8 @@
         </div>
       </div>
 
-      <div class="roomTitleWrapper">
-        <h5 class="roomTitle">기묘한 날개짓</h5>
+      <div class="gangnamRoomTitleWrapper">
+        <h5 class="roomTitle">위험한 초대</h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
               <button type="button" class="btn btn-default" id="output2">60:00</button>
@@ -43,8 +43,8 @@
         </div>
       </div>
 
-      <div class="roomTitleWrapper">
-        <h5 class="roomTitle">숨바꼭질</h5>
+      <div class="gangnamRoomTitleWrapper">
+        <h5 class="roomTitle"></h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
               <button type="button" class="btn btn-default" id="output3">60:00</button>
@@ -55,8 +55,8 @@
         </div>
       </div>
 
-      <div class="roomTitleWrapper">
-        <h5 class="roomTitle">제물의 밤</h5>
+      <div class="gangnamRoomTitleWrapper">
+        <h5 class="roomTitle"></h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
               <button type="button" class="btn btn-default" id="output4">60:00</button>
@@ -66,29 +66,16 @@
           </form>
         </div>
       </div>
-
-      <div class="roomTitleWrapper">
-        <h5 class="roomTitle">그 남자 그 여자</h5>
-        <div class="buttonWrapper">
-          <div class="timeContents" id="clock">
-              <button type="button" class="btn btn-default" id="output5">60:00</button>
-          </div>
-          <form class="timeContents" id="timestate5">
-            <input type="button" id="startStateButton5" class="btn btn-default btn-warning" value="시작 전">
-          </form>
-        </div>
-      </div>
-    </div>
-    
-    <div id="roomTitleWrapper">
-      <textarea id="chatLog1" class="chat_log" readonly></textarea>
-      <textarea id="chatLog2" class="chat_log" readonly></textarea>
-      <textarea id="chatLog3" class="chat_log" readonly></textarea>
-      <textarea id="chatLog4" class="chat_log" readonly></textarea>
-      <textarea id="chatLog5" class="chat_log" readonly></textarea>
     </div>
 
-    <!-- 501동 테마 -->
+    <div id="gangnamRoomTitleWrapper">
+      <textarea id="chatLog1" class="gangnam_chat_log" readonly></textarea>
+      <textarea id="chatLog2" class="gangnam_chat_log" readonly></textarea>
+      <textarea id="chatLog3" class="gangnam_chat_log" readonly></textarea>
+      <textarea id="chatLog4" class="gangnam_chat_log" readonly></textarea>
+    </div>
+
+    <!-- 기억의 틈 -->
     <div class="roomWrapper">
       <div class="contents">
         <form class="roomContents" id="chat1">
@@ -101,7 +88,7 @@
       </div>
     </div>
 
-    <!-- 기묘한 날개짓 테마 -->
+    <!-- 위험한 초대 -->
     <div class="roomWrapper">
       <div class="contents">
         <form class="roomContents" id="chat2">
@@ -114,7 +101,7 @@
       </div>
     </div>
 
-    <!-- 숨바꼭질 테마 -->
+    <!--  -->
     <div class="roomWrapper">
       <div class="contents">
         <form class="roomContents" id="chat3">
@@ -127,37 +114,22 @@
       </div>
     </div>
 
-    <!-- 제물의 밤 테마 -->
     <div class="roomWrapper">
       <div class="contents">
-        <form class="roomContents" id="chat4">
-          <input id="name4" class="name" type="text" value="room4" readonly>
-          <input id="message4" class="message" type="text" autocomplete="off" placeholder="[제물의 밤] 힌트를 입력해주세요">
+        <form class="roomContents" id="chat3">
+          <input id="name3" class="name" type="text" value="room3" readonly>
+          <input id="message3" class="message" type="text" autocomplete="off" placeholder="[숨바꼭질] 힌트를 입력해주세요">
           <input type="submit" class="chat btn btn-info" value="입력"/>
         </form>
       </div>
-      <div class="hintBox room4">
+      <div class="hintBox room3">
       </div>
     </div>
 
-    <!-- 그 남자 그 여자 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat5">
-          <input id="name5" class="name" type="text" value="room5" readonly>
-          <input id="message5" class="message" type="text" autocomplete="off" placeholder="[그 남자 그 여자] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room5">
-      </div>
-    </div>
-
-    <!-- 현재 시간 -->
-    <div class="roomWrapper">
-      <div class="currentTimeContent">
+    <div class="clockWrapper">
+      <div class="currentTimeContentInGeondae">
           <p id="currentTimer"></p>
-          <button id="buttonWraper" onclick="tryReconnect()"><img id="refreshButton" src="../image/refresh.png" alt=""></button>
+          <button id="buttonWraper" onclick="tryReconnect()"><img id="refreshButton" src="../../image/refresh.png" alt=""></button>
       </div>
     </div>
 
@@ -165,8 +137,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/hint.js"></script>
+    <script type="text/javascript" src="/js/xcape_geondae/geondae_main.js"></script>
+    <script type="text/javascript" src="/js/xcape_geondae/geondae_hint.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </body>
 </html>

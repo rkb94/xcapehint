@@ -47,17 +47,7 @@
   }
 }
 
-
 .chat_log{
-  width: 20%;
-  float: left;
-  height: 200px;
-  background-color: #333333;
-  color: antiquewhite;
-  border-color: black;
-}
-
-.gangnam_chat_log{
   width: 25%;
   float: left;
   height: 200px;
@@ -66,34 +56,19 @@
   border-color: black;
 }
 
-#header{
+#roomTitleWrapper{
   display: flex;
 }
 
-.roomTitleWrapper {
-  width: 20%;
-  border: solid black 1px;
-}
-
-.gangnamRoomTitleWrapper {
-  width: 25%;
-  border: solid black 1px;
-}
-
 .roomTitle{
+  width: 25%;
   float: left;
   color: antiquewhite;
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
   margin: 0px;
-  padding: 10px;
-  width: 100%;
-}
-
-.buttonWrapper {
-  width: 100%;
-  text-align: center;
-  padding: 5%;
+  padding: 20px;
+  border: solid #333333;
 }
 
 .message{ width: 90%; }

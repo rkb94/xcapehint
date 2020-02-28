@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XCAPE 건대</title>
+        <style>
+        </style>
+    </head>
+    <body id="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="chatLog" class="chat_log" readonly></div>
+                </div>
+                <form id="chat">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <input id="message" class="message" type="text" autocomplete="off" placeholder="메시지를 입력해주세요">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <input id="chatButton" type="submit" class="chat btn btn-info" value="보내기"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/js/xcape_geondae/geondae_chat.js"></script>
+</html>
