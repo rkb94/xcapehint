@@ -17,9 +17,9 @@
         </div>
       </div>
     </div>
-    <div id="header">
+    <div class="gangnam" id="header">
 
-      <div class="gangnamRoomTitleWrapper">
+      <div class="roomTitleWrapper">
         <h5 class="roomTitle">기억의 틈</h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
@@ -31,11 +31,11 @@
         </div>
       </div>
 
-      <div class="gangnamRoomTitleWrapper">
+      <div class="roomTitleWrapper">
         <h5 class="roomTitle">위험한 초대</h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
-              <button type="button" class="btn btn-default" id="output2">60:00</button>
+              <button type="button" class="btn btn-default" id="output2">70:00</button>
           </div>
           <form class="timeContents" id="timestate2">
             <input type="button" id="startStateButton2" class="btn btn-default btn-warning" value="시작 전">
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="gangnamRoomTitleWrapper">
+      <!-- <div class="roomTitleWrapper">
         <h5 class="roomTitle"></h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <div class="gangnamRoomTitleWrapper">
+      <div class="roomTitleWrapper">
         <h5 class="roomTitle"></h5>
         <div class="buttonWrapper">
           <div class="timeContents" id="clock">
@@ -65,22 +65,22 @@
             <input type="button" id="startStateButton4" class="btn btn-default btn-warning" value="시작 전">
           </form>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div id="gangnamRoomTitleWrapper">
       <textarea id="chatLog1" class="gangnam_chat_log" readonly></textarea>
       <textarea id="chatLog2" class="gangnam_chat_log" readonly></textarea>
-      <textarea id="chatLog3" class="gangnam_chat_log" readonly></textarea>
-      <textarea id="chatLog4" class="gangnam_chat_log" readonly></textarea>
+      <!-- <textarea id="chatLog3" class="gangnam_chat_log" readonly></textarea>
+      <textarea id="chatLog4" class="gangnam_chat_log" readonly></textarea> -->
     </div>
 
     <!-- 기억의 틈 -->
-    <div class="roomWrapper">
+    <div class="gangnam roomWrapper">
       <div class="contents">
         <form class="roomContents" id="chat1">
           <input id="name1" class="name" type="text" value="room1" readonly>
-          <input id="message1" class="message" type="text" autocomplete="off" placeholder="[501동 사람들] 힌트를 입력해주세요">
+          <input id="message1" class="message" type="text" autocomplete="off" placeholder="[기억의 틈] 힌트를 입력해주세요">
           <input type="submit" class="chat btn btn-info" value="입력"/>
         </form>
       </div>
@@ -89,11 +89,11 @@
     </div>
 
     <!-- 위험한 초대 -->
-    <div class="roomWrapper">
+    <div class="gangnam roomWrapper">
       <div class="contents">
         <form class="roomContents" id="chat2">
           <input id="name2" class="name" type="text" value="room2" readonly>
-          <input id="message2" class="message" type="text" autocomplete="off" placeholder="[기묘한 날개짓] 힌트를 입력해주세요">
+          <input id="message2" class="message" type="text" autocomplete="off" placeholder="[위험한 초대] 힌트를 입력해주세요">
           <input type="submit" class="chat btn btn-info" value="입력"/>
         </form>
       </div>
@@ -101,12 +101,11 @@
       </div>
     </div>
 
-    <!--  -->
-    <div class="roomWrapper">
+    <!-- <div class="roomWrapper">
       <div class="contents">
         <form class="roomContents" id="chat3">
           <input id="name3" class="name" type="text" value="room3" readonly>
-          <input id="message3" class="message" type="text" autocomplete="off" placeholder="[숨바꼭질] 힌트를 입력해주세요">
+          <input id="message3" class="message" type="text" autocomplete="off" placeholder="">
           <input type="submit" class="chat btn btn-info" value="입력"/>
         </form>
       </div>
@@ -118,13 +117,13 @@
       <div class="contents">
         <form class="roomContents" id="chat3">
           <input id="name3" class="name" type="text" value="room3" readonly>
-          <input id="message3" class="message" type="text" autocomplete="off" placeholder="[숨바꼭질] 힌트를 입력해주세요">
+          <input id="message3" class="message" type="text" autocomplete="off" placeholder="">
           <input type="submit" class="chat btn btn-info" value="입력"/>
         </form>
       </div>
       <div class="hintBox room3">
       </div>
-    </div>
+    </div> -->
 
     <div class="clockWrapper">
       <div class="currentTimeContentInGeondae">
@@ -137,8 +136,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="/js/xcape_geondae/geondae_main.js"></script>
-    <script type="text/javascript" src="/js/xcape_geondae/geondae_hint.js"></script>
+    <script type="text/javascript" src="/js/xcape_gangnam/gangnam_main.js"></script>
+    <script type="text/javascript" src="/js/xcape_gangnam/gangnam_hint.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </body>
 </html>

@@ -318,6 +318,7 @@ function reconnectTimer(roomNum, remainMin, remainSec){
     roomStarted[roomNum] = true;
     var display = document.querySelector('#output'+roomNum);
     var startStateButton = document.getElementById('startStateButton'+roomNum);
+    startStateButton.closest(".roomTitleWrapper").style.border = "solid 2px lightgreen";
     startStateButton.type = 'submit';
     startStateButton.className = 'btn btn-default btn-danger';
     startStateButton.value = '일시정지';
