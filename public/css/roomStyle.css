@@ -1,18 +1,28 @@
 #background {
     /* background-color: black; */
     background-image: url(/image/bg1.gif);
+    background-color: black;
 }
 
 #background2 {
     /* background-color: black; */
     background-image: url(/image/bg2.gif);
     background-size: 100%;
+    background-color: black;
+}
+
+#background3 {
+    background-image: url(/image/bg3.gif);
+    background-size: 100%;
+    background-color: black;
+    background-repeat: no-repeat;
 }
 
 #background5 {
     /* background-color: black; */
-    background-image: url(/image/bg5.gif);
+    background-image: url(/image/bg4.gif);
     background-size: 100%;
+    background-color: black;
 }
 
 #chatLog {
