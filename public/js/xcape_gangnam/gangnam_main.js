@@ -474,7 +474,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output2':
             clearInterval(inter2);
-            document.getElementById(data.output).innerHTML = '60:00';
+            document.getElementById(data.output).innerHTML = '70:00';
             $('#chatLog2').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
@@ -484,7 +484,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output3':
             clearInterval(inter3);
-            document.getElementById(data.output).innerHTML = '60:00';
+            document.getElementById(data.output).innerHTML = '70:00';
             $('#chatLog3').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
@@ -494,28 +494,8 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output4':
             clearInterval(inter4);
-            document.getElementById(data.output).innerHTML = '60:00';
+            document.getElementById(data.output).innerHTML = '70:00';
             $('#chatLog4').val(''); // 힌트 내용 refresh
-            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
-            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
-            startStateButton.type = 'button';
-            startStateButton.className = 'btn btn-default btn-warning';
-            startStateButton.value = '시작 전';
-            break;
-        case 'output5':
-            clearInterval(inter5);
-            document.getElementById(data.output).innerHTML = '60:00';
-            $('#chatLog5').val(''); // 힌트 내용 refresh
-            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
-            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
-            startStateButton.type = 'button';
-            startStateButton.className = 'btn btn-default btn-warning';
-            startStateButton.value = '시작 전';
-            break;
-        case 'output6':
-            clearInterval(inter6);
-            document.getElementById(data.output).innerHTML = '60:00';
-            $('#chatLog6').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
