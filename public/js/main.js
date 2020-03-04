@@ -13,12 +13,12 @@ const group = "suwon";
 nowTime();
 setInterval(nowTime, 1000);
 
-$(document).ready(function () { // 페이지 시작하면 힌트들을 가져오자
+document.addEventListener("DOMContentLoaded", function () { 
     socket.emit('join send', group);
     getHintContent();
     console.log('Get hint contents')
     socket.emit('if started', group);
-});
+})
 
 window.onbeforeunload = function() { // 새로고침 방지
     return "Dude, are you sure you want to leave? Think of the kittens!";
@@ -124,7 +124,7 @@ $('#timestate3').on('submit', function(e){ // 3번 일시정지
         var output3Sec = document.getElementById('output3').innerHTML.slice(3);
         output3Sec *= 1;
         var output3Dur = (output3Min * 60) + output3Sec;
-        socket.emit('restart clock', 'room3');
+        socket.emit('restart clock', 'room3', group);
         startTimer(output3Dur, document.querySelector('#output3'));
         startStateButton.className = 'btn btn-default btn-danger';
         startStateButton.value = '일시정지';
@@ -269,7 +269,7 @@ socket.on('already started', function(data){ // 이미 진행중일 경우 모�
 });
 
 socket.on('before started', function(data){
-    var roomNum = data.roomNum.slice(4, 5);
+    var roomNum = data.roomNum;
     var remainMin = data.min;
     var remainSec = data.sec;
     if(roomStarted[roomNum] == false){
@@ -430,14 +430,21 @@ function pausedTimer(display){ // inter + number의 타이머를 일시 정지!!
     clearInterval(display);
 }
 
+function makeOutputName(roomNum) {
+    return 'output' + roomNum;
+}
+
 socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
-    console.log("room" + data.roomNum + " reset timer!! in " + data.output);
+    console.log(changeRoomName('room' + data.roomNum) + " reset timer!! in " + data.output);
     roomStarted[data.roomNum] = false;
-    switch(data.output) {
+    console.log(makeOutputName(data.roomNum));
+    const limitTime = data.roomNum == 1 ? '70:00' : '60:00';
+    
+    switch(makeOutputName(data.roomNum)) {
         case 'output1':
             clearInterval(inter1);
-            document.getElementById(data.output).innerHTML = '70:00';
-            $('#chatLog1').val(''); // 힌트 내용 refresh
+            document.getElementById(makeOutputName(data.roomNum)).innerHTML = limitTime;
+            document.querySelector("#chatLog" + data.roomNum).value = ''; // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
@@ -447,8 +454,8 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output2':
             clearInterval(inter2);
-            document.getElementById(data.output).innerHTML = '60:00';
-            $('#chatLog2').val(''); // 힌트 내용 refresh
+            document.getElementById(makeOutputName(data.roomNum)).innerHTML = limitTime;
+            document.querySelector("#chatLog" + data.roomNum).value = ''; // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
@@ -457,8 +464,8 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output3':
             clearInterval(inter3);
-            document.getElementById(data.output).innerHTML = '60:00';
-            $('#chatLog3').val(''); // 힌트 내용 refresh
+            document.getElementById(makeOutputName(data.roomNum)).innerHTML = limitTime;
+            document.querySelector("#chatLog" + data.roomNum).value = ''; // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
@@ -467,8 +474,8 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output4':
             clearInterval(inter4);
-            document.getElementById(data.output).innerHTML = '60:00';
-            $('#chatLog4').val(''); // 힌트 내용 refresh
+            document.getElementById(makeOutputName(data.roomNum)).innerHTML = limitTime;
+            document.querySelector("#chatLog" + data.roomNum).value = ''; // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
@@ -477,8 +484,8 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             break;
         case 'output5':
             clearInterval(inter5);
-            document.getElementById(data.output).innerHTML = '60:00';
-            $('#chatLog5').val(''); // 힌트 내용 refresh
+            document.getElementById(makeOutputName(data.roomNum)).innerHTML = limitTime;
+            document.querySelector("#chatLog" + data.roomNum).value = ''; // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
             startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';

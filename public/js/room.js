@@ -1,16 +1,17 @@
 var socket = io();
-var inter1;
+var intervalTimer;
 var started = false;
 var checkMain = false;
 var checkFunction = null;
-const roomNum = '1';
 const group = "suwon";
 const seventyMinutes = 60 * 70;
+const sixtyMinutes = 60 * 60;
+const limitTime = roomNum == 1 ? seventyMinutes : sixtyMinutes;
 
-$(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
+document.addEventListener("DOMContentLoaded", function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
     socket.emit('join send', group);
-    socket.emit('reset clock', roomNum, 'output1', group);
+    socket.emit('reset clock', roomNum, group);
 });
 
 window.addEventListener( 'message', function( e ) {
@@ -25,8 +26,8 @@ function activeStart(){
     if(started == false){
         started = true;
         var display = document.querySelector('#output');
-        startTimer(seventyMinutes, display, 99);
-        socket.emit('start room', roomNum, seventyMinutes, group);
+        startTimer(limitTime, display, 99);
+        socket.emit('start room', roomNum, limitTime, group);
         console.log("start timer start!!!");
         checkFunction = setTimeout(confirmMain, 1000);
     } else {
@@ -41,7 +42,7 @@ function confirmMain() {
     } else {
         console.log("Send start");
         socket.emit('join send', group);
-        socket.emit('start room', roomNum, seventyMinutes, group);
+        socket.emit('start room', roomNum, limitTime, group);
         setTimeout(confirmMain, 1000);
     }
 }
@@ -53,18 +54,17 @@ socket.on('confirm client', function(msg){
 });
 
 socket.on('receive message', function(msg){
-    var roomNum = msg.roomNum;
+    var roomName = msg.roomNum;
     var contents = msg.contents;
-    if(roomNum == 'room1'){
+    if(roomName == 'room'+roomNum){
         window.parent.postMessage('receiveHint', '*');
-        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
+        document.querySelector("#chatLog").innerHTML = '<h1 id="chatMessage" readonly>' + contents + '</h1>';
     }
 });
 
 socket.on('restart clock', function(data){
-    console.log(data + 'restart room1');
-    if(data == 'room1'){
-        console.log('restart clock room1');
+    if(data == 'room' + roomNum){
+        console.log('restart clock room' + roomNum);
         var output1Min = document.getElementById('output').innerHTML.slice(0, 2);
         output1Min *= 1;
         var output1Sec = document.getElementById('output').innerHTML.slice(3, 5);
@@ -80,20 +80,20 @@ socket.on('restart clock', function(data){
 });
 
 socket.on('paused clock', function(data){
-    if(data == 'room1'){
-        console.log('paused clock room1');
+    if(data == 'room' + roomNum){
+        console.log('paused clock room' + roomNum);
         pausedTimer();
     }
 });
 
 socket.on('active room', function(data){
-    if(data == 'room1'){
-        console.log('active room1 clock!!!');
+    if(data == 'room' + roomNum){
+        console.log('active room' + roomNum + ' clock!!!');
         if(document.getElementById('clock').style.display == "none"){
             activeStart();
         } else {
-            socket.emit('already started', 'room1', group);
-            console.log("already started room1");
+            socket.emit('already started', 'room' + roomNum, group);
+            console.log("already started room" + roomNum );
         }
     }
 });
@@ -102,7 +102,7 @@ socket.on('if started', function(group){
     if(started == true){
         var min = document.getElementById('output').innerHTML.slice(0, 2);
         var sec = document.getElementById('output').innerHTML.slice(3, 5);
-        socket.emit('before started', 'room1', min, sec, group);
+        socket.emit('before started', roomNum, min, sec, group);
     }
 });
 
@@ -123,7 +123,7 @@ function startTimer(duration, display, mil) {
         if(minutes == 0 && seconds == 0){
             console.log('act clearInterval!!!');
             document.getElementById("output").innerHTML = "00:00:00";
-            clearInterval(inter1);
+            clearInterval(intervalTimer);
             return;
         }
 
@@ -146,10 +146,10 @@ function startTimer(duration, display, mil) {
     };
     // we don't want to wait a full second before the timer starts
     timer();
-    inter1 = setInterval(timer, 10);
+    intervalTimer = setInterval(timer, 10);
 }
 
 function pausedTimer(){ // inter + number의 타이머를 일시 정지!!
-    console.log('inter paused!!');
-    clearInterval(inter1);
+    console.log(roomNum + ' inter paused!!');
+    clearInterval(intervalTimer);
 }

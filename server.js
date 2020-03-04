@@ -29,9 +29,9 @@ io.on('connection', function(socket){
     io.sockets.in(group).emit('receive message', {roomNum : name, contents : text, group : group});
   });
 
-  socket.on('restart clock', function(data,group){
+  socket.on('restart clock', function(data, group){
     console.log(data);
-    io.sockets.in(group).emit('restart clock', data,group);
+    io.sockets.in(group).emit('restart clock', data, group);
   });
 
   socket.on('paused clock', function(data,group){
@@ -39,10 +39,8 @@ io.on('connection', function(socket){
     io.sockets.in(group).emit('paused clock', data,group);
   });
 
-  socket.on('reset clock', function(data1, data2, group){
-    var data = data1 + ' : ' + data2;
-    console.log(data);
-    io.sockets.in(group).emit('reset clock', {roomNum : data1, output : data2, group : group});
+  socket.on('reset clock', function(data, group){
+    io.sockets.in(group).emit('reset clock', {roomNum : data, group : group});
   });
 
   socket.on('start room', function(data1, data2, group){
