@@ -42,13 +42,18 @@ io.on('connection', function(socket){
   socket.on('reset clock', function(data1, data2, group){
     var data = data1 + ' : ' + data2;
     console.log(data);
-    io.sockets.in(group).emit('reset clock', {roomNum : data1, output : data2,group : group});
+    io.sockets.in(group).emit('reset clock', {roomNum : data1, output : data2, group : group});
   });
 
   socket.on('start room', function(data1, data2, group){
     var data = data1 + ' : ' + data2;
     console.log(data);
     io.sockets.in(group).emit('start room', {roomNum : data1, time : data2, group : group});
+  });
+
+  socket.on('confirm server', function(data1, group){
+    console.log(data1);
+    io.sockets.in(group).emit('confirm client', {roomNum : data1, group : group});
   });
 
   socket.on('active room', function(data, group){

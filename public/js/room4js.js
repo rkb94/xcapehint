@@ -1,12 +1,16 @@
 var socket = io();
 var inter4;
 var started = false;
+var checkMain = false;
+var checkFunction = null;
+const roomNum = '4';
 const group = "suwon";
+const sixtyMinutes = 60 * 60;
 
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
     socket.emit('join send', group);
-    socket.emit('reset clock', '4', 'output4', group);
+    socket.emit('reset clock', roomNum, 'output4', group);
 });
 
 window.addEventListener( 'message', function( e ) {
@@ -21,15 +25,34 @@ function activeStart(){
     var roomNum = '4';
     if(started == false){
         started = true;
-        var sixtyMinutes = 60 * 60;
         var display = document.querySelector('#output');
         startTimer(sixtyMinutes, display, 99);
         socket.emit('start room', roomNum, sixtyMinutes, group);
         console.log("start timer start!!!");
+        checkFunction = setTimeout(confirmMain, 1000);
     } else {
         console.log("room" + roomNum + "는 이미 시작을 진행했습니다.");
     }
 };
+
+function confirmMain() {
+    if(checkMain){
+        console.log("Success Start!!");
+        clearTimeout(checkFunction);
+    } else {
+        console.log("Send start");
+        socket.emit('join send', group);
+        socket.emit('start room', roomNum, sixtyMinutes, group);
+        setTimeout(confirmMain, 1000);
+    }
+}
+
+socket.on('confirm client', function(msg){
+    if(msg.roomNum == roomNum) {
+        checkMain = true;
+    }
+});
+
 
 socket.on('receive message', function(msg){
     var roomNum = msg.roomNum;

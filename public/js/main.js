@@ -237,6 +237,7 @@ $('#chat5').on('submit', function(e){
 socket.on('start room', function(data){ // 방 번호 룸에서 시작을 누르면 해당 번호의 타이머 시작 & 버튼 시작 전에서 일시정지로 바꾸자
     var roomNum = data.roomNum;
     if(roomStarted[roomNum] == false){
+        socket.emit('confirm server', roomNum, group);
         roomStarted[roomNum] = true;
         var time = data.time;
         console.log(changeRoomName(roomNum) + ' start!!!');
@@ -469,7 +470,7 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             document.getElementById(data.output).innerHTML = '60:00';
             $('#chatLog4').val(''); // 힌트 내용 refresh
             var startStateButton = document.getElementById('startStateButton' + data.roomNum);
-            document.querySelector(startStateButton).closest(".roomTitleWrapper").style.border = "solid 1px black";
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
             startStateButton.type = 'button';
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
