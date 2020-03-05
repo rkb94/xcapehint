@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <head>
+    <meta charset="utf-8">
+    <title>XCRIME 건대</title>
+  </head>
+  <body id="background">
+    <!-- Modal Content -->
+    <div id="modal" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="checkAlert()" class="w3-button w3-display-topright">확인</span>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </div>
+    <div class="gangnam" id="header">
+
+      <div class="roomTitleWrapper">
+        <h5 class="roomTitle">미씽 다이얼</h5>
+        <div class="buttonWrapper">
+          <div class="timeContents" id="clock">
+              <button type="button" class="btn btn-default" id="output1">60:00</button>
+          </div>
+          <form class="timeContents" id="timestate1">
+            <input type="button" id="startStateButton1" class="btn btn-default btn-warning" value="시작 전">
+          </form>
+        </div>
+      </div>
+
+      <div class="roomTitleWrapper">
+        <h5 class="roomTitle">청림멘션</h5>
+        <div class="buttonWrapper">
+          <div class="timeContents" id="clock">
+              <button type="button" class="btn btn-default" id="output2">60:00</button>
+          </div>
+          <form class="timeContents" id="timestate2">
+            <input type="button" id="startStateButton2" class="btn btn-default btn-warning" value="시작 전">
+          </form>
+        </div>
+      </div>
+
+      <!-- <div class="roomTitleWrapper">
+        <h5 class="roomTitle"></h5>
+        <div class="buttonWrapper">
+          <div class="timeContents" id="clock">
+              <button type="button" class="btn btn-default" id="output3">60:00</button>
+          </div>
+          <form class="timeContents" id="timestate3">
+            <input type="button" id="startStateButton3" class="btn btn-default btn-warning" value="시작 전">
+          </form>
+        </div>
+      </div>
+
+      <div class="roomTitleWrapper">
+        <h5 class="roomTitle"></h5>
+        <div class="buttonWrapper">
+          <div class="timeContents" id="clock">
+              <button type="button" class="btn btn-default" id="output4">60:00</button>
+          </div>
+          <form class="timeContents" id="timestate4">
+            <input type="button" id="startStateButton4" class="btn btn-default btn-warning" value="시작 전">
+          </form>
+        </div>
+      </div> -->
+    </div>
+
+    <div id="gangnamRoomTitleWrapper">
+      <textarea id="chatLog1" class="gangnam_chat_log" readonly></textarea>
+      <textarea id="chatLog2" class="gangnam_chat_log" readonly></textarea>
+      <!-- <textarea id="chatLog3" class="gangnam_chat_log" readonly></textarea>
+      <textarea id="chatLog4" class="gangnam_chat_log" readonly></textarea> -->
+    </div>
+
+    <!-- 미씽 다이얼 -->
+    <div class="gangnam roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat1">
+          <input id="name1" class="name" type="text" value="room1" readonly>
+          <input id="message1" class="message" type="text" autocomplete="off" placeholder="[미씽 다이얼] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+      </div>
+      <div class="hintBox room1">
+      </div>
+    </div>
+
+    <!-- 청림 멘션 -->
+    <div class="gangnam roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat2">
+          <input id="name2" class="name" type="text" value="room2" readonly>
+          <input id="message2" class="message" type="text" autocomplete="off" placeholder="[청림 멘션] 힌트를 입력해주세요">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+      </div>
+      <div class="hintBox room2">
+      </div>
+    </div>
+
+    <!-- <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat3">
+          <input id="name3" class="name" type="text" value="room3" readonly>
+          <input id="message3" class="message" type="text" autocomplete="off" placeholder="">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+      </div>
+      <div class="hintBox room3">
+      </div>
+    </div>
+
+    <div class="roomWrapper">
+      <div class="contents">
+        <form class="roomContents" id="chat3">
+          <input id="name3" class="name" type="text" value="room3" readonly>
+          <input id="message3" class="message" type="text" autocomplete="off" placeholder="">
+          <input type="submit" class="chat btn btn-info" value="입력"/>
+        </form>
+      </div>
+      <div class="hintBox room3">
+      </div>
+    </div> -->
+
+    <div class="clockWrapper">
+      <div class="currentTimeContentInGeondae">
+          <p id="currentTimer"></p>
+          <button id="buttonWraper" onclick="tryReconnect()"><img id="refreshButton" src="../../image/refresh.png" alt=""></button>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/xcape_gangnam/gangnam_hint.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+  </body>
+</html>

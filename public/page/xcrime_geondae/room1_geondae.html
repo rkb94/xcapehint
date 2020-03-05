@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/css/roomStyle.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>501동 사람들</title>
+        <style>
+        </style>
+    </head>
+    <script>const roomNum = 1</script>
+    <body id="background">
+        <div id="clock">
+            <p id="output">70:00:00</p>
+        </div>
+        <div id="chatLog"></div>
+        <form><input class="refreshButton" type="button" value="XCAPE" onClick="history.go(0)"></form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/js/room.js"></script>
+    </body>
+</html>

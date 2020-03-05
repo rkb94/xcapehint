@@ -8,7 +8,7 @@ const roomName = "room" + roomNum;
 $(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
     socket.emit('join send', group);
-    socket.emit('reset clock', roomNum, 'output' + roomNum, group);
+    socket.emit('reset clock', roomNum, group);
 });
 
 window.addEventListener( 'message', function( e ) {
