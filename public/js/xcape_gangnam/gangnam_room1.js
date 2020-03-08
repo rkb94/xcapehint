@@ -5,7 +5,7 @@ const group = "gangnam";
 const roomNum = '1';
 const roomName = "room" + roomNum;
 
-$(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
+document.addEventListener("DOMContentLoaded", function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
     socket.emit('join send', group);
     socket.emit('reset clock', roomNum, group);

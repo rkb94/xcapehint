@@ -3,10 +3,10 @@ var inter4;
 var started = false;
 const group = "geondae";
 
-$(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
+document.addEventListener("DOMContentLoaded", function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     console.log('start refresh');
     socket.emit('join send', group);
-    socket.emit('reset clock', '4', 'output4', group);
+    socket.emit('reset clock', '4', group);
 });
 
 window.addEventListener( 'message', function( e ) {
@@ -36,7 +36,7 @@ socket.on('receive message', function(msg){
     var contents = msg.contents;
     if(roomNum == 'room4'){
         window.parent.postMessage('receiveHint', '*');
-        $('#chatLog').html('<h1 id="chatMessage" readonly>' + contents + '</h1>');        
+        document.querySelector("#chatLog").innerHTML = '<h1 id="chatMessage" readonly>' + contents + '</h1>';
     }
 });
 

@@ -3,7 +3,7 @@ var intervalTimer;
 var started = false;
 var checkMain = false;
 var checkFunction = null;
-const group = "suwon";
+var startAttemp = 0;
 const seventyMinutes = 60 * 70;
 const sixtyMinutes = 60 * 60;
 const limitTime = roomNum == 1 ? seventyMinutes : sixtyMinutes;
@@ -12,9 +12,15 @@ document.addEventListener("DOMContentLoaded", function () { // 페이지가 Refr
     console.log('start refresh');
     socket.emit('join send', group);
     socket.emit('reset clock', roomNum, group);
+    if(document.cookie.match("restartAttemp") != null) {
+        activeStart();
+        var date = new Date();
+        date.setDate(date.getDate() - 1);
+        document.cookie = "restartAttemp = FALSE; Expires=" + date.toUTCString();
+    }
 });
 
-window.addEventListener( 'message', function( e ) {
+window.addEventListener('message', function(e) {
     if(e.data == 'playStart'){
         activeStart();
     } else if (e.data == 'resetPage'){
@@ -39,10 +45,14 @@ function confirmMain() {
     if(checkMain){
         console.log("Success Start!!");
         clearTimeout(checkFunction);
+    } else if(startAttemp > 5) {
+        document.cookie = "restartAttemp = TRUE;";
+        location.reload();
     } else {
         console.log("Send start");
         socket.emit('join send', group);
         socket.emit('start room', roomNum, limitTime, group);
+        startAttemp++;
         setTimeout(confirmMain, 1000);
     }
 }

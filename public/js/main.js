@@ -4,12 +4,12 @@ var inter2;
 var inter3;
 var inter4;
 var inter5;
+var inter6;
 var roomStarted = [false, false, false, false, false, false];
 var room1Flag = true;
 var audio = new Audio('/mp3/bell.mp3');
 var silenceAudio = new Audio('/mp3/silence.mp3');
 var audioFlag = true;
-const group = "suwon";
 nowTime();
 setInterval(nowTime, 1000);
 
@@ -20,8 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     socket.emit('if started', group);
 })
 
-window.onbeforeunload = function() { // 새로고침 방지
-    return "Dude, are you sure you want to leave? Think of the kittens!";
+window.addEventListener("offline", function(e) {
+    setTimeout(reloadPage, 2000);
+});
+
+function reloadPage() {
+    location.reload();
 }
 
 function getHintContent() {

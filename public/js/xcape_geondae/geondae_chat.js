@@ -1,7 +1,7 @@
 var socket = io();
 var group = 'geondae'
 
-$(document).ready(function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
+document.addEventListener("DOMContentLoaded", function () { // 페이지가 Refresh 될 때 main에서 시간 초기화
     socket.emit('join send', group);
     console.log(socket.id);
 });
