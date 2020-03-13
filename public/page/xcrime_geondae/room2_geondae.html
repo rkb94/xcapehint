@@ -5,11 +5,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="mobile-web-app-capable" content="yes">
-        <title>기묘한 날개짓</title>
+        <title>청림 멘션</title>
         <style>
         </style>
     </head>
-    <script>const roomNum = 2</script>
+    <script>
+        const group = "xcrime_geondae";
+        const roomNum = 2;
+    </script>
     <body id="background2">
         <div id="clock">
             <p id="output">60:00:00</p>
@@ -17,6 +20,6 @@
         <div id="chatLog"></div>
         <form><input class="refreshButton" type="button" value="XCAPE" onClick="history.go(0)"></form>
         <script src="/socket.io/socket.io.js"></script>
-        <script type="text/javascript" src="/js/room.js"></script>
+        <script type="text/javascript" src="/js/xcrime_geondae/room.js"></script>
     </body>
 </html>
