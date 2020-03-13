@@ -205,22 +205,22 @@ window.hint = [
     },
     {
         theme: 'room2',
-        hintNumber: '16',
+        hintNumber: '17',
         hintContent: '남편의 편지 두 장을 대조하여 숫자가 쓰여있는 부분에 쓰인 글자를 보고 순서대로 나열해주세요.'
     },
     {
         theme: 'room2',
-        hintNumber: '17',
+        hintNumber: '18',
         hintContent: '파란불빛 후레쉬를 얻어 앞방으로 가 사진속의 나비들을 비춰서 나비 이름을 확인한 후, 제일 앞방의 액자속 같은 나비를 파란불빛 후레쉬로 비추고, 마크를 태깅해주세요.'
     },
     {
         theme: 'room2',
-        hintNumber: '18',
+        hintNumber: '19',
         hintContent: '아내의 편지를 읽고 사건개요에 적힌 남편의 생년월일을 마지막 함에 입력해주세요.'
     },
     {
         theme: 'room2',
-        hintNumber: '19',
+        hintNumber: '20',
         hintContent: '얻은 카드들을 방 함 위에 원칙에 맞게 놓으면 영상이 재생되고, 영상을 본 후 아내의 마지막 말에서 남자의 이름을 찾아 열쇠를 찾아주세요.'
     },
 

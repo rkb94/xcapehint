@@ -59,3 +59,7 @@
     background: border-box;
     border: none;
 }
+
+.hintImage {
+    width: 80%;
+}
