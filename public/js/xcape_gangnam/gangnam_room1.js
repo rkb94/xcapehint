@@ -22,7 +22,7 @@ window.addEventListener( 'message', function( e ) {
 function activeStart(){
     if(started == false){
         started = true;
-        var seventyMinutes = 60 * 30;
+        var seventyMinutes = 60 * 70;
         var display = document.querySelector('#output');
         startTimer(seventyMinutes, display, 99);
         socket.emit('start room', roomNum, seventyMinutes, group);

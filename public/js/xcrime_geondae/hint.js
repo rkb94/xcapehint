@@ -35,77 +35,82 @@ window.hint = [
     {
         theme: 'room1',
         hintNumber: '4',
-        hintContent: '아빠의 글을 보고 “양심 -> 정직 -> 의지 -> 용기 -> 자긍심” 순서대로 아나운서의 덕목표의 방향을 입력하세요.'
+        hintContent: '뒤에 있는 아나운서의 덕목표를 보고 [양심]에서 [정직]가는 방향을 보면 아래 방향입니다.<br><br>이와 동일한 방식으로 [의지, 용기, 자긍심]도 아나운서의 덕목표를 보고 방향을 키패드에 입력해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '5',
-        hintContent: '사진을 태깅한 후, 4명이 있는 가족사진만 고른 후, 시간 순서대로 아나운서의 덕목표 밑에 있는 첫번째 사물함에 입력하세요.'
+        hintContent: '사진이 걸려 있는 액자 여러 개를 보실 수 있습니다.<br><br>그 중에서 4명이 있는 가족사진만 고른 후, 시간이 흐르는 순서대로 배열 해 주신 뒤, 뒤에 있는 [첫 번째 사물함]에 입력해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '6',
-        hintContent: '유치원 안내문을 태깅한 후, jamie의 하원시간 [14:10]과 Jaff의 하교시간 [14:00~14:35]을 대조해보세요.'
+        hintContent: '바느질꾼에 해당하는 성씨가 TAYLOR입니다. TAYLOR의 A 자리에 Jeff의 혈액형인 B를 대입해 주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '7',
-        hintContent: '태깅한 후, cctv화면을 보고 Jaff가 Jamie를 유기한 시간을 확인해주세요.'
+        hintContent: '유치원 안내문을 태깅한 후, jamie의 하원시간 [14:10]과 Jaff의 하교시간 [14:00~14:35]을 대조해보세요.'
     },
     {
         theme: 'room1',
         hintNumber: '8',
-        hintContent: '지금까지 획득한 4개의 카드를 화이트보드판에 알맞게 꽂아주세요.'
+        hintContent: '태깅한 후, cctv화면을 보고 Jaff가 Jamie를 유기한 시간을 확인해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '9',
-        hintContent: '영상시청 후 전화내용은 떨어진 클루와 동일한 내용입니다.'
+        hintContent: '지금까지 획득한 4개의 카드를 화이트보드판에 알맞게 꽂아주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '10',
-        hintContent: '1978년 트로피를 POST BOX SEND함에 넣어 보내주세요.'
+        hintContent: '영상시청 후 전화내용은 떨어진 클루와 동일한 내용입니다.'
     },
     {
         theme: 'room1',
         hintNumber: '11',
-        hintContent: '2번째 전화는 범인이 자신의 모습이 보이지 않게 전기차단기의 전원을 차단해 달라는 내용입니다. 그래서 관리실 안에 전자차단기 장치를 풀어주세요.'
+        hintContent: '1978년 트로피를 POST BOX SEND함에 넣어 보내주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '12',
-        hintContent: 'Control장치 오른편에 있는 파일철을 보시면, Control1~4 에 색상이 나열된 것이 보입니다.<br>해당하는 색을 도면에 칠한다고 생각하고 가려보시면 디지털모양 숫자가 나옵니다.'
+        hintContent: '2번째 전화는 범인이 자신의 모습이 보이지 않게 전기차단기의 전원을 차단해 달라는 내용입니다. 그래서 관리실 안에 전자차단기 장치를 풀어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '13',
-        hintContent: '서재 안 큰 박스에서 찾은 손톱을 태깅한 후, Jamie의 실험결과와 동일한 혈액형의 번호를 찾아서 X-KIT안에 정답을 입력합니다.'
+        hintContent: 'Control장치 오른편에 있는 파일철을 보시면, Control1~4 에 색상이 나열된 것이 보입니다.<br>해당하는 색을 도면에 칠한다고 생각하고 가려보시면 디지털모양 숫자가 나옵니다.'
     },
     {
         theme: 'room1',
         hintNumber: '14',
-        hintContent: '재 검출된 Anti D값을 보고 + 인지 - 인지 확인해준 후, 관리실 맨 밑 서랍에 Anti D 값을 대입해서 계산해주세요.'
+        hintContent: '서재 안 큰 박스에서 찾은 손톱을 태깅한 후, Jamie의 실험결과와 동일한 혈액형의 번호를 찾아서 X-KIT안에 정답을 입력합니다.'
     },
     {
         theme: 'room1',
         hintNumber: '15',
-        hintContent: '장갑을 태깅한 후, 핏자국의 순서를 파악해주세요.<br>그리고 관리실 벽면에 붙어있는 장갑을 UV랜턴[파란불빛]으로 비춰보고 해당하는 장갑의 손가락 갯수를 파악해주세요.'
+        hintContent: '재 검출된 Anti D값을 보고 + 인지 - 인지 확인해준 후, 관리실 맨 밑 서랍에 Anti D 값을 대입해서 계산해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '16',
-        hintContent: '리모컨을 눌러 커튼이 걷히면, do you remember THEDAY 가 있습니다. THEDAY는 순서를 의미합니다.<br>관리실안에 파일철을 보시고, T로 시작하는 파일의 번호부터 Y까지 찾아주세요.'
+        hintContent: '장갑을 비주어 보면 [현미경 모양]이 있습니다. 태깅하신 후, 화면을 소비소 글자를 읽어 주시면 핏자국의 순서를 파악할 수 있습니다.<br>그리고 관리실 벽면에 있는 장갑들을 UV랜턴[파란불빛]으로 비춰 보고 핏자국 순서대로 손가락의 숫자를 보시고 정답을 입력해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '17',
-        hintContent: 'Adam의 유서를 보시면 Lucas는 Jamie보다 1살 많습니다. 죽은 연도는 비디오테이프에 적혀 있습니다. 저소득주거지역은 액자를 보면 나와있습니다.'
+        hintContent: '리모컨을 눌러 커튼이 걷히면, do you remember THEDAY 가 있습니다. THEDAY는 순서를 의미합니다.<br>관리실안에 파일철을 보시고, T로 시작하는 파일의 번호부터 Y까지 찾아주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '18',
-        hintContent: '미리 꽂아져 있는 양심을 기준으로 나머지 육각형을 꽂아주세요.<br>[획득한 사진 뒷면을 보시면 ‘양심’ 이라고 적혀있는 사진 앞쪽을 보면 오른쪽 왼편에 v표시가 있습니다.]'
+        hintContent: 'Adam의 유서를 보시면 Lucas는 Jamie보다 1살 많습니다. 죽은 연도는 비디오테이프에 적혀 있습니다. 저소득주거지역은 액자를 보면 나와있습니다.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '19',
+        hintContent: '미리 꽂아져 있는 양심을 기준으로 나머지 육각형을 꽂아주세요.<br>[획득한 사진 뒷면을 보시면 ‘양심’ 이라고 적혀 있는 사진 앞쪽을 보면 오른쪽 아래에 V표시가 있습니다.]'
     },
 
 
@@ -118,7 +123,7 @@ window.hint = [
     {
         theme: 'room2',
         hintNumber: '2',
-        hintContent: '고 접수증 사진으로 열쇠 위치를 파악한 후, 지시봉으로 열쇠를 획득하세요.'
+        hintContent: '열쇠 위치는 모니터를 바라보는 방향 기준으로 왼쪽 위를 보시면 걸려있습니다.<br>(좀 떨어져서 보시면 보실 수 있습니다! 생각보다 위에 있습니다.)'
     },
     {
         theme: 'room2',
