@@ -18,126 +18,221 @@ window.hint = [
     // 이 경우 중괄호 {}, 마지막에 반점이 들어가야합니다. 주의해주세요!
     // 밑에 적혀있는 내용들은 예시로 적은 것이니 힌트 내용을 수정해주세요!
 
-    ///////// 501동 사람들 /////////
+    ///////// 기억의 틈 /////////
     {
         theme: 'room1',
         hintNumber: '1',
-        hintContent: 'X-KIT를 가족사진 액자에 태깅한 후 아버지와의 약속 자물쇠를 풀어주세요.'
+        hintContent: '문 옆 스위치 ON 불 켜짐'
     },
     {
         theme: 'room1',
         hintNumber: '2',
-        hintContent: '가정통신문에 X-KIT 태깅후 가정통신문에 학년, ㅇ~ㅈ에서 반, 줄자로 벽에 그림에서 통신문에 맞는키를 잰후  X-KIT에 입력해주세요.'
+        hintContent: 'X-KIT를 가족사진 액자에 태깅한 후 아버지와의 약속 자물쇠를 풀어주세요 '
     },
     {
         theme: 'room1',
         hintNumber: '3',
-        hintContent: '거울로 가정통신문 서랍위쪽을 살펴보세요.'
+        hintContent: '6975'
     },
     {
         theme: 'room1',
         hintNumber: '4',
-        hintContent: '젓가락으로 미닫이문을 열어주세요.'
+        hintContent: '가정통신문에 X-KIT 태깅 후 가정통신문에 학년, ㅇ~ㅈ에서 반, 줄자로 벽에 키를 잰 후 X-KIT에 입력 해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '5',
-        hintContent: '신발장 위에 있는 비디오 구매 영수증을 봐주신 후, 비디오 책장을 보고 방향 자물쇠를 풀어주세요.'
+        hintContent: 'X- KIT 3463'
     },
     {
         theme: 'room1',
         hintNumber: '6',
-        hintContent: '[죠스바=9바]에서 9는 죠스의 글자 획수를 구한 값입니다. 나머지 [빠삐]와 [월드]의 획수도 함께 세주세요.'
+        hintContent: '거울로 가정통신문 서랍 위쪽을 살펴보세요.'
     },
     {
         theme: 'room1',
         hintNumber: '7',
-        hintContent: '지로통지서에서 [요한서금지을국관]을 찾아주시고 보일러에 노란색 스티커에 전화번호가 붙여져있습니다. 전화번호 바로 위쪽에 글자들로 [요한서금지을국관]에 맞는 숫자를 찾으신후 보일러 자물쇠를 풀어주세요.'
+        hintContent: '임 춘동(267948352)'
     },
     {
         theme: 'room1',
         hintNumber: '8',
-        hintContent: 'X-KIT 태깅후 열로 아이들 사진을 태워보시고 14~16시 사이에 아이들을 찾아주신 다음에 바깥 비디오구매 영수증 밑서랍 자물쇠를 풀어주시면 됩니다.'
+        hintContent: '젓가락으로 미닫이문 구멍에 넣어 문을 열어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '9',
-        hintContent: '다락방 낙서되어있는 창문 위쪽에 눈을 가까이 대고 자세히 보시면 영어모양을 보실수 있습니다 그리고 1층에 우리집 서랍을 풀어주세요.'
+        hintContent: '신발장 위 비디오구매 영수증으로 비디오책장을 방향을 확인 후 방향 자물쇠를 풀어주세요'
     },
     {
         theme: 'room1',
         hintNumber: '10',
-        hintContent: '동자승 액자에 태깅후  X-KIT에 HATEI를 쳐주세요..'
+        hintContent: '↑ → ↓ ↓ ← ← (상,우,하,하,좌,좌)'
     },
     {
         theme: 'room1',
         hintNumber: '11',
-        hintContent: '다락방으로 이동후 노빨/검회/흰빨/검빨 순서대로 부적을 세신후 창문 자물쇠에 입력해주세요.'
+        hintContent: '[죠스바=9바]에서 9는 <text style=color:red;font-weight:bold;background:white;>죠스의 글자 획수</text>를 구한 값입니다.<br>[빠삐]와 [월드]의 획수도 세어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '12',
-        hintContent: '양말안에 열쇠로 신발장을 열어주세요.'
+        hintContent: '빠삐: 19 월드 : 14'
     },
     {
         theme: 'room1',
         hintNumber: '13',
-        hintContent: '신발장에 X-KIT태깅후 유치원 이름으로 꽃별천지 게임을 해주시면 됩니다. 꽃별천지로 유치원이름 획수를 일일이 세신후 꽃으로 끝나시면 꽃에 별로 끝나시면 별 천으로 끝나시면 천국 지로 끝나시면 지옥에 신발 놔주시면 됩니다.'
+        hintContent: '지로 통지서에서 [요한서금지을국관]을 찾아주시고 보일러에 노란색 스티커에 전화번호가 붙어져 있습니다. 전화번호 위 [요한서금지을국관]에 맞는 번호를 찾아 보일로 자물쇠를 열어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '14',
-        hintContent: '철문옆에 우편함에 있는 비디오를 티비 아래에 위치한 비디오 플레이어에 꽂아주세요.'
+        hintContent: '8009-720 = 7289'
     },
     {
         theme: 'room1',
         hintNumber: '15',
-        hintContent: '비디오 시청후 비디오 자막에 있는 단서로 슈퍼마켓 오른쪽 골목에 들어가시면 있는 배전함에 답을 입력해주세요.'
+        hintContent: 'X-KIT 태깅 후 열로 아이들 사진을 태워보시고 14~16시 사이에 아이들을 찾아주신 다음에 바깥 신발장 비디오구매 영수증 밑 자물쇠를 풀어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '16',
-        hintContent: '배전함 스위치를 올리신 후 X-KIT를 태깅해주세요.'
+        hintContent: '2678 (다락방 문 열쇠 나옴)'
     },
     {
         theme: 'room1',
         hintNumber: '17',
-        hintContent: 'X-KIT 에 보이는 땅따먹기 규칙과 철문옆에 보이시는 규칙과 조합해 슈퍼마켓 문옆에 있는 낙서 4줄 순서대로 게임을 해주시면 됩니다. [0=왼발]로 홀수만 밟으시는거고 [△=오른발]로 짝수만 밟으시는거고 [ㅎㅌ=양발]을 다쓰시는겁니다 이 규칙들로 땅따먹기 게임진행 하시면서 밟지 않은 숫자들로 슈퍼문 자물쇠를 풀어주시면 됩니다.'
+        hintContent: '다락방 낙서 되어 있는 창문 위쪽에 눈을 가까이 대고 보시면 옷으로 나타낸 영어 모양을 보실 수 있습니다. 영어 모양을 확인하신 후 1층 영어 알파벳 판과 매칭해서 두 번째 사물함 열어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '18',
-        hintContent: '슈퍼안 나무서랍 첫번째칸에 들어있는 장부로 금고를 풀어주시면 됩니다.'
+        hintContent: 'WAIT > 유아 납치(343606175)'
     },
     {
         theme: 'room1',
         hintNumber: '19',
-        hintContent: '금고안에서 나온 핸드폰에 X-KIT 태깅후 녹음된 내용을 들으신 후, X-KIT 에 나와있는 통화 마침시간에 5분을 더해주고 냉장고안에 있는 함 자물쇠를 풀어주시면 됩니다.'
+        hintContent: '동자승 액자에 X-KIT 태깅 후 X-KIT에 정답을 입력해주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '20',
-        hintContent: '할머니 시체위에 나와있는 한자들로 냉장고함 안에서 꺼내신 검은색함 비밀번호를 풀어주시면 됩니다.'
+        hintContent: 'X- KIT : HATEI'
     },
     {
         theme: 'room1',
         hintNumber: '21',
-        hintContent: '검은색 함 안에있는 랜선 코드번호로 나무서랍 3번째칸 자물쇠를 풀어주시면 됩니다.'
+        hintContent: '동자승 액자에 왼쪽 볼에 스티커는 부적의 배경 색, 오른쪽 볼은 부적의 글자색입니다. 부적의 개수를 세어 다락방 창문 자물쇠를 열어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '22',
-        hintContent: '2층과 1층에 랜선연결후 UP 버튼과 멜로디 버튼을 동시에 눌러주세요.'
+        hintContent: '노빨 / 검회 / 흰빨 / 검빨 6243'
     },
     {
         theme: 'room1',
         hintNumber: '23',
-        hintContent: '전화기를 들어 통화내용을 들으신 후 슈퍼마켓 벽면에 달력을 보시고 년도와날짜를 전화기 밑 키패드 자물쇠에 입력해주세요.'
+        hintContent: '양말 안 열쇠로 신발장 문을 열어주세요.'
     },
     {
         theme: 'room1',
         hintNumber: '24',
-        hintContent: '액자와 UV랜턴을 꺼내신후 액자에 X-KIT를 태깅해주세요. 액자뒷면을 보시면 나비, 다섯손가락, 물고기 그림이 있습니다. 실종된 아이들 포스터를 UV 랜턴으로 보시면 한글자씩 나오는데 그 글자를 액자뒷면에 나온 순서대로 조합해주신 후 본명을 찾아주시고 빨간색 버튼에 모스부호를 입력해주시면 됩니다. 점은 1초정도 길게 눌러주시고 선은 2초정도 길게 눌러주시면 됩니다.'
+        hintContent: '신발장에 X-KIT 태깅 후 유치원 이름으로 꽃별천지 게임을 해주시면 됩니다. 꽃별천지로 유치원 이름 획수를 일일이 세어주시고 <text style=color:red;font-weight:bold;background:white;>‘지’로 끝나면 지옥 칸</text>에 넣어주시면 됩니다.<br>(글자색 신발 색상)<br><text style=color:blue;font-weight:bold;background:white;>중앙 : 참사랑 – 별 <text style=color:red;>오른쪽 : 샛별 – 천국 <text style=color:black;>왼쪽 : 꿈나무 – 지옥'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '25',
+        hintContent: '철문 옆에 우편함에 있는 비디오를 <text style=color:red;font-weight:bold;background:white;>TV 아래에 있는 비디오 재생기</text>에 넣어주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '26',
+        hintContent: '26. 비디오 시청 후 <text style=color:red;font-weight:bold;background:white;>비디오 자막</text>에 있는 단서로 슈퍼마켓 오른쪽 골목에 있는 배전함에 답을 입력해주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '27',
+        hintContent: 'CHILD'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '28',
+        hintContent: '배전함 스위치를 올리신 후 X-KIT 태깅 해주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '29',
+        hintContent: 'X-KIT에 나온 땅따먹기 규칙과 철문 옆 벽에 쓰여 있는 규칙을 이용해 슈퍼마켓 문 옆 낙서 4줄 순서대로 땅따먹기 게임을 해서 슈퍼마켓 문을 열어주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '30',
+        hintContent: 'O : 왼발 (홀수) △ : 오른발 (짝수) ♡ : 양발<br><br><text style=color:red;font-weight:bold;background:white;>△O♡△♡ : 1 ♡♡△♡ : 3 ♡O♡♡ : 6 ♡O♡△△ : 7'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '31',
+        hintContent: '슈퍼 안 나무서랍 첫 번째 칸에 있는 장부로 금고를 풀어주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '32',
+        hintContent: 'L : 21 / R : 33'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '33',
+        hintContent: '금고 안에서 나온 핸드폰에 X-KIT 태깅 후 녹음된 내용을 들으시고 X-KIT에 나와 있는 <text style=color:red;font-weight:bold;background:white;>통화 마침 시간에 5분 후</text>를 더해서 냉장고 안 자물쇠를 풀어주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '34',
+        hintContent: '23:37 – 23:42'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '35',
+        hintContent: '할머니 시체 오른쪽 위에 한자들로 냉장고 한번 안에서 꺼내신 검은색 함 비밀번호를 입력해주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '36',
+        hintContent: '5832'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '37',
+        hintContent: '검은색 함을 열어 <text style=color:red;font-weight:bold;background:white;>전화선 해킹코드</text>를 찾아주신 후 나무서랍 3번째 칸 자물쇠를 풀어주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '38',
+        hintContent: '0825'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '39',
+        hintContent: '서랍에서 나온 랜선과 검은색 함에 적힌 랜선 사용법으로 랜선을 연결해주신 후 UP 버튼과 멜로디 버튼을 동시에 눌러주세요 (전화박스 문 열림)'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '40',
+        hintContent: '전화기를 들어 통화내용을 들으신 후 <text style=color:red;font-weight:bold;background:white;>슈퍼마켓 벽면에 달력</text>을 보시고 <text style=color:red;font-weight:bold;background:white;>년도월일</text>를 전화기 밑 키패드 자물쇠에 입력해주세요.'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '41',
+        hintContent: '19861227'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '42',
+        hintContent: '액자와 UV 랜턴을 꺼내신 후 액자에 X-KIT 태깅해주세요'
+    },
+    {
+        theme: 'room1',
+        hintNumber: '43',
+        hintContent: '1) 액자 뒷면을 보시면 <text style=color:red;font-weight:bold;>나비, 다섯 손가락, 물고기 그림</text>이 있습니다.<br>2) 실종된 아이들 포스터를 <text style=color:red;font-weight:bold;>UV 랜턴으로 비춰보시면 이름</text>이 나옵니다.<br>3) 실종된 아이들 <text style=color:red;font-weight:bold;>포스터 내용</text>을 보시고 나비, 다섯 손가락, 물고기를 찾아 <text style=color:red;font-weight:bold;>이름의 순서</text>를 맞춰주세요.<br><text style=color:darkviolet;font-weight:bold;background:white;>나비 : 주 ● ― 손가락 : 미 ― ― 물고기 : 소 ●●</text><br>4) X-KIT에 나온 모스부호를 이용해 찾아주신 이름을 입력해주세요.'
     },
 
 
@@ -145,37 +240,37 @@ window.hint = [
     {
         theme: 'room2',
         hintNumber: '1',
-        hintContent: '케이크위 초대장을 읽어보시면 영어 알파벳 [ HOXTr ] 이 보이실겁니다. 해당 알파벳들로 오른쪽 알파벳을 한글로 바꾼 표가 있습니다. 해당 표를 확인 후 키패드함에 답을 입력해주시면 됩니다.'
+        hintContent: '케이크 위 초대장을 읽어보시면 영어 알파벳 [HOXTr]이 보이실 겁니다. 해당 알파벳들로 오른쪽 알파벳을 한글로 바꿔 키패드에 입력해주시면 됩니다.'
     },
 
     {
         theme: 'room2',
         hintNumber: '2',
-        hintContent: '기사 말과 신부 말밑에 보시면 숫자가 적혀져 있습니다. 케이크밑에 미니체스판이 있는데 그 미니체스판을 보신후 오른쪽 체스판에 각각말밑에 있는 숫자대로 놔주시면 됩니다. 기사는 8A 기준에서 시작하시면 되고 신부는 H1 기준에서 시작해주시면 됩니다.'
+        hintContent: '기사 말과 신부 말 밑에 보시면 숫자가 적혀져 있습니다. 케이크 밑에 미니체스판을 보시고 맞는 자리에 올려주시면 됩니다. 기사 말은 8A 기준으로 신부 말은 H1 기준으로 해주시면 됩니다.'
     },
 
     {
         theme: 'room2',
         hintNumber: '3',
-        hintContent: '나무서랍안 토글스위치가 두줄이 있으십니다. 눈동자 액자를 보신다음 안쪽 3칸은 눈동자가 바라보고있는 방향그대로 토글스위치를 조정해주시면 되고 바깥쪽 3칸은 눈동자가 바라보고 있는 반대방향으로 해주시면 됩니다.'
+        hintContent: '나무 서랍 안 토글스위치가 두 줄이 있습니다. 눈동자 액자를 보신 다음 안쪽 3칸은 눈동자가 바라보고 있는 방향으로 스위치를 조정해주시고 바깥 쪽 3칸은 반대로 조정해주시면 됩니다.'
     },
 
     {
         theme: 'room2',
         hintNumber: '4',
-        hintContent: '이동한의자 뒤 벽면에 REM기억D! 0해라3 이렇게 적혀져있으신데 이동하신분 책상위에 OMR카드를 보시면 REMIND! 0523 이라고 적혀져있습니다. 협동하셔서 없는부분을 대조해서 찾으신후 알파벳 자물쇠를 풀어주세요.'
+        hintContent: '이동한 의자 뒤 벽면에 REM기억D! 0해라3 이렇게 적혀있을 겁니다. 이동하신 분 책상 위에 OMR카드를 보시면 ‘기억해라’ 부분이 알파벳과 숫자로 나와 있습니다.'
     },
 
     {
         theme: 'room2',
         hintNumber: '5',
-        hintContent: '필통안에 있는 UV랜턴으로 책상을 보면 음표들을 찾으실 수 있습니다 각음표들 옆에는 [#숫자]가 적혀져있으십니다. 교가를 보시면 총 여섯 줄이 있는데 만약 #4 옆에 음표가 있으시면 교가의 4번째줄에서 해당 음표를 찾아주시면 됩니다. 그렇게 나머지 음표들도 교가에서 숫자를 먼저 찾아주신 후 칠판에 빨간색으로 칠해져 있는 음표 순서대로 다시 배열하신 후 가방 비밀번호를 열어주시면 됩니다.'
+        hintContent: '1) 필통 안에 있는 UV 랜턴으로 책상을 보면 음표들을 찾을 수 있습니다.<br>2) 음표에는 [#숫자]가 적혀있습니다. 숫자는 교가에 몇 번째 줄을 뜻합니다.<br>3) 칠판에 적힌 음표를 보신 후 첫 번째 빨간색 음표를 책상에서 찾아주세요.<br>4) 빨간색 음표와 숫자를 확인하신 후 교가에서 몇 번째줄(숫자), 해당 음표(빨간색)을 찾아주시면 가사에 숫자가 적혀있습니다.'
     },
 
     {
         theme: 'room2',
         hintNumber: '6',
-        hintContent: '가방 안에 부탄가스를 책상 위에 부탄가스 놓는 곳에 놓아주시면 됩니다.'
+        hintContent: '가방 안에 부탄가스를 책상 위에 부탄가스 놓는 곳에 놓아주시면 됩니다.<br><text style=color:red;font-weight:bold;background:white;>책상 동그라미 표시 (UV랜턴으로 비춰봐야 보임)'
     },
 
     {
@@ -241,19 +336,19 @@ window.hint = [
     {
         theme: 'room2',
         hintNumber: '17',
-        hintContent: '교사수첩과 화장대위에 있는 청접장을 화장대 첫번째 서랍 왼쪽에 교사수첩을 넣어주고 오른쪽 칸에 청접장을 넣고 닫으면 됩니다.'
+        hintContent: '교사수첩과 화장대 위에 있는 청첩장을 서랍에 넣어주세요.<br>(교사수첩 – 왼쪽, 청첩장 – 오른쪽)'
     },
 
     {
         theme: 'room2',
         hintNumber: '18',
-        hintContent: '바구니안에 있는 출산예정일을 보신후 벽에 걸려져있는 태아사진을 보시면 숫자가 또 적혀져있습니다. 예를 들어 9라고 적혀져있는 태아사진에 3.1이라고 적혀져 있는데 그뜻은 9라고 적혀져있는 원고지에 3번째 줄 첫 번째 칸을 의미하는 것입니다. [공백포함] 나머지 1 0 8 2 7 도 찾아주면 됩니다.'
+        hintContent: '1) 바구니 안에 있는 출산예정일을 확인해주세요 910827<br>2) 태아 사진과 원고지를 보시면 숫자가 적혀있습니다. 출산 예정일 순서대로 배열해 주세요<br>3) 첫 번째 태아 사진을 보시면 3.1이라고 적혀 있습니다. 원고지 3번째 줄 1번째 칸을 의미합니다.<br>4) 공백을 포함해서 칸을 세어주세요.'
     },
 
     {
         theme: 'room2',
         hintNumber: '19',
-        hintContent: '아기를 나무상자에 넣고 닫아주세요.'
+        hintContent: '아기를 나무상자에 넣어 주세요.<br><text style=color:red;font-weight:bold;background:white;>(나무상자 안 아기머리 방향 있음)'
     },
 
     {
@@ -266,7 +361,7 @@ window.hint = [
     {
         theme: 'room2',
         hintNumber: '21',
-        hintContent: '프로파일러 액자와 허소리 액자에 설명을 읽어보고 디케의 여신 액자에 칼이나 저울 파란색 선 밑에 대주시면 됩니다.'
+        hintContent: '프로파일러 액자와 허소리 액자에 설명을 읽어보고 디케의 여신 액자에 가져다 대주세요.<br>38. 프로 파일러 액자와 허소리 액자에 설명을 읽어보고 디케의 여신 액자에 가져다 대주세요<br><text style=color:red;font-weight:bold;>(프로 파일러 : 칼 허소리 : 저울 액자에 UV랜턴 비추면 가이드 라인 보임)'
     },
 
     {
