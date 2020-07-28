@@ -16,9 +16,7 @@ $(document).ready(function () { // 페이지 시작하면 힌트들을 가져오
     getHintContent();
     console.log('Get hint contents')
     socket.emit('if started', group);
-    if (new Date() < "2020-07-30") {
-        displayBlockModal("안녕하세요. 위험한 초대 테마 힌트 오류로 인한 힌트 시스템 설치파일 안내 드립니다.<br><button onclick='window.open(`https://drive.google.com/drive/folders/1cWnBllDJNBIg0zUGduBbmp3EfAu0cgE0?usp=sharing`)'>힌트 앱 설치 파일 다운로드</button><button onclick='window.open(`https://docs.google.com/document/d/1Ah7CAcD5q8F_YBY_cUEI4OGqWn9Yi_THU2wrVpwQsGU/edit?usp=sharing`)'>힌트 앱 설치 방법</button><br>위 링크로 접속 후 원하는 테마의 설치파일을 다운로드 받으시길 바랍니다. 사용방법을 참조해주세요 감사합니다.<br>다운로드 링크는 페이지 하단에도 있습니다. 추후에 필요하실 때에도 사용해주세요.");
-    }
+    displayBlockModal("안녕하세요. 위험한 초대 테마 힌트 오류로 인한 힌트 시스템 설치파일 안내 드립니다.<br><button onclick='window.open(`https://drive.google.com/drive/folders/1cWnBllDJNBIg0zUGduBbmp3EfAu0cgE0?usp=sharing`)'>힌트 앱 설치 파일 다운로드</button><button onclick='window.open(`https://docs.google.com/document/d/1Ah7CAcD5q8F_YBY_cUEI4OGqWn9Yi_THU2wrVpwQsGU/edit?usp=sharing`)'>힌트 앱 설치 방법</button><br>위 링크로 접속 후 원하는 테마의 설치파일을 다운로드 받으시길 바랍니다. 사용방법을 참조해주세요 감사합니다.<br>다운로드 링크는 페이지 하단에도 있습니다. 추후에 필요하실 때에도 사용해주세요.");
 });
 
 window.addEventListener("offline", function(e) {
