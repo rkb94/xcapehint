@@ -360,7 +360,7 @@ function changeRoomName(roomNum){
             roomName = '기억의 틈';
             return roomName;
         case 'room2':
-            roomName = '위험한 초대';
+            roomName = '수취인 초대';
             return roomName;
         case 'room3':
             roomName = '준비중입니다.';
