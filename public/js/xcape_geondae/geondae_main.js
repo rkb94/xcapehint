@@ -37,7 +37,7 @@ function getHintContent() {
                 <div class="form-group has-success has-feedback">
                     <div class="input-group">
                         <span class="input-group-addon">` + hint[i].hintNumber + `</span>
-                        <button onclick="clickHint('` + hint[i].theme + `', '` + hint[i].hintContent + `')" class="btn btn-primary btn-m btn-block" id="roomHint-` + hint[i].hintNumber + `" style="border-bottom-left-radius : 0; border-top-left-radius : 0;">` + hint[i].hintContent + `</button>
+                        <button onclick="clickHint('` + hint[i].theme + `', '` + hint[i].hintContent + `')" class="btn btn-primary btn-m btn-block" id="roomHint-` + hint[i].hintNumber + `" style="border-bottom-left-radius : 0; border-top-left-radius : 0; white-space: normal;">` + hint[i].hintContent + `</button>
                     </div>
                 </div>
             `)

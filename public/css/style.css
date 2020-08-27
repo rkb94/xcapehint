@@ -55,7 +55,6 @@
   }
 }
 
-
 .chat_log{
   width: 20%;
   float: left;
@@ -66,7 +65,7 @@
 }
 
 .gangnam_chat_log{
-  width: 50%;
+  width: 100%;
   float: left;
   height: 200px;
   background-color: #333333;
@@ -74,12 +73,12 @@
   border-color: black;
 }
 
-#header{
+.flex{
   display: flex;
 }
 
 .gangnam > .roomTitleWrapper {
-  width: 50%;
+  width: 100%;
   border: solid black 1px;
 }
 
@@ -109,10 +108,10 @@
   padding: 3%;
 }
 
-.message{ width: 90%; }
-.chat{ width: 9%; }
+.message{ width: 100%; }
+
 .roomContents {
-  display: inline-block;
+  display: inline-flex;
   width: 100%;
 }
 .time{
@@ -133,8 +132,8 @@
   margin-top: 15px;
   padding: 10px;
   border: solid 1px;
-  width: 49.7%;
-  display: inline-block;
+  width: 100%;
+  /* display: inline-block; */
 }
 
 .clockWrapper {
@@ -148,7 +147,7 @@
 }
 
 .contents {
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 
 #background{

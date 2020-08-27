@@ -20,8 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="gangnam" id="header">
-
+    <div class="gangnam flex">
       <div class="roomTitleWrapper">
         <h5 class="roomTitle">미씽 다이얼</h5>
         <div class="buttonWrapper">
@@ -33,7 +32,6 @@
           </form>
         </div>
       </div>
-
       <div class="roomTitleWrapper">
         <h5 class="roomTitle">청림 맨션</h5>
         <div class="buttonWrapper">
@@ -45,89 +43,40 @@
           </form>
         </div>
       </div>
-
-      <!-- <div class="roomTitleWrapper">
-        <h5 class="roomTitle"></h5>
-        <div class="buttonWrapper">
-          <div class="timeContents" id="clock">
-              <button type="button" class="btn btn-default" id="output3">60:00</button>
-          </div>
-          <form class="timeContents" id="timestate3">
-            <input type="button" id="startStateButton3" class="btn btn-default btn-warning" value="시작 전">
-          </form>
-        </div>
-      </div>
-
-      <div class="roomTitleWrapper">
-        <h5 class="roomTitle"></h5>
-        <div class="buttonWrapper">
-          <div class="timeContents" id="clock">
-              <button type="button" class="btn btn-default" id="output4">60:00</button>
-          </div>
-          <form class="timeContents" id="timestate4">
-            <input type="button" id="startStateButton4" class="btn btn-default btn-warning" value="시작 전">
-          </form>
-        </div>
-      </div> -->
     </div>
 
-    <div id="gangnamRoomTitleWrapper">
+    <div class="flex" id="gangnamRoomTitleWrapper">
       <textarea id="chatLog1" class="gangnam_chat_log" readonly></textarea>
       <textarea id="chatLog2" class="gangnam_chat_log" readonly></textarea>
-      <!-- <textarea id="chatLog3" class="gangnam_chat_log" readonly></textarea>
-      <textarea id="chatLog4" class="gangnam_chat_log" readonly></textarea> -->
     </div>
 
-    <!-- 미씽 다이얼 -->
-    <div class="gangnam roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat1">
-          <input id="name1" class="name" type="text" value="room1" readonly>
-          <input id="message1" class="message" type="text" autocomplete="off" placeholder="[미씽 다이얼] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
+    <div class="flex">
+      <!-- 미씽 다이얼 -->
+      <div class="gangnam roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat1">
+            <input id="name1" class="name" type="text" value="room1" readonly>
+            <input id="message1" class="message" type="text" autocomplete="off" placeholder="[미씽 다이얼] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room1">
+        </div>
       </div>
-      <div class="hintBox room1">
-      </div>
-    </div>
-
-    <!-- 청림 멘션 -->
-    <div class="gangnam roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat2">
-          <input id="name2" class="name" type="text" value="room2" readonly>
-          <input id="message2" class="message" type="text" autocomplete="off" placeholder="[청림 맨션] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room2">
-      </div>
-    </div>
-
-    <!-- <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat3">
-          <input id="name3" class="name" type="text" value="room3" readonly>
-          <input id="message3" class="message" type="text" autocomplete="off" placeholder="">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room3">
+  
+      <!-- 청림 멘션 -->
+      <div class="gangnam roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat2">
+            <input id="name2" class="name" type="text" value="room2" readonly>
+            <input id="message2" class="message" type="text" autocomplete="off" placeholder="[청림 맨션] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room2">
+        </div>
       </div>
     </div>
-
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat3">
-          <input id="name3" class="name" type="text" value="room3" readonly>
-          <input id="message3" class="message" type="text" autocomplete="off" placeholder="">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room3">
-      </div>
-    </div> -->
-
     <div class="clockWrapper">
       <div class="currentTimeContentInGeondae">
           <p id="currentTimer"></p>

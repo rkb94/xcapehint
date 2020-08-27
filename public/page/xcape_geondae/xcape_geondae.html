@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div id="header">
+    <div class="flex">
       <div class="roomTitleWrapper">
         <h5 class="roomTitle">501동 사람들</h5>
         <div class="buttonWrapper">
@@ -91,7 +91,7 @@
       </div>
     </div>
 
-    <div id="header">
+    <div class="flex">
       <textarea id="chatLog1" class="chat_log" readonly></textarea>
       <textarea id="chatLog2" class="chat_log" readonly></textarea>
       <textarea id="chatLog3" class="chat_log" readonly></textarea>
@@ -100,81 +100,85 @@
       <textarea id="chatLog6" class="chat_log" readonly></textarea>
     </div>
 
-    <!-- 501동 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat1">
-          <input id="name1" class="name" type="text" value="room1" readonly>
-          <input id="message1" class="message" type="text" autocomplete="off" placeholder="[501동 사람들] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
+    <div class="flex">
+      <!-- 501동 테마 -->
+      <div class="roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat1">
+            <input id="name1" class="name" type="text" value="room1" readonly>
+            <input id="message1" class="message" type="text" autocomplete="off" placeholder="[501동 사람들] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room1">
+        </div>
       </div>
-      <div class="hintBox room1">
-      </div>
-    </div>
-
-    <!-- 기묘한 날개짓 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat2">
-          <input id="name2" class="name" type="text" value="room2" readonly>
-          <input id="message2" class="message" type="text" autocomplete="off" placeholder="[기묘한 날개짓] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room2">
-      </div>
-    </div>
-
-    <!-- 숨바꼭질 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat3">
-          <input id="name3" class="name" type="text" value="room3" readonly>
-          <input id="message3" class="message" type="text" autocomplete="off" placeholder="[숨바꼭질] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room3">
+  
+      <!-- 기묘한 날개짓 테마 -->
+      <div class="roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat2">
+            <input id="name2" class="name" type="text" value="room2" readonly>
+            <input id="message2" class="message" type="text" autocomplete="off" placeholder="[기묘한 날개짓] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room2">
+        </div>
       </div>
     </div>
-
-    <!-- 이도공간 테마 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat4">
-          <input id="name4" class="name" type="text" value="room4" readonly>
-          <input id="message4" class="message" type="text" autocomplete="off" placeholder="[이도공간] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
+    <div class="flex">
+      <!-- 숨바꼭질 테마 -->
+      <div class="roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat3">
+            <input id="name3" class="name" type="text" value="room3" readonly>
+            <input id="message3" class="message" type="text" autocomplete="off" placeholder="[숨바꼭질] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room3">
+        </div>
       </div>
-      <div class="hintBox room4">
+  
+      <!-- 이도공간 테마 -->
+      <div class="roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat4">
+            <input id="name4" class="name" type="text" value="room4" readonly>
+            <input id="message4" class="message" type="text" autocomplete="off" placeholder="[이도공간] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room4">
+        </div>
       </div>
     </div>
-
-    <!-- 필연의 수감동 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat5">
-          <input id="name5" class="name" type="text" value="room5" readonly>
-          <input id="message5" class="message" type="text" autocomplete="off" placeholder="[필연의 수감동] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
+    <div class="flex">
+      <!-- 필연의 수감동 -->
+      <div class="roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat5">
+            <input id="name5" class="name" type="text" value="room5" readonly>
+            <input id="message5" class="message" type="text" autocomplete="off" placeholder="[필연의 수감동] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room5">
+        </div>
       </div>
-      <div class="hintBox room5">
-      </div>
-    </div>
-
-    <!-- 핑퐁 핑퐁 -->
-    <div class="roomWrapper">
-      <div class="contents">
-        <form class="roomContents" id="chat6">
-          <input id="name6" class="name" type="text" value="room6" readonly>
-          <input id="message6" class="message" type="text" autocomplete="off" placeholder="[핑퐁 핑퐁] 힌트를 입력해주세요">
-          <input type="submit" class="chat btn btn-info" value="입력"/>
-        </form>
-      </div>
-      <div class="hintBox room6">
+  
+      <!-- 핑퐁 핑퐁 -->
+      <div class="roomWrapper">
+        <div class="contents">
+          <form class="roomContents" id="chat6">
+            <input id="name6" class="name" type="text" value="room6" readonly>
+            <input id="message6" class="message" type="text" autocomplete="off" placeholder="[핑퐁 핑퐁] 힌트를 입력해주세요">
+            <input type="submit" class="chat btn btn-info" value="입력"/>
+          </form>
+        </div>
+        <div class="hintBox room6">
+        </div>
       </div>
     </div>
 

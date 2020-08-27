@@ -25,6 +25,14 @@
     background-color: black;
 }
 
+#background6 {
+    background-color: black;
+    background-image: url(/image/bg6.gif);
+    background-size: cover;
+    background-color: black;
+    background-repeat: no-repeat;
+}
+
 #chatLog {
     display: flex;
     align-items: center;
