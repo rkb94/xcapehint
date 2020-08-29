@@ -4,6 +4,25 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.postgresql-curly-86535,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
+
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',function(req, res){
