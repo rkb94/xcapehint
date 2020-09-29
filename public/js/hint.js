@@ -23,7 +23,7 @@ window.hint = [
     {
         theme: 'room1',
         hintNumber: '1',
-        hintContent: '분리수거 함 안에 있는 신문기사에서 최저임금을 찾아 입력해 주세요.'
+        hintContent: '분리수거 함 안에있는 우유를 우유통안에 넣고 최저임금을 찾아 입력해 주세요.'
     },
     {
         theme: 'room1',
@@ -43,7 +43,7 @@ window.hint = [
     {
         theme: 'room1',
         hintNumber: '5',
-        hintContent: '파일 안 남자의 사진과 피난안내도를 비교하여 사진을 시간 순서대로 보고, 파일에서 남자가 서있는 위치를 확인하고 피난 안내도 속 남자의 위치를 비추는 CCTV 그림을 확인해주세요. 이때 피난 안내도 속 노란 불빛은 정답과는 무관함으로 CCTV 모양 자체만 봐주세요. 이 방식으로, 사진 5장 속 남자의 위치를 비추는 CCTV를 확인한 뒤, 사진 순서대로 이동경로를 방향 자물쇠에 입력해주세요.'
+        hintContent: '파일 안 남자의 사진과 피난안내도를 비교하여 사진을 시간 순서대로 보고, 파일에서 남자가 서있는 위치를 확인하고 피난 안내도 속 남자의 위치를 비추는 CCTV 그림을 확인해주세요. CCTV 모양이 가르키는 노란 불빛의 방향을 봐주세요. 이 방식으로, 사진 5장 속 남자의 위치를 비추는 CCTV를 확인한 뒤, 사진 순서대로 노란 불빛 방향을 방향 자물쇠에 입력해주세요.'
     },
     {
         theme: 'room1',
@@ -83,26 +83,21 @@ window.hint = [
     {
         theme: 'room1',
         hintNumber: '12',
-        hintContent: '가져온 우유를 우유통에 넣어주세요.'
-    },
-    {
-        theme: 'room1',
-        hintNumber: '13',
         hintContent: '얻은 고리를 컴퓨터 핸드폰 사진에 나온 위치에 꽃고 타일을 들어주세요.'
     },
     {
         theme: 'room1',
-        hintNumber: '14',
+        hintNumber: '13',
         hintContent: '화살표 모양이 있는 벨브를 표시된 방향대로 돌린 후 초록불에 태깅 해주세요.'
     },
     {
         theme: 'room1',
-        hintNumber: '15',
+        hintNumber: '14',
         hintContent: '태깅 내용 확인 후,  X-NOTE 의 [ 1 4 5 7 ]번의 답을 철함 자물쇠에 입력해주세요.'
     },
     {
         theme: 'room1',
-        hintNumber: '16',
+        hintNumber: '15',
         hintContent: '철함을 연 후, 현재 연도를 입력해주세요.'
     },
 
@@ -347,71 +342,66 @@ window.hint = [
     {
         theme:'room4',
         hintNumber:'3',
-        hintContent:'말머리 앞에 있는 날짜를 반대쪽으로 넘긴 뒤 해당하는 달모양을 찾습니다. 그리고 달모양 그림을 받아 말머리상 옆에 있는 십자가 모양에 맟춰 말머리를 돌려주세요.'
-    },
-    {
-        theme:'room4',
-        hintNumber:'4',
         hintContent:'피라미드 아래 문자와 빨간색함 옆 벽면에 문자를 이용하여 순혈마녀의 이름을 해독해 주세요. [ _ _ _ _ _ ]'
     },
     {
         theme:'room4',
-        hintNumber:'5',
+        hintNumber:'4',
         hintContent:'마녀의 음계 확인 후 마녀의 음계를 누를 수 있는 마법진 아크릴 함의 자물쇠를 열어주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'6',
+        hintNumber:'5',
         hintContent:'힌트 판을 보고 알맞게 마녀의 음계를 눌러주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'7',
+        hintNumber:'6',
         hintContent:'총으로 해골의 움직이는 빨간 눈을 맞춰주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'8',
+        hintNumber:'7',
         hintContent:'단상에 맨 아래 서랍과 제일 작은 책모양 서랍을 열어주세요. 그리고 화살표 그림에 맞춰 책모양 서랍을 움직여 방향 자물쇠를 열어주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'9',
+        hintNumber:'8',
         hintContent:'서랍에 붙어있는 문구를 확인한 후, 서랍 두개 안의 문구와 비교하여 독사와 두꺼비 뼈를 대신 할 수있는 물건을 각 각 서랍에 넣어주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'10',
+        hintNumber:'9',
         hintContent:'방안 곳곳을 돌아다니며 서랍안에 있는 문양을 찾아 UV랜턴으로 비춰주세요. 알맞는 문양의 카드를 카드함에 넣어주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'11',
+        hintNumber:'10',
         hintContent:'십자가를 관뚜껑 가운데 십자가 그림에 대주세요'
     },
     {
         theme:'room4',
-        hintNumber:'12',
+        hintNumber:'11',
         hintContent:'십자가를 바로 옆 관뚜껑에 대주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'13',
+        hintNumber:'12',
         hintContent:'촛대 밑에 서랍에서 초를 꺼내 비어있는 초 자리에 꽂아주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'14',
+        hintNumber:'13',
         hintContent:'안에 있는 동물 갯수를 확인하여 흰색 사물함 맨 아래 서랍을 열어주세요.'
     },
     {
         theme:'room4',
-        hintNumber:'15',
+        hintNumber:'14',
         hintContent:'마지막 방에서 4개의 조각을 가지고 피라미드 있는 방으로 가서 거울을 보고 문제를 풀어주세요. 순서대로 꽂아주시면 됩니다.'
     },
     {
         theme:'room4',
-        hintNumber:'16',
+        hintNumber:'15',
         hintContent:'터널 안 벽면에 손그림 액자를 봐주세요 손목에 있는 달 모양과  조각상 밑에 달을 비교하여 같은 모양을 찾아 해당하는 별자리 그림에 반지를 꽂아주세요.'
     },
         
