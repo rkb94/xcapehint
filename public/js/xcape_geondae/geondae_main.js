@@ -533,6 +533,16 @@ socket.on('reset clock', function(data){ // 방 번호 룸에서 시작을 누�
             startStateButton.className = 'btn btn-default btn-warning';
             startStateButton.value = '시작 전';
             break;
+        case 'output6':
+            clearInterval(inter6);
+            document.getElementById(makeOutputName(data.roomNum)).innerHTML = limitTime;
+            document.querySelector("#chatLog" + data.roomNum).value = ''; // 힌트 내용 refresh
+            var startStateButton = document.getElementById('startStateButton' + data.roomNum);
+            startStateButton.closest(".roomTitleWrapper").style.border = "solid 1px black";
+            startStateButton.type = 'button';
+            startStateButton.className = 'btn btn-default btn-warning';
+            startStateButton.value = '시작 전';
+            break;
         default:
             console.log("error about reset timer");
             break;
