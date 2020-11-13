@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^7.2.3",
     "git": "^0.1.5",
     "pg": "^8.3.3",
     "socket.io": "^2.0.3"

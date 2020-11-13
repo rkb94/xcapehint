@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+    <meta charset="utf-8">
+    <title>XCAPE HINT SETTING</title>
+</head>
+<script>
+</script>
+
+<body id="background">
+    <select id="merchantList"></select>
+    <select id="themeList"></select>
+    <input type="number" id="seq" style="width: 50px; text-align: center;"/>
+    <input type="text" id="key" style="width: 80px; text-transform:uppercase; text-align: center;" maxlength="5"/>
+    <input type="text" id="message" />
+    <button type="submit" id="save" >저장하기</button>
+    <div id="hintDiv" style="margin: 20px;">
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.2/handlebars.min.js"></script>
+<script type="text/javascript" src="/js/hint_setting.js"></script>
+<script type="rv-template" id="hintItem">
+    {{#hints}}
+    <div class="form-group has-success has-feedback">
+        <div class="input-group">
+            <span class="input-group-addon">{{seq}}</span>
+            <span class="input-group-addon" style="width: 80px">{{key}}</span>
+            <button onclick="alert('{{message}}')" class="btn btn-primary btn-m btn-block" 
+                id="{{key}}" style="border-bottom-left-radius : 0; border-top-left-radius : 0; white-space: normal;">{{message}}</button>
+        </div>
+    </div>
+    {{/hints}}
+</script>
+
+</html>

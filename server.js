@@ -4,26 +4,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 
-const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: "postgres://leixollrwwwwsi:fd0202741572ae0683f4f40d9033c008834fdfcfee688b913edfd3b48c8b66ab@ec2-54-86-57-171.compute-1.amazonaws.com:5432/dchc4hv12gluia",
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-
-client.connect();
-
-client.query('SELECT * From xcapehint;', (err, res) => {
-  if (err) throw err;
-  let hint = res.rows;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row.them));
-  }
-  client.end();
-});
-
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',function(req, res){
