@@ -3,6 +3,24 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
+var firebase = require("firebase/app");
+
+// Add the Firebase products that you want to use
+var firebaseAuth = require("firebase/auth");
+var firestore = require("firebase/firestore");
+
+var firebaseConfig = {
+  apiKey: "AIzaSyB30tl9b5jdPzsyNOQMxCai5meLFzFk3t0",
+  authDomain: "xcapehint.firebaseapp.com",
+  databaseURL: "https://xcapehint.firebaseio.com",
+  projectId: "xcapehint",
+  storageBucket: "xcapehint.appspot.com",
+  messagingSenderId: "258457372086",
+  appId: "1:258457372086:web:88043be942807733492d17",
+  measurementId: "G-Q7Q7T2KT2J"
+};
+
+firebase.initializeApp(firebaseConfig);
 
 app.use(express.static(path.join(__dirname,'public')));
 

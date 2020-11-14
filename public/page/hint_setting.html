@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/hint_setting.css">
 <link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <head>
     <meta charset="utf-8">
@@ -12,25 +14,56 @@
 </script>
 
 <body id="background">
-    <select id="merchantList"></select>
-    <select id="themeList"></select>
-    <input type="number" id="seq" style="width: 50px; text-align: center;"/>
-    <input type="text" id="key" style="width: 80px; text-transform:uppercase; text-align: center;" maxlength="5"/>
-    <input type="text" id="message" />
-    <button type="submit" id="save" >저장하기</button>
-    <div id="hintDiv" style="margin: 20px;">
+    <div id="controller">
+        <div class="row" id="controllSelector">
+            <div class="col-md-4 col-sm-12 row">
+                <div class="form-group col-md-6 col-sm-6">
+                    <label class="inputLabel" for="merchantList">가맹점</label>
+                    <select id="merchantList" class="form-control"></select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <label class="inputLabel" for="themeList">테마</label>
+                    <select id="themeList" class="form-control"></select>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12 row">
+                <div class="form-group col-md-2 col-sm-2">
+                    <label class="inputLabel" for="seq">번호</label>
+                    <input type="number" class="form-control" id="seq" />
+                </div>
+                <div class="form-group col-md-3 col-sm-3">
+                    <label class="inputLabel" for="key">키</label>
+                    <input type="text" class="form-control" id="key" style="text-transform:uppercase; text-align: center;" maxlength="5"/>
+                </div>
+                <div class="form-group col-md-7 col-sm-7">
+                    <label class="inputLabel" for="message">메시지</label>
+                    <input type="text" class="form-control" id="message" />
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 row">
+                <div class="form-group col-md-12 col-sm-12">
+                    <label class="inputLabel" for="message">&nbsp;</label>
+                    <button type="submit" id="save" class="btn btn-primary btn-block">저장하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hintDiv">
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-
+     
 <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.2/handlebars.min.js"></script>
@@ -39,10 +72,12 @@
     {{#hints}}
     <div class="form-group has-success has-feedback">
         <div class="input-group">
-            <span class="input-group-addon">{{seq}}</span>
-            <span class="input-group-addon" style="width: 80px">{{key}}</span>
-            <button onclick="alert('{{message}}')" class="btn btn-primary btn-m btn-block" 
-                id="{{key}}" style="border-bottom-left-radius : 0; border-top-left-radius : 0; white-space: normal;">{{message}}</button>
+            <span class="input-group-addon hintSeq" style="width: 3%; line-height: 2;">{{seq}}</span>
+            <span class="input-group-addon hintKey" style="width: 6%; line-height: 2;">{{key}}</span>
+            <button onclick="changeHintMessage('{{key}}', '{{message}}')" class="btn btn-primary btn-m btn-block" 
+                id="{{key}}" style="width: 88%; border-radius: 0; white-space: normal;">{{message}}</button>
+            <button onclick="deleteHint(`{{key}}`)" class="btn btn-danger btn-m" 
+            style="width: 3%; border-bottom-left-radius: 0; border-top-left-radius: 0; white-space: normal;">𝗫</button>
         </div>
     </div>
     {{/hints}}

@@ -1,0 +1,23 @@
+.inputLabel {
+    color: whitesmoke;
+}
+
+#controllSelector {
+    margin: 1% 2%;
+}
+
+.input-group-addon {
+    line-height: 2;
+}
+
+#hintDiv {
+    margin: 1%;
+    padding: 1%;
+    position: relative;
+    height: auto;
+    min-height: 80% !important;
+    width: 98%;
+    height: 40rem;
+    overflow: scroll;
+    border: solid 1px black;
+}

@@ -1,21 +1,22 @@
-var firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    databaseURL: process.env.FIREBASE_DATABASE_URL,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID
-};
-
 // Initialize Firebase
+var firebaseConfig = {
+    apiKey: "AIzaSyB30tl9b5jdPzsyNOQMxCai5meLFzFk3t0",
+    authDomain: "xcapehint.firebaseapp.com",
+    databaseURL: "https://xcapehint.firebaseio.com",
+    projectId: "xcapehint",
+    storageBucket: "xcapehint.appspot.com",
+    messagingSenderId: "258457372086",
+    appId: "1:258457372086:web:88043be942807733492d17",
+    measurementId: "G-Q7Q7T2KT2J"
+};
 firebase.initializeApp(firebaseConfig);
+
 var db = firebase.firestore();
+let hintList;
 let merchantList = [];
 let themeList = [];
 let publicHintList = { hint: [] };
-let merchant = `${new URLSearchParams(window.location.search).get("merchant")}`;
+let merchant = `${new URLSearchParams(window.location.search).get("merchant")}` == "null" ?  "건대-엑스케이프" : `${new URLSearchParams(window.location.search).get("merchant")}`;
 let theme = `${new URLSearchParams(window.location.search).get("theme")}`;
 
 $(document).ready(function () {
@@ -28,12 +29,29 @@ $(document).ready(function () {
         let seq = $("#seq").val();
         insertHint(key, message, seq);
     });
+
+    $("#merchantList").change(function() {
+        $("#hintDiv").html("");
+        merchant = this.value;
+        theme = "";
+        getThemeList(merchant).then(theme => {
+            hintList = new HintList(merchant, theme);
+        })
+    });
+
+    $("#themeList").change(function() {
+        $("#hintDiv").html("");
+        theme = $("#themeList").val();
+        getThemeList(merchant).then(theme => {
+            hintList = new HintList(merchant, theme);
+        })
+    });
 });
 
 async function settingMerchantTheme() {
     await getMerchantList().then(merchant => {
         getThemeList(merchant).then(theme => {
-            new HintList(merchant, theme);
+            hintList = new HintList(merchant, theme);
         });
     });
 }
@@ -62,11 +80,13 @@ HintList.prototype = {
             .doc(theme)
             .collection('힌트').get().then((hints) => {
                 hints.forEach(hint => {
-                    hintList.push({
-                        seq: `${hint.data().seq}`,
-                        key: `${hint.data().key}`,
-                        message: `${hint.data().message}`
-                    });
+                    if (hint.data().use) {
+                        hintList.push({
+                            seq: `${hint.data().seq}`,
+                            key: `${hint.data().key}`,
+                            message: `${hint.data().message}`
+                        });
+                    }
                 })
             });
         hintList.sort(function (a, b) {
@@ -90,6 +110,8 @@ async function getMerchantList() {
 }
 
 async function getThemeList(merchant) {
+    themeList = [];
+    $("#themeList").html("");
     await db.collection("xcape")
             .doc(merchant)
             .collection("테마").get().then((themes) => {
@@ -99,7 +121,7 @@ async function getThemeList(merchant) {
                         name: `${theme.id}`
                     });
                 });
-                if (theme == "null") {
+                if (theme == "null" || theme == "") {
                     theme = themeList[0].name;
                 }
             });
@@ -132,7 +154,8 @@ function insertHint(key, message, seq) {
         .set({
             key: `${key}`.toUpperCase(),
             message: `${message}`,
-            seq: `${seq}`
+            seq: `${seq}`,
+            use: true
         })
         .then(function () {
             console.log("Document successfully written!");
@@ -142,4 +165,58 @@ function insertHint(key, message, seq) {
         .catch(function (error) {
             console.error("Error writing document: ", error);
         });
+}
+
+function changeHintMessage(key, oldMessage) {
+    let newMessage = prompt("바꾸실 힌트 메시지를 입력해주세요.", oldMessage);
+    if (newMessage == "" || newMessage == null) {
+        alert("잘못된 입력입니다. 다시 입력해주세요.");
+        throw new Error("Invalid input message error");
+    } else if (newMessage == oldMessage) {
+        alert("기존과 동일한 입력입니다. 새로운 힌트 메시지를 입력해주세요.");
+        throw new Error("Same input message error");
+    }
+    console.log(key + ": " +newMessage);
+
+    db.collection("xcape")
+        .doc(merchant)
+        .collection('테마')
+        .doc(theme)
+        .collection('힌트')
+        .doc(`${key}`.toUpperCase())
+        .update({
+            message: `${newMessage}`
+        })
+        .then(function() {
+            console.log("Document successfully updated!");
+            let url = `http://${window.location.host}${window.location.pathname}?merchant=${merchant}&theme=${theme}`;
+            window.location.href = url;
+        })
+        .catch(function(error) {
+            alert("힌트 수정에 실패했습니다.");
+            console.error("Error updating document: ", error);
+        });
+}
+
+function deleteHint(key) {
+    if(confirm("힌트를 삭제하시겠습니까?")) {
+        db.collection("xcape")
+            .doc(merchant)
+            .collection('테마')
+            .doc(theme)
+            .collection('힌트')
+            .doc(`${key}`.toUpperCase())
+            .update({
+                use: false
+            })
+            .then(function() {
+                console.log("Document successfully updated!");
+                let url = `http://${window.location.host}${window.location.pathname}?merchant=${merchant}&theme=${theme}`;
+                window.location.href = url;
+            })
+            .catch(function(error) {
+                alert("삭제에 실패했습니다.");
+                console.error("Error updating document: ", error);
+            });
+    }
 }
