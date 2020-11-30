@@ -126,7 +126,6 @@ function HintList(merchant, theme) {
         $(".tooltip").remove();
         $("#spinner").hide();
         $("#hint-table").empty();
-        console.log(this.hintList.hints[0].values);
         $("#hint-table").append(this.hintHtml);
         $('[data-toggle="tooltip"]').tooltip()
     });
