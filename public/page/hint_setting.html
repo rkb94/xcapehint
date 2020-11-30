@@ -1,86 +1,212 @@
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/hint_setting.css">
-<link rel="stylesheet" href="/css/bootstrap.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="/css/hint_setting.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
     <title>XCAPE HINT SETTING</title>
-</head>
-<script>
-</script>
-
-<body id="background">
-    <div id="controller">
-        <div class="row" id="controllSelector">
-            <div class="col-md-4 col-sm-12 row">
-                <div class="form-group col-md-6 col-sm-6">
-                    <label class="inputLabel" for="merchantList">가맹점</label>
-                    <select id="merchantList" class="form-control"></select>
-                </div>
-                <div class="form-group col-md-6 col-sm-6">
-                    <label class="inputLabel" for="themeList">테마</label>
-                    <select id="themeList" class="form-control"></select>
-                </div>
-            </div>
-            <div class="col-md-5 col-sm-12 row">
-                <div class="form-group col-md-2 col-sm-2">
-                    <label class="inputLabel" for="seq">번호</label>
-                    <input type="number" class="form-control" id="seq" />
-                </div>
-                <div class="form-group col-md-3 col-sm-3">
-                    <label class="inputLabel" for="key">키</label>
-                    <input type="text" class="form-control" id="key" style="text-transform:uppercase; text-align: center;" maxlength="5"/>
-                </div>
-                <div class="form-group col-md-7 col-sm-7">
-                    <label class="inputLabel" for="message">메시지</label>
-                    <input type="text" class="form-control" id="message" />
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12 row">
-                <div class="form-group col-md-12 col-sm-12">
-                    <label class="inputLabel" for="message">&nbsp;</label>
-                    <button type="submit" id="save" class="btn btn-primary btn-block">저장하기</button>
-                </div>
-            </div>
+  </head>
+  <body class="bg-dark">
+    <div class="container-fluid" id="hint-navigator">
+      <div class="card text-white my-bg-dark mb-3">
+        <div class="card-header">
+          <h2>
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-sliders" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+            </svg>
+            &nbsp;XCAPE Hint Setting
+          </h2>
         </div>
-    </div>
-    <div id="hintDiv">
-    </div>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/js/bootstrap.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-     
-<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.2/handlebars.min.js"></script>
-<script type="text/javascript" src="/js/hint_setting.js"></script>
-<script type="rv-template" id="hintItem">
-    {{#hints}}
-    <div class="form-group has-success has-feedback">
-        <div class="input-group">
-            <span class="input-group-addon hintSeq" style="width: 3%; line-height: 2;">{{seq}}</span>
-            <span class="input-group-addon hintKey" style="width: 6%; line-height: 2;">{{key}}</span>
-            <button onclick="changeHintMessage('{{key}}', '{{message}}')" class="btn btn-primary btn-m btn-block" 
-                id="{{key}}" style="width: 88%; border-radius: 0; white-space: normal;">{{message}}</button>
-            <button onclick="deleteHint(`{{key}}`)" class="btn btn-danger btn-m" 
-            style="width: 3%; border-bottom-left-radius: 0; border-top-left-radius: 0; white-space: normal;">𝗫</button>
+        <div class="row align-items-center card-body">
+          <div class="col-md-10 col-sm-12">
+            <div class="row">
+              <div class="col-md-4 col-sm-12 input-group mb-3 form-group">
+                <div class="input-group-prepend">
+                  <label class="input-group-text text-light bg-dark border-muted" for="merchantList">가맹점</label>
+                </div>
+                <select class="custom-select text-light bg-secondary border-muted" id="merchantList"></select>
+              </div>
+              <div class="col-md-4 col-sm-12 input-group mb-3 form-group">
+                <div class="input-group-prepend">
+                  <label class="input-group-text text-light bg-dark border-muted" for="themeList">테마</label>
+                </div>
+                <select class="custom-select text-light bg-secondary border-muted" id="themeList"></select>
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <div class="input-group flex-nowrap form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-light bg-dark border-muted" id="addon-wrapping">번호</span>
+                  </div>
+                  <input 
+                    type="number" 
+                    class="form-control text-light bg-secondary border-muted" 
+                    placeholder="번호" 
+                    aria-label="번호" 
+                    aria-describedby="addon-wrapping" 
+                    id="seq" 
+                    disabled
+                  >
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-12">
+                <div class="input-group flex-nowrap form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-light bg-dark border-muted" id="addon-wrapping">키</span>
+                  </div>
+                  <input 
+                    type="text" 
+                    class="form-control text-light bg-secondary border-muted" 
+                    placeholder="키" 
+                    aria-label="키" 
+                    aria-describedby="addon-wrapping" 
+                    id="key" 
+                    maxlength="5"
+                    data-container="body" 
+                    data-toggle="popover" 
+                    data-placement="bottom" 
+                    data-content="Key 값은 수정 가능하지만, 5자리 대문자 알파벳과 숫자 조합으로만 가능합니다."
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="row row-cols-2">
+              <div class="col">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-light bg-dark border-muted" id="basic-addon3">힌트 1</span>
+                  </div>
+                  <input type="text" class="form-control text-light bg-secondary border-muted" id="message1" aria-describedby="basic-addon3" placeholder="힌트를 입력해주세요.">
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text text-light bg-dark border-muted" id="basic-addon3">힌트 2</span>
+                  </div>
+                  <input type="text" class="form-control text-light bg-secondary border-muted" id="message2" aria-describedby="basic-addon3" placeholder="힌트를 입력해주세요.">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-2 col-sm-12 d-flex">
+            <button type="submit" id="save" class="btn btn-primary btn-lg btn-block">저장</button>
+          </div>
         </div>
-    </div>
-    {{/hints}}
-</script>
+      </div>
 
+
+      <div class="card text-white my-bg-dark mb-3">
+        <div class="card-header">test</div>
+        <div class="card-body table-responsive">
+          <!-- Fixed header table-->
+          <div class="table-responsive">
+            <table class="table table-hover table-dark table-fixed">
+              <thead>
+                <tr>
+                  <th scope="col" class="col-1">#</th>
+                  <th scope="col" class="col-2">Key</th>
+                  <th scope="col" class="col-4">힌트 1</th>
+                  <th scope="col" class="col-4">힌트 2</th>
+                  <th scope="col" class="col-1">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody id="hint-table">
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <div class="spinner-border text-light" id="spinner" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.2/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/js/hint_setting.js"></script>
+    <script type="rv-template" id="hint-item">
+        {{#hints}}
+          <tr>
+            <th class="col-1" scope="row">{{inc @key}}</th>
+            <td 
+              class="col-2 key_button"
+              data-clipboard-text="{{key}}" 
+              id="{{key}}"
+              data-toggle="tooltip" 
+              data-placement="left" 
+              title="복사하기!"
+              style="cursor: pointer;"
+            >
+              {{key}}
+            </td>
+            <td 
+              class="col-4"
+              onclick="changeHintMessage('{{key}}', 1, '{{message1}}')" 
+              data-toggle="tooltip" 
+              data-placement="left" 
+              title="수정하기!"
+              style="cursor: pointer;"
+            >
+              {{message1}}
+            </td>
+            <td 
+              class="col-4"
+              onclick="changeHintMessage('{{key}}', 2, '{{message2}}')" 
+              data-toggle="tooltip" 
+              data-placement="left" 
+              title="수정하기!"
+              style="cursor: pointer;"
+            >
+              {{message2}}
+            </td>
+            <td 
+              class="col-1 x-button"
+              onclick="deleteHint(`{{key}}`)" 
+              data-toggle="tooltip" 
+              data-placement="left" 
+              title="삭제하기!"
+              style="cursor: pointer;"
+            >
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            </td>
+          </tr>
+        {{/hints}}
+    </script>
+  </body>
 </html>

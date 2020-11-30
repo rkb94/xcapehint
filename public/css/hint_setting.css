@@ -1,23 +1,65 @@
-.inputLabel {
-    color: whitesmoke;
+.selector-for-some-widget {
+    box-sizing: content-box;
 }
 
-#controllSelector {
-    margin: 1% 2%;
+body {
+    background-color: #262626;
 }
 
-.input-group-addon {
-    line-height: 2;
+#hint-navigator {
+    margin-top: 1%;
 }
 
-#hintDiv {
-    margin: 1%;
-    padding: 1%;
+.my-bg-dark {
+    background-color: #262626!important;
+}
+
+#hint-table{
     position: relative;
     height: auto;
     min-height: 80% !important;
-    width: 98%;
-    height: 40rem;
+    width: 100%;
+    height: 54vh;
     overflow: scroll;
-    border: solid 1px black;
+}
+
+.table-fixed tbody {
+    height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+    display: block;
+}
+
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+    float: left;
+    position: relative;
+}
+
+.table td:hover:not(.x-button) {
+    border: 1px solid white;
+    padding: 11px 11px;
+    display: block;
+}
+
+.text-center {
+    display: block;
+    position: relative;
+    z-index: 100;
+    height: 100%;
+}
+
+.spinner-border {
+    display: block;
+    position: fixed;
+    top: calc(50% - (58px / 2));
+    right: calc(50% - (58px / 2));
 }
