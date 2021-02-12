@@ -42,7 +42,7 @@ window.hint = [
     {
         theme: 'room1',
         hintNumber: '5',
-        hintContent: 'X- KIT 3463'
+        hintContent: 'X- KIT 3436'
     },
     {
         theme: 'room1',
