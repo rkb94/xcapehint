@@ -13,7 +13,7 @@
     "@popperjs/core": "^2.5.4",
     "bootstrap": "^4.5.3",
     "clipboard": "^2.0.6",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "firebase": "^7.2.3",
     "git": "^0.1.5",
     "pg": "^8.3.3",
